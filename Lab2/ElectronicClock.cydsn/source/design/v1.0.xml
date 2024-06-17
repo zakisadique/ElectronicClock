@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rte>
+ <configset>
+  <config name="version" value="Erika 2"/>
+  <config name="path_out" value="{PROJECT_PATH}\out"/>
+  <config name="templateDir" value="{GEN_PATH}\templates\Erika"/>
+  <config name="userCodeStart" value="/\* USER CODE START {TAG} \*/"/>
+  <config name="userCodeEnd" value="/\* USER CODE END {TAG} \*/"/>
+  <config name="guivers" value="0.1.2"/>
+ </configset>
+ <naming>
+  <config name="signalpoolPrefix" value="sp_"/>
+  <config name="signalpoolPostfix" value=""/>
+  <config name="taskPrefix" value="tsk_"/>
+  <config name="taskPostfix" value=""/>
+  <config name="signalclassPrefix" value="sc_"/>
+  <config name="signalclassPostfix" value=""/>
+  <config name="signalobjectPrefix" value="so_"/>
+  <config name="signalobjectPostfix" value=""/>
+  <config name="swcPrefix" value="swc_"/>
+  <config name="swcPostfix" value=""/>
+  <config name="runnablePrefix" value=""/>
+  <config name="runnablePostfix" value="_run"/>
+  <config name="eventPrefix" value="ev_"/>
+  <config name="eventPostfix" value=""/>
+  <config name="resourcePrefix" value="res_"/>
+  <config name="resourcePostfix" value=""/>
+  <config name="addrPrefix" value="ADR_"/>
+  <config name="addrStartPostfix" value="_START"/>
+  <config name="addrEndPostfix" value="_END"/>
+ </naming>
+ <signalpools>
+  <signalpool description="The common global signal pool, all signals will be stored here" endaddr="ADR_SP_COMMON_END" name="sp_common" shortname="common" startaddr="ADR_SP_COMMON_START"/>
+ </signalpools>
+ <tasks>
+  <task description="Task doing work" events="" mode="Cyclic and Event" name="tsk_input" shortname="input" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_250ms" timertickperiod="250"/>
+  <task description="Task doing work" events="" mode="Event" name="tsk_control" shortname="control" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="1"/>
+  <task description="Task doing work" events="" mode="Cyclic" name="tsk_display" shortname="display" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_250ms" timertickperiod="250"/>
+ </tasks>
+ <signalclasses>
+  <signalclass description="Signalclass" name="sc_buttons" shortname="buttons"/>
+  <signalclass description="Signalclass" name="sc_events" shortname="events"/>
+  <signalclass description="Signalclass" name="sc_clockData" shortname="clockData"/>
+ </signalclasses>
+ <signalobjects>
+  <signalobject description="A Signal for the input buttons" indriver="default" name="so_buttons" onDataError="0" onDataUpdate="0" outdriver="0" resource="res_buttons_Lock" shortname="buttons" signalclass="sc_buttons" signalpool="sp_common"/>
+  <signalobject description="A Signal for events" indriver="0" name="so_events" onDataError="0" onDataUpdate="ev_events_onData" outdriver="0" resource="res_events_Lock" shortname="events" signalclass="sc_events" signalpool="sp_common"/>
+  <signalobject description="A Signal for the clock data" indriver="0" name="so_clockData" onDataError="0" onDataUpdate="0" outdriver="default" resource="res_clockdata_Lock" shortname="clockData" signalclass="sc_clockData" signalpool="sp_common"/>
+ </signalobjects>
+ <swcs>
+  <swc description="Software component" name="swc_input" shortname="input"/>
+  <swc description="Software component" name="swc_control" shortname="control"/>
+  <swc description="Software component" name="swc_output" shortname="output"/>
+ </swcs>
+ <runnables>
+  <runnable component="swc_input" cycletime="0" description="Runnable" events="ev_ButtonsPressed" name="INPUT_readButtons_run" shortname="readButtons" signalIN="so_buttons" signalOUT="so_events" task="tsk_input"/>
+  <runnable component="swc_control" cycletime="0" description="Runnable" events="ev_events_onData" name="CONTROL_runStateMachine_run" shortname="runStateMachine" signalIN="so_events" signalOUT="so_clockData" task="tsk_control"/>
+  <runnable component="swc_output" cycletime="250" description="Runnable" events="" name="OUTPUT_updateDataOnTFT_run" shortname="updateDataOnTFT" signalIN="so_clockData" signalOUT="" task="tsk_display"/>
+  <runnable component="swc_output" cycletime="1000" description="Runnable" events="" name="OUTPUT_blink1s_run" shortname="blink1s" signalIN="so_clockData" signalOUT="" task="tsk_display"/>
+  <runnable component="swc_input" cycletime="60000" description="Runnable" events="" name="INPUT_1min_run" shortname="1min" signalIN="" signalOUT="so_events" task="tsk_input"/>
+  <runnable component="swc_input" cycletime="250" description="Runnable" events="" name="INPUT_250ms_run" shortname="250ms" signalIN="" signalOUT="so_events" task="tsk_input"/>
+ </runnables>
+ <events>
+  <event description="A Event" name="ev_events_onData" shortname="events_onData"/>
+  <event description="A Event" name="ev_ButtonsPressed" shortname="ButtonsPressed"/>
+  <event description="A Event" name="ev_250ms" shortname="250ms"/>
+  <event description="A Event" name="ev_60000ms" shortname="60000ms"/>
+ </events>
+ <resources>
+  <resource description="A Resource" name="res_buttons_Lock" restype="semaphore" shortname="buttons_Lock"/>
+  <resource description="A Resource" name="res_events_Lock" restype="semaphore" shortname="events_Lock"/>
+  <resource description="A Resource" name="res_clockdata_Lock" restype="semaphore" shortname="clockdata_Lock"/>
+ </resources>
+</rte>

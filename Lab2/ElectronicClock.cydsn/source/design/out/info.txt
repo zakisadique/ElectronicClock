@@ -1,0 +1,151 @@
+signalclasses:
+    sc_buttons:
+        datatrigger: 
+    sc_events:
+        datatrigger: 
+    sc_clockData:
+        datatrigger:
+
+signalpools:
+    sp_common:
+        start: ADR_SP_COMMON_START
+        end: ADR_SP_COMMON_END
+        signals:
+            so_buttons:
+                    class: sc_buttons
+                    inDriver: default
+                    outDriver: 0
+                    onDataUpdate: 0
+                    onDataUpdateTask: 
+                    onDataError: 0
+                    onDataErrorTask: 
+            so_events:
+                    class: sc_events
+                    inDriver: 0
+                    outDriver: 0
+                    onDataUpdate: ev_events_onData
+                    onDataUpdateTask: 
+                    onDataError: 0
+                    onDataErrorTask: 
+            so_clockData:
+                    class: sc_clockData
+                    inDriver: 0
+                    outDriver: default
+                    onDataUpdate: 0
+                    onDataUpdateTask: 
+                    onDataError: 0
+                    onDataErrorTask:
+
+tasks:
+    tsk_input:
+        timertickperiod: 250
+        mode: Cyclic and Event
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: ev_250ms|ev_ButtonsPressed
+        runnables:
+                INPUT_readButtons_run:
+                    task: tsk_input
+                    cycletime: 0
+                    events: ev_ButtonsPressed
+                    signalIN: so_buttons
+                    signalOUT: so_events
+            
+                INPUT_1min_run:
+                    task: tsk_input
+                    cycletime: 60000
+                    events: 
+                    signalIN: 
+                    signalOUT: so_events
+            
+                INPUT_250ms_run:
+                    task: tsk_input
+                    cycletime: 250
+                    events: 
+                    signalIN: 
+                    signalOUT: so_events
+            
+    tsk_control:
+        timertickperiod: 1
+        mode: Event
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: ev_events_onData
+        runnables:
+                CONTROL_runStateMachine_run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: ev_events_onData
+                    signalIN: so_events
+                    signalOUT: so_clockData
+            
+    tsk_display:
+        timertickperiod: 250
+        mode: Cyclic
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: ev_250ms
+        runnables:
+                OUTPUT_updateDataOnTFT_run:
+                    task: tsk_display
+                    cycletime: 250
+                    events: 
+                    signalIN: so_clockData
+                    signalOUT: 
+            
+                OUTPUT_blink1s_run:
+                    task: tsk_display
+                    cycletime: 1000
+                    events: 
+                    signalIN: so_clockData
+                    signalOUT:
+
+swc:
+    swc_input:
+        runnables:
+                INPUT_readButtons_run:
+                    task: tsk_input
+                    cycletime: 0
+                    events: ev_ButtonsPressed
+                    signalIN: so_buttons
+                    signalOUT: so_events
+            
+                INPUT_1min_run:
+                    task: tsk_input
+                    cycletime: 60000
+                    events: 
+                    signalIN: 
+                    signalOUT: so_events
+            
+                INPUT_250ms_run:
+                    task: tsk_input
+                    cycletime: 250
+                    events: 
+                    signalIN: 
+                    signalOUT: so_events
+            
+    swc_control:
+        runnables:
+                CONTROL_runStateMachine_run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: ev_events_onData
+                    signalIN: so_events
+                    signalOUT: so_clockData
+            
+    swc_output:
+        runnables:
+                OUTPUT_updateDataOnTFT_run:
+                    task: tsk_display
+                    cycletime: 250
+                    events: 
+                    signalIN: so_clockData
+                    signalOUT: 
+            
+                OUTPUT_blink1s_run:
+                    task: tsk_display
+                    cycletime: 1000
+                    events: 
+                    signalIN: so_clockData
+                    signalOUT:
+

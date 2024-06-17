@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a143b0fb-6439-4f74-85cc-204e644f97ab
+C:\Users\zakis\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|614c61a7-99c2-4735-9cb5-14bee2306129
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|04b55910-4134-4323-bc20-d1943220fa81
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|84bfcfad-9cf6-419e-8928-381d8f9c41b8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4255d2fc-ecd8-457c-afa8-d80829a3c0b0
+C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\ElectronicClock.cyprj|5407febd-0090-493c-80ed-5694492e4b54
