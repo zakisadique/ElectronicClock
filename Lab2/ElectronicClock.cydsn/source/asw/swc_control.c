@@ -26,8 +26,7 @@
 
 /* USER CODE START SWC_CONTROL_USERDEFINITIONS */
 
-#include "statemachine.h"
-#include "statemachine_clock.h"
+#include "statemachine_clock_cfg.h"
 
 /* USER CODE END SWC_CONTROL_USERDEFINITIONS */
 
@@ -120,7 +119,7 @@ static void CLOCK_increment1Minute(){
     clockData.m_minutes.value = (clockData.m_minutes.value + 1) % clockData.m_minutes.maxValue;
     
     if (clockData.m_minutes.value == 0){
-        clockData.m_hours.value += 1;
+        clockData.m_hours.value = (clockData.m_hours.value + 1) % clockData.m_hours.maxValue;
         
     }
     clockData.m_minutes.m_updateRequired = TRUE;
@@ -215,6 +214,14 @@ static void CLOCK_DISPATCH_WRAPPER(WIDGET_ACTIVE widget, STATE_event_t event){
 
     
     
+
+}
+
+static boolean_t CLOCK_GUARD_checkLeftKey(){
+    if (CLOCK_Widget_FSM.state == CLOCK_W_ISAUTOINCREMENTING){
+        return FALSE;
+    }
+    return TRUE;
 
 }
 

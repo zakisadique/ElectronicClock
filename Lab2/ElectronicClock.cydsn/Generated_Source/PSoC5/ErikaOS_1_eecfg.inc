@@ -91,16 +91,16 @@
     #define alrm_250ms_input 0U
     #endif
     #if EE_MAX_ALARM > 1
-    #define alrm_1s 1U
+    #define alrm_250ms_display 1U
     #endif
     #if EE_MAX_ALARM > 2
-    #define alrm_250ms_display 2U
+    #define alrm_buttonPressed 2U
     #endif
     #if EE_MAX_ALARM > 3
-    #define alrm_buttonPressed 3U
+    #define alrm1min_input 3U
     #endif
     #if EE_MAX_ALARM > 4
-    #define Alarm_5 4U
+    #define alrm1min_input 4U
     #endif
     #if EE_MAX_ALARM > 5
     #define Alarm_6 5U

@@ -72,6 +72,9 @@ static void CLOCK_incrementWidget();
 static void CLOCK_setDisplayFonts();
 
 
+static boolean_t CLOCK_GUARD_checkLeftKey();
+
+
 /*****************************************************************************/
 /* State Machine Table Declarations                                          */
 /*****************************************************************************/
@@ -80,28 +83,28 @@ static void CLOCK_setDisplayFonts();
 
 /**  ===== STATE_CLOCK_C_ISDISPLAYING ====   */
 const STATE_stateInnerTransitionTable_t STATE_CLOCK_C_ISDISPLAYING_Transitions = {
-/*    Event                     ToState                             Guard               Action                      */
-    { EV_KEYLEFT,               CLOCK_C_ISEDITINGHOURS,             0,                  CLOCK_dispatch_KL_Hours     },  
-    { EV_1MIN,                  CLOCK_C_ISDISPPLAYING,              0,                  CLOCK_increment1Minute      },  
+/*    Event                     ToState                             Guard                       Action                      */
+    { EV_KEYLEFT,               CLOCK_C_ISEDITINGHOURS,             0,                          CLOCK_dispatch_KL_Hours     },  
+    { EV_1MIN,                  CLOCK_C_ISDISPPLAYING,              0,                          CLOCK_increment1Minute      },  
 };
 
    
 /**  ===== STATE_CLOCK_C_ISEDITINGHOURS ====   */
 const STATE_stateInnerTransitionTable_t STATE_CLOCK_C_ISEDITINGHOURS_Transitions = {
-/*    Event                     ToState                             Guard               Action                      */
-    { EV_KEYLEFT,               CLOCK_C_ISEDITINGMINUTES,           0,                  CLOCK_dispatch_KL_HoursMins },  
-    { EV_KEYRIGHT,              CLOCK_C_ISEDITINGHOURS,             0,                  CLOCK_dispatch_KR_Hours     }, 
-    { EV_KEYRIGHTLONGPRESS,     CLOCK_C_ISEDITINGHOURS,             0,                  CLOCK_dispatch_KRLP_Hours   },  
-    { EV_250MS,                 CLOCK_C_ISEDITINGHOURS,             0,                  CLOCK_dispatch_250MS_Hours  },  
+/*    Event                     ToState                             Guard                       Action                      */
+    { EV_KEYLEFT,               CLOCK_C_ISEDITINGMINUTES,           CLOCK_GUARD_checkLeftKey,   CLOCK_dispatch_KL_HoursMins }, 
+    { EV_KEYRIGHT,              CLOCK_C_ISEDITINGHOURS,             0,                          CLOCK_dispatch_KR_Hours     }, 
+    { EV_KEYRIGHTLONGPRESS,     CLOCK_C_ISEDITINGHOURS,             0,                          CLOCK_dispatch_KRLP_Hours   },  
+    { EV_250MS,                 CLOCK_C_ISEDITINGHOURS,             0,                          CLOCK_dispatch_250MS_Hours  },  
 };
 
 /**  ===== STATE_CLOCK_C_ISEDITINGMINS ====   */
 const STATE_stateInnerTransitionTable_t STATE_CLOCK_C_ISEDITINGMins_Transitions = {
-/*    Event                     ToState                             Guard               Action                      */
-    { EV_KEYLEFT,               CLOCK_C_ISDISPPLAYING,              0,                  CLOCK_dispatch_KL_Mins      },  
-    { EV_KEYRIGHT,              CLOCK_C_ISEDITINGMINUTES,           0,                  CLOCK_dispatch_KR_Mins      }, 
-    { EV_KEYRIGHTLONGPRESS,     CLOCK_C_ISEDITINGMINUTES,           0,                  CLOCK_dispatch_KRLP_Mins    },  
-    { EV_250MS,                 CLOCK_C_ISEDITINGMINUTES,           0,                  CLOCK_dispatch_250MS_Mins   },  
+/*    Event                     ToState                             Guard                       Action                      */
+    { EV_KEYLEFT,               CLOCK_C_ISDISPPLAYING,              CLOCK_GUARD_checkLeftKey,   CLOCK_dispatch_KL_Mins      },  
+    { EV_KEYRIGHT,              CLOCK_C_ISEDITINGMINUTES,           0,                          CLOCK_dispatch_KR_Mins      }, 
+    { EV_KEYRIGHTLONGPRESS,     CLOCK_C_ISEDITINGMINUTES,           0,                          CLOCK_dispatch_KRLP_Mins    },  
+    { EV_250MS,                 CLOCK_C_ISEDITINGMINUTES,           0,                          CLOCK_dispatch_250MS_Mins   },  
 };
 
 

@@ -1,6 +1,6 @@
 // ======================================================================
 // ElectronicClock.v generated from TopDesign.cysch
-// 06/17/2024 at 21:17
+// 06/18/2024 at 22:26
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

@@ -20,10 +20,10 @@
     #define ev_250ms 0x4U
     #endif
     #if 4 > 3
-    #define ev_60000ms 0x8U
+    #define ev_1min 0x8U
     #endif
     #if 4 > 4
-    #define Event_5 0x10U
+    #define ev_1min 0x10U
     #endif
     #if 4 > 5
     #define Event_6 0x20U

@@ -33,7 +33,7 @@
   <signalpool description="The common global signal pool, all signals will be stored here" endaddr="ADR_SP_COMMON_END" name="sp_common" shortname="common" startaddr="ADR_SP_COMMON_START"/>
  </signalpools>
  <tasks>
-  <task description="Task doing work" events="" mode="Cyclic and Event" name="tsk_input" shortname="input" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_250ms" timertickperiod="250"/>
+  <task description="Task doing work" events="" mode="Event" name="tsk_input" shortname="input" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_250ms" timertickperiod="250"/>
   <task description="Task doing work" events="" mode="Event" name="tsk_control" shortname="control" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="1"/>
   <task description="Task doing work" events="" mode="Cyclic" name="tsk_display" shortname="display" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_250ms" timertickperiod="250"/>
  </tasks>
@@ -57,14 +57,14 @@
   <runnable component="swc_control" cycletime="0" description="Runnable" events="ev_events_onData" name="CONTROL_runStateMachine_run" shortname="runStateMachine" signalIN="so_events" signalOUT="so_clockData" task="tsk_control"/>
   <runnable component="swc_output" cycletime="250" description="Runnable" events="" name="OUTPUT_updateDataOnTFT_run" shortname="updateDataOnTFT" signalIN="so_clockData" signalOUT="" task="tsk_display"/>
   <runnable component="swc_output" cycletime="1000" description="Runnable" events="" name="OUTPUT_blink1s_run" shortname="blink1s" signalIN="so_clockData" signalOUT="" task="tsk_display"/>
-  <runnable component="swc_input" cycletime="60000" description="Runnable" events="" name="INPUT_1min_run" shortname="1min" signalIN="" signalOUT="so_events" task="tsk_input"/>
-  <runnable component="swc_input" cycletime="250" description="Runnable" events="" name="INPUT_250ms_run" shortname="250ms" signalIN="" signalOUT="so_events" task="tsk_input"/>
+  <runnable component="swc_input" cycletime="60000" description="Runnable" events="ev_1min" name="INPUT_1min_run" shortname="1min" signalIN="" signalOUT="so_events" task="tsk_input"/>
+  <runnable component="swc_input" cycletime="250" description="Runnable" events="ev_250ms" name="INPUT_250ms_run" shortname="250ms" signalIN="" signalOUT="so_events" task="tsk_input"/>
  </runnables>
  <events>
   <event description="A Event" name="ev_events_onData" shortname="events_onData"/>
   <event description="A Event" name="ev_ButtonsPressed" shortname="ButtonsPressed"/>
   <event description="A Event" name="ev_250ms" shortname="250ms"/>
-  <event description="A Event" name="ev_60000ms" shortname="60000ms"/>
+  <event description="A Event" name="ev_1min" shortname="1min"/>
  </events>
  <resources>
   <resource description="A Resource" name="res_buttons_Lock" restype="semaphore" shortname="buttons_Lock"/>

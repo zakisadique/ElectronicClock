@@ -42,14 +42,14 @@
 /* Cyclic Table */
 
 const RTE_cyclicTable_t RTE_cyclicActivationTable_tsk_input[] = {
-	{ INPUT_250ms_run, 250 },	//Runnable
-    { INPUT_1min_run, 1000 },	//Runnable
 };
 const uint16_t RTE_cyclicActivation_tsk_input_size = sizeof (RTE_cyclicActivationTable_tsk_input) / sizeof(RTE_cyclicTable_t); 
 
 /* Event Table */
 const RTE_eventTable_t RTE_eventActivationTable_tsk_input[] = {
     { INPUT_readButtons_run, ev_ButtonsPressed },  //Runnable
+    { INPUT_250ms_run, ev_250ms },	//Runnable
+    { INPUT_1min_run, ev_1min },	//Runnable
 }; 
 const uint16_t RTE_eventActivation_tsk_input_size = sizeof (RTE_eventActivationTable_tsk_input) / sizeof(RTE_eventTable_t);
 
@@ -83,23 +83,14 @@ TASK(tsk_input)
     while(1)
     {
         //Wait, read and clear the event
-        WaitEvent(ev_250ms|ev_ButtonsPressed);
+        WaitEvent(ev_250ms|ev_1min|ev_ButtonsPressed);
         GetEvent(tsk_input,&ev);
         ClearEvent(ev);
     
 		/* USER CODE START TSK_INPUT_TASKBOBY_PRE */
 
 		/* USER CODE END TSK_INPUT_TASKBODY_PRE */
-        
-        if (ev & ev_250ms){
-            //Process Cyclic table on tick
-            RTE_ProcessCyclicTable(RTE_cyclicActivationTable_tsk_input, RTE_cyclicActivation_tsk_input_size, ticktime);
-
-			ticktime += 250;
-			if (ticktime > 0xFFFFFF00) ticktime = 0;
-
-		};
-		
+        		
 		//Process data driven events
 		RTE_ProcessEventTable(RTE_eventActivationTable_tsk_input, RTE_eventActivation_tsk_input_size, ev);
 		

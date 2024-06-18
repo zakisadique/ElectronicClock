@@ -82,9 +82,10 @@ TASK(tsk_init)
     
     
     //Start the alarm with 100ms cycle time
-    SetRelAlarm(alrm_250ms_input,1,250);
+    SetRelAlarm(alrm_250ms_input,250,250);
+    SetRelAlarm(alrm1min_input,1000,1000);
     SetRelAlarm(alrm_250ms_display,1,250);
-    SetRelAlarm(alrm_1s,1,60000);
+
     
 
     ActivateTask(tsk_input);
