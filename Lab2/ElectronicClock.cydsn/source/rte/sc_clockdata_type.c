@@ -47,15 +47,16 @@ inline RC_t SC_CLOCKDATA_driverOut(const SC_CLOCKDATA_data_t  *const data)
     
     
     if (data -> m_hours.m_updateRequired == TRUE){
-        TFT_colors_t background = (data -> m_hours.m_editing == TRUE)? GRAY : BLACK;
+        TFT_colors_t background = (data -> m_hours.m_editing == TRUE)? WHITE : BLACK;
+        TFT_colors_t foreground = (data -> m_hours.m_editing == TRUE)? BLACK : WHITE;
         
         uint8_t hours = data -> m_hours.value;
         
         uint8_t hoursFirstDigit = hours / 10;
-        TFT_drawChar(10, 60, hoursFirstDigit + 48, WHITE, background, fontSize);
+        TFT_drawChar(10, 60, hoursFirstDigit + 48, foreground, background, fontSize);
         
         uint8_t hoursSecondDigit = hours % 10;
-        TFT_drawChar(30, 60, hoursSecondDigit + 48, WHITE, background, fontSize);
+        TFT_drawChar(30, 60, hoursSecondDigit + 48, foreground, background, fontSize);
         
         //whoever calls driver out makes it false
         
@@ -64,15 +65,16 @@ inline RC_t SC_CLOCKDATA_driverOut(const SC_CLOCKDATA_data_t  *const data)
     
 
     if (data -> m_minutes.m_updateRequired == TRUE){
-        TFT_colors_t background = (data -> m_minutes.m_editing == TRUE)? GRAY : BLACK;
+        TFT_colors_t background = (data -> m_minutes.m_editing == TRUE)? WHITE : BLACK;
+        TFT_colors_t foreground = (data -> m_minutes.m_editing == TRUE)? BLACK : WHITE;
         
         uint8_t minutes = data -> m_minutes.value;
         
         uint8_t minutesFirstDigit = minutes / 10;
-        TFT_drawChar(80, 60, minutesFirstDigit + 48, WHITE, background, fontSize);
+        TFT_drawChar(80, 60, minutesFirstDigit + 48, foreground, background, fontSize);
         
         uint8_t minutesSecondDigit = minutes % 10;
-        TFT_drawChar(100, 60, minutesSecondDigit + 48, WHITE, background, fontSize);
+        TFT_drawChar(100, 60, minutesSecondDigit + 48, foreground, background, fontSize);
         
     }
     
