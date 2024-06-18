@@ -26,6 +26,9 @@
 
 /* USER CODE START SWC_CONTROL_USERDEFINITIONS */
 
+#include "statemachine.h"
+#include "statemachine_clock.h"
+
 /* USER CODE END SWC_CONTROL_USERDEFINITIONS */
 
 
@@ -44,11 +47,176 @@
 void CONTROL_runStateMachine_run(RTE_event ev){
 	
 	/* USER CODE START CONTROL_runStateMachine_run */
+    SC_EVENTS_data_t eventData = SC_EVENTS_INIT_DATA;
+    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &eventData);
+    
+    STATE_event_t event = eventData.m_event;
+    
+    STATE_processEvent(&CLOCK_CONTAINER_FSM, event);
 
     /* USER CODE END CONTROL_runStateMachine_run */
 }
 
 /* USER CODE START SWC_CONTROL_FUNCTIONS */
+
+static void CLOCK_dispatch_KL_Hours(){
+    
+    CLOCK_DISPATCH_WRAPPER(WIDGET_HOUR, EV_KEYLEFT);
+    return;
+
+}
+static void CLOCK_dispatch_KL_Mins(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_MIN, EV_KEYLEFT);
+    return;
+
+}
+static void CLOCK_dispatch_KL_HoursMins(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_HOUR, EV_KEYLEFT);
+    CLOCK_DISPATCH_WRAPPER(WIDGET_MIN, EV_KEYLEFT);
+    return;
+
+}
+
+static void CLOCK_dispatch_KR_Hours(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_HOUR, EV_KEYRIGHT);
+    return;
+
+}
+static void CLOCK_dispatch_KR_Mins(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_MIN, EV_KEYRIGHT);
+    return;
+
+}
+static void CLOCK_dispatch_KRLP_Hours(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_HOUR, EV_KEYRIGHTLONGPRESS);
+    return;
+
+}
+static void CLOCK_dispatch_KRLP_Mins(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_MIN, EV_KEYRIGHTLONGPRESS);
+    return;
+
+}
+
+static void CLOCK_dispatch_250MS_Hours(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_HOUR, EV_250MS);
+    return;
+
+}
+static void CLOCK_dispatch_250MS_Mins(){
+    CLOCK_DISPATCH_WRAPPER(WIDGET_MIN, EV_250MS);
+    return;
+
+}
+
+
+
+
+static void CLOCK_increment1Minute(){
+    
+    SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
+    
+    clockData.m_minutes.value = (clockData.m_minutes.value + 1) % clockData.m_minutes.maxValue;
+    
+    if (clockData.m_minutes.value == 0){
+        clockData.m_hours.value += 1;
+        
+    }
+    clockData.m_minutes.m_updateRequired = TRUE;
+    clockData.m_hours.m_updateRequired = TRUE;
+//    clockData.m_hours.value = (clockData.m_hours.value + 1) % clockData.m_hours.maxValue;
+    
+    
+    
+
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, clockData);
+    return;
+
+}
+
+
+static void CLOCK_setEditFonts(){
+    SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
+    
+    if (clockData.m_hours.isActive == TRUE){
+        clockData.m_hours.m_editing = TRUE;
+        clockData.m_hours.m_updateRequired = TRUE;
+
+    }
+    if (clockData.m_minutes.isActive == TRUE){
+        clockData.m_minutes.m_editing = TRUE;
+        clockData.m_minutes.m_updateRequired = TRUE;
+    }
+    
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, clockData);
+    return;
+
+}
+static void CLOCK_incrementWidget(){
+    
+    SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
+    
+    if (clockData.m_hours.isActive == TRUE){
+        clockData.m_hours.value = (clockData.m_hours.value + 1) % clockData.m_hours.maxValue;
+        clockData.m_hours.m_updateRequired = TRUE;
+    }
+    if (clockData.m_minutes.isActive == TRUE){
+        clockData.m_minutes.value = (clockData.m_minutes.value + 1) % clockData.m_minutes.maxValue;
+        clockData.m_minutes.m_updateRequired = TRUE;
+    }
+    
+
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, clockData);
+    
+    return;
+
+}
+static void CLOCK_setDisplayFonts(){
+    
+    SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
+    
+    
+    if (clockData.m_hours.isActive == TRUE){
+        clockData.m_hours.m_editing = FALSE;
+        clockData.m_hours.m_updateRequired = TRUE;
+    }
+    if (clockData.m_minutes.isActive == TRUE){
+        clockData.m_minutes.m_editing = FALSE;
+        clockData.m_minutes.m_updateRequired = TRUE;
+    }
+
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, clockData);
+    return;
+
+
+}
+
+static void CLOCK_DISPATCH_WRAPPER(WIDGET_ACTIVE widget, STATE_event_t event){
+    
+    SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
+    
+    if (widget == WIDGET_HOUR){
+        clockData.m_hours.isActive = TRUE;
+        clockData.m_minutes.isActive = FALSE;
+    } 
+    if (widget == WIDGET_MIN){
+        clockData.m_hours.isActive = FALSE;
+        clockData.m_minutes.isActive = TRUE;
+    } 
+    
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, clockData);
+    
+    STATE_processEvent(&CLOCK_Widget_FSM, event);
+
+    
+    
+
+}
 
 /* USER CODE END SWC_CONTROL_FUNCTIONS */
 

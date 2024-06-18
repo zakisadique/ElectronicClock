@@ -1,0 +1,2554 @@
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"statemachine.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.STATE_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	STATE_init
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	STATE_init, %function
+  25              	STATE_init:
+  26              	.LFB0:
+  27              		.file 1 "source\\bsw\\statemachine.c"
+   1:source\bsw/statemachine.c **** /**
+   2:source\bsw/statemachine.c **** * \file <filename>
+   3:source\bsw/statemachine.c **** * \author <author-name>
+   4:source\bsw/statemachine.c **** * \date <date>
+   5:source\bsw/statemachine.c **** *
+   6:source\bsw/statemachine.c **** * \brief <Symbolic File name>
+   7:source\bsw/statemachine.c **** *
+   8:source\bsw/statemachine.c **** * \copyright Copyright ©2016
+   9:source\bsw/statemachine.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\bsw/statemachine.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\bsw/statemachine.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\bsw/statemachine.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\bsw/statemachine.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\bsw/statemachine.c **** *
+  15:source\bsw/statemachine.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\bsw/statemachine.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\bsw/statemachine.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\bsw/statemachine.c **** */
+  19:source\bsw/statemachine.c **** 
+  20:source\bsw/statemachine.c **** /*****************************************************************************/
+  21:source\bsw/statemachine.c **** /* Include files                                                             */
+  22:source\bsw/statemachine.c **** /*****************************************************************************/
+  23:source\bsw/statemachine.c **** 
+  24:source\bsw/statemachine.c **** #include "statemachine.h"
+  25:source\bsw/statemachine.c **** 
+  26:source\bsw/statemachine.c **** /*****************************************************************************/
+  27:source\bsw/statemachine.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  28:source\bsw/statemachine.c **** /*****************************************************************************/
+  29:source\bsw/statemachine.c **** 
+  30:source\bsw/statemachine.c **** /*****************************************************************************/
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 2
+
+
+  31:source\bsw/statemachine.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  32:source\bsw/statemachine.c **** /*****************************************************************************/
+  33:source\bsw/statemachine.c **** 
+  34:source\bsw/statemachine.c **** 
+  35:source\bsw/statemachine.c **** 
+  36:source\bsw/statemachine.c **** 
+  37:source\bsw/statemachine.c **** /*****************************************************************************/
+  38:source\bsw/statemachine.c **** /* Local variable definitions ('static')                                     */
+  39:source\bsw/statemachine.c **** /*****************************************************************************/
+  40:source\bsw/statemachine.c **** 
+  41:source\bsw/statemachine.c **** 
+  42:source\bsw/statemachine.c **** 
+  43:source\bsw/statemachine.c **** 
+  44:source\bsw/statemachine.c **** 
+  45:source\bsw/statemachine.c **** 
+  46:source\bsw/statemachine.c **** 
+  47:source\bsw/statemachine.c **** /*****************************************************************************/
+  48:source\bsw/statemachine.c **** /* Local function prototypes ('static') / Guards                             */
+  49:source\bsw/statemachine.c **** /*****************************************************************************/
+  50:source\bsw/statemachine.c **** 
+  51:source\bsw/statemachine.c **** 
+  52:source\bsw/statemachine.c **** 
+  53:source\bsw/statemachine.c **** /*****************************************************************************/
+  54:source\bsw/statemachine.c **** /* Local function prototypes ('static') / Helper                             */
+  55:source\bsw/statemachine.c **** /*****************************************************************************/
+  56:source\bsw/statemachine.c **** 
+  57:source\bsw/statemachine.c **** 
+  58:source\bsw/statemachine.c **** /**
+  59:source\bsw/statemachine.c ****  * Get the index of the state in the table
+  60:source\bsw/statemachine.c ****  */
+  61:source\bsw/statemachine.c **** sint16_t STATE__getIndexOfState(STATE_stateOuterTransitionTable_t const * const  transitionTable,
+  62:source\bsw/statemachine.c ****                                 uint16_t transitionTableSize,
+  63:source\bsw/statemachine.c ****                                 STATE_state_t state);
+  64:source\bsw/statemachine.c **** 
+  65:source\bsw/statemachine.c **** 
+  66:source\bsw/statemachine.c **** 
+  67:source\bsw/statemachine.c **** /*****************************************************************************/
+  68:source\bsw/statemachine.c **** /* Function implementation - global ('extern') and local ('static')          */
+  69:source\bsw/statemachine.c **** /*****************************************************************************/
+  70:source\bsw/statemachine.c **** 
+  71:source\bsw/statemachine.c **** /**
+  72:source\bsw/statemachine.c ****  * Initialise the state machine, especially the internal object
+  73:source\bsw/statemachine.c ****  * \param STATEMACHINE_t* const me                                          : OUT - Pointer to the 
+  74:source\bsw/statemachine.c ****  * \param STATE_stateOuterTransitionTable_t const *const transitionTable    : IN - Pointer to trans
+  75:source\bsw/statemachine.c ****  * \param uint16_t transitionTableSize                                      : IN - Size of the tran
+  76:source\bsw/statemachine.c ****  * \param STATE_stateActionTable_t const * const actionTable                : IN - Pointer to actio
+  77:source\bsw/statemachine.c ****  * \param uint16_t actionTableSize                                          : IN - Size of action t
+  78:source\bsw/statemachine.c ****  * \param STATE_state_t state                                               : IN - Initial State
+  79:source\bsw/statemachine.c ****  * \return RC_SUCCESS;
+  80:source\bsw/statemachine.c ****  */
+  81:source\bsw/statemachine.c **** RC_t STATE_init(STATEMACHINE_t* const me,
+  82:source\bsw/statemachine.c ****                 STATE_stateOuterTransitionTable_t const * const transitionTable,
+  83:source\bsw/statemachine.c ****                 uint16_t transitionTableSize,
+  84:source\bsw/statemachine.c ****                 STATE_stateActionTable_t const * const actionTable,
+  85:source\bsw/statemachine.c ****                 uint16_t actionTableSize,
+  86:source\bsw/statemachine.c ****                 STATE_state_t state)
+  87:source\bsw/statemachine.c **** {
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 3
+
+
+  28              		.loc 1 87 0
+  29              		.cfi_startproc
+  30              		@ args = 8, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  88:source\bsw/statemachine.c ****     me->transitionTable = transitionTable;
+  34              		.loc 1 88 0
+  35 0000 0160     		str	r1, [r0]
+  89:source\bsw/statemachine.c ****     me->transitionTableSize = transitionTableSize;
+  36              		.loc 1 89 0
+  37 0002 8280     		strh	r2, [r0, #4]	@ movhi
+  90:source\bsw/statemachine.c ****     me->actionTable = actionTable;
+  38              		.loc 1 90 0
+  39 0004 8360     		str	r3, [r0, #8]
+  91:source\bsw/statemachine.c ****     me->actionTableSize = actionTableSize;
+  40              		.loc 1 91 0
+  41 0006 BDF80030 		ldrh	r3, [sp]
+  42              	.LVL1:
+  43 000a 8381     		strh	r3, [r0, #12]	@ movhi
+  92:source\bsw/statemachine.c ****     me->state = state;
+  44              		.loc 1 92 0
+  45 000c 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+  46 0010 8373     		strb	r3, [r0, #14]
+  47              	.LVL2:
+  93:source\bsw/statemachine.c **** }
+  48              		.loc 1 93 0
+  49 0012 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE0:
+  52              		.size	STATE_init, .-STATE_init
+  53              		.section	.text.STATE__getIndexOfState,"ax",%progbits
+  54              		.align	2
+  55              		.global	STATE__getIndexOfState
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	STATE__getIndexOfState, %function
+  59              	STATE__getIndexOfState:
+  60              	.LFB1:
+  94:source\bsw/statemachine.c **** 
+  95:source\bsw/statemachine.c **** 
+  96:source\bsw/statemachine.c **** 
+  97:source\bsw/statemachine.c **** #define STATE_INVALIDINDEX -1
+  98:source\bsw/statemachine.c **** sint16_t STATE__getIndexOfState(STATE_stateOuterTransitionTable_t const * const  transitionTable,
+  99:source\bsw/statemachine.c ****                                 uint16_t transitionTableSize,
+ 100:source\bsw/statemachine.c ****                                 STATE_state_t state)
+ 101:source\bsw/statemachine.c **** {
+  61              		.loc 1 101 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66              	.LVL3:
+  67 0000 30B4     		push	{r4, r5}
+  68              		.cfi_def_cfa_offset 8
+  69              		.cfi_offset 4, -8
+  70              		.cfi_offset 5, -4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 4
+
+
+  71              	.LVL4:
+  72              	.LBB2:
+ 102:source\bsw/statemachine.c ****     sint16_t result = STATE_INVALIDINDEX; //error
+ 103:source\bsw/statemachine.c ****     
+ 104:source\bsw/statemachine.c ****     for (uint16_t i = 0; i < transitionTableSize; i++)
+  73              		.loc 1 104 0
+  74 0002 0023     		movs	r3, #0
+  75 0004 09E0     		b	.L3
+  76              	.LVL5:
+  77              	.L6:
+ 105:source\bsw/statemachine.c ****     {
+ 106:source\bsw/statemachine.c ****         if ((*transitionTable)[i].fromState == state)
+  78              		.loc 1 106 0
+  79 0006 03EB4305 		add	r5, r3, r3, lsl #1
+  80 000a AC00     		lsls	r4, r5, #2
+  81 000c 045D     		ldrb	r4, [r0, r4]	@ zero_extendqisi2
+  82 000e 9442     		cmp	r4, r2
+  83 0010 01D1     		bne	.L4
+ 107:source\bsw/statemachine.c ****         {
+ 108:source\bsw/statemachine.c ****             return i;
+  84              		.loc 1 108 0
+  85 0012 18B2     		sxth	r0, r3
+  86              	.LVL6:
+  87 0014 05E0     		b	.L5
+  88              	.LVL7:
+  89              	.L4:
+ 104:source\bsw/statemachine.c ****     {
+  90              		.loc 1 104 0 discriminator 2
+  91 0016 0133     		adds	r3, r3, #1
+  92              	.LVL8:
+  93 0018 9BB2     		uxth	r3, r3
+  94              	.LVL9:
+  95              	.L3:
+ 104:source\bsw/statemachine.c ****     {
+  96              		.loc 1 104 0 is_stmt 0 discriminator 1
+  97 001a 8B42     		cmp	r3, r1
+  98 001c F3D3     		bcc	.L6
+  99              	.LBE2:
+ 109:source\bsw/statemachine.c ****         }
+ 110:source\bsw/statemachine.c ****     }
+ 111:source\bsw/statemachine.c ****     
+ 112:source\bsw/statemachine.c ****     return STATE_INVALIDINDEX; 
+ 100              		.loc 1 112 0 is_stmt 1
+ 101 001e 4FF0FF30 		mov	r0, #-1
+ 102              	.LVL10:
+ 103              	.L5:
+ 113:source\bsw/statemachine.c **** }
+ 104              		.loc 1 113 0
+ 105 0022 30BC     		pop	{r4, r5}
+ 106              		.cfi_restore 5
+ 107              		.cfi_restore 4
+ 108              		.cfi_def_cfa_offset 0
+ 109 0024 7047     		bx	lr
+ 110              		.cfi_endproc
+ 111              	.LFE1:
+ 112              		.size	STATE__getIndexOfState, .-STATE__getIndexOfState
+ 113 0026 00BF     		.section	.text.STATE_processEvent,"ax",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 5
+
+
+ 114              		.align	2
+ 115              		.global	STATE_processEvent
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	STATE_processEvent, %function
+ 119              	STATE_processEvent:
+ 120              	.LFB2:
+ 114:source\bsw/statemachine.c **** 
+ 115:source\bsw/statemachine.c **** /**
+ 116:source\bsw/statemachine.c ****  * This function will process the event with the defined state machine
+ 117:source\bsw/statemachine.c ****  * The state machine is implemented as a singleton object, only the configuration may differ
+ 118:source\bsw/statemachine.c ****  * \param STATEMACHINE_t* const me              : IN - Pointer to the state machine
+ 119:source\bsw/statemachine.c ****  * \param STATE_event_t ev                      : IN - Event to be processed
+ 120:source\bsw/statemachine.c ****  * \return RC_SUCCESS or error
+ 121:source\bsw/statemachine.c ****  */
+ 122:source\bsw/statemachine.c **** RC_t STATE_processEvent(STATEMACHINE_t* const me, STATE_event_t ev)
+ 123:source\bsw/statemachine.c **** {    
+ 121              		.loc 1 123 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 16
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125              	.LVL11:
+ 126 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 127              		.cfi_def_cfa_offset 36
+ 128              		.cfi_offset 4, -36
+ 129              		.cfi_offset 5, -32
+ 130              		.cfi_offset 6, -28
+ 131              		.cfi_offset 7, -24
+ 132              		.cfi_offset 8, -20
+ 133              		.cfi_offset 9, -16
+ 134              		.cfi_offset 10, -12
+ 135              		.cfi_offset 11, -8
+ 136              		.cfi_offset 14, -4
+ 137 0004 85B0     		sub	sp, sp, #20
+ 138              		.cfi_def_cfa_offset 56
+ 139 0006 0546     		mov	r5, r0
+ 140 0008 8A46     		mov	r10, r1
+ 141              	.LVL12:
+ 124:source\bsw/statemachine.c ****     STATE_GuardPtr_t guard = 0;
+ 125:source\bsw/statemachine.c ****     STATE_ActionPtr_t acTransition = 0;
+ 126:source\bsw/statemachine.c ****     STATE_ActionPtr_t acEntry = 0;
+ 127:source\bsw/statemachine.c ****     STATE_ActionPtr_t acExit = 0;
+ 128:source\bsw/statemachine.c ****     
+ 129:source\bsw/statemachine.c ****     
+ 130:source\bsw/statemachine.c ****     //Read the state from the watchdog object;
+ 131:source\bsw/statemachine.c ****     STATE_state_t currentState = me->state;
+ 142              		.loc 1 131 0
+ 143 000a 90F80E80 		ldrb	r8, [r0, #14]	@ zero_extendqisi2
+ 144              	.LVL13:
+ 132:source\bsw/statemachine.c ****     STATE_state_t toState = currentState; //Just in case
+ 133:source\bsw/statemachine.c ****     
+ 134:source\bsw/statemachine.c ****     //Calculate the table index of the outer table
+ 135:source\bsw/statemachine.c ****     sint16_t index = STATE__getIndexOfState(me->transitionTable, me->transitionTableSize, currentSt
+ 145              		.loc 1 135 0
+ 146 000e 0468     		ldr	r4, [r0]
+ 147 0010 4246     		mov	r2, r8
+ 148 0012 8188     		ldrh	r1, [r0, #4]
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 6
+
+
+ 149              	.LVL14:
+ 150 0014 2046     		mov	r0, r4
+ 151              	.LVL15:
+ 152 0016 FFF7FEFF 		bl	STATE__getIndexOfState
+ 153              	.LVL16:
+ 136:source\bsw/statemachine.c ****     
+ 137:source\bsw/statemachine.c ****     //This should never happen
+ 138:source\bsw/statemachine.c ****     if (STATE_INVALIDINDEX == index)
+ 154              		.loc 1 138 0
+ 155 001a B0F1FF3F 		cmp	r0, #-1
+ 156 001e 63D0     		beq	.L21
+ 139:source\bsw/statemachine.c ****     {
+ 140:source\bsw/statemachine.c ****         return RC_ERROR_RANGE;
+ 141:source\bsw/statemachine.c ****     }
+ 142:source\bsw/statemachine.c ****     
+ 143:source\bsw/statemachine.c ****     STATE_stateInnerTransitionTable_t const* const pInnerTable = (*(me->transitionTable))[index].pI
+ 157              		.loc 1 143 0
+ 158 0020 00EB4002 		add	r2, r0, r0, lsl #1
+ 159 0024 9300     		lsls	r3, r2, #2
+ 160 0026 1A46     		mov	r2, r3
+ 161 0028 2344     		add	r3, r3, r4
+ 162 002a 5E68     		ldr	r6, [r3, #4]
+ 163              	.LVL17:
+ 144:source\bsw/statemachine.c ****     
+ 145:source\bsw/statemachine.c ****     uint16_t innerTableSize = 0;
+ 146:source\bsw/statemachine.c ****     if (0 != pInnerTable)
+ 164              		.loc 1 146 0
+ 165 002c 1EB1     		cbz	r6, .L22
+ 147:source\bsw/statemachine.c **** 	{
+ 148:source\bsw/statemachine.c **** 		innerTableSize = (*me->transitionTable)[index].size;
+ 166              		.loc 1 148 0
+ 167 002e 1444     		add	r4, r4, r2
+ 168 0030 B4F80890 		ldrh	r9, [r4, #8]
+ 169              	.LVL18:
+ 170 0034 01E0     		b	.L10
+ 171              	.LVL19:
+ 172              	.L22:
+ 145:source\bsw/statemachine.c ****     if (0 != pInnerTable)
+ 173              		.loc 1 145 0
+ 174 0036 4FF00009 		mov	r9, #0
+ 175              	.LVL20:
+ 176              	.L10:
+ 149:source\bsw/statemachine.c **** 	}
+ 150:source\bsw/statemachine.c ****     
+ 151:source\bsw/statemachine.c ****     if (0 == pInnerTable || 0 == innerTableSize)
+ 177              		.loc 1 151 0
+ 178 003a 002E     		cmp	r6, #0
+ 179 003c 57D0     		beq	.L23
+ 180              		.loc 1 151 0 is_stmt 0 discriminator 1
+ 181 003e B9F1000F 		cmp	r9, #0
+ 182 0042 57D0     		beq	.L24
+ 183 0044 4746     		mov	r7, r8
+ 184 0046 0024     		movs	r4, #0
+ 185 0048 0294     		str	r4, [sp, #8]
+ 186 004a 0194     		str	r4, [sp, #4]
+ 187 004c 47E0     		b	.L11
+ 188              	.LVL21:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 7
+
+
+ 189              	.L20:
+ 190              	.LBB3:
+ 152:source\bsw/statemachine.c ****     {
+ 153:source\bsw/statemachine.c ****         //No transitions in this state
+ 154:source\bsw/statemachine.c ****         return RC_ERROR_INVALID_STATE;
+ 155:source\bsw/statemachine.c ****     }
+ 156:source\bsw/statemachine.c ****     
+ 157:source\bsw/statemachine.c ****     //Iterate through the inner table and find correct transition
+ 158:source\bsw/statemachine.c ****     for (uint16_t i = 0; i < innerTableSize; i++)
+ 159:source\bsw/statemachine.c ****     {
+ 160:source\bsw/statemachine.c ****         if ((*pInnerTable)[i].event == ev)
+ 191              		.loc 1 160 0 is_stmt 1
+ 192 004e A346     		mov	fp, r4
+ 193 0050 04EB4402 		add	r2, r4, r4, lsl #1
+ 194 0054 9300     		lsls	r3, r2, #2
+ 195 0056 F35C     		ldrb	r3, [r6, r3]	@ zero_extendqisi2
+ 196 0058 5345     		cmp	r3, r10
+ 197 005a 3ED1     		bne	.L12
+ 161:source\bsw/statemachine.c ****         {
+ 162:source\bsw/statemachine.c ****             //Transition found, let's check the guard
+ 163:source\bsw/statemachine.c ****             guard = (*pInnerTable)[i].guard;
+ 198              		.loc 1 163 0
+ 199 005c 04EB4402 		add	r2, r4, r4, lsl #1
+ 200 0060 9300     		lsls	r3, r2, #2
+ 201 0062 3344     		add	r3, r3, r6
+ 202 0064 5B68     		ldr	r3, [r3, #4]
+ 203              	.LVL22:
+ 164:source\bsw/statemachine.c ****             if (0 == guard || TRUE == guard())
+ 204              		.loc 1 164 0
+ 205 0066 13B1     		cbz	r3, .L13
+ 206              		.loc 1 164 0 is_stmt 0 discriminator 1
+ 207 0068 9847     		blx	r3
+ 208              	.LVL23:
+ 209 006a 0128     		cmp	r0, #1
+ 210 006c 35D1     		bne	.L12
+ 211              	.L13:
+ 212              	.LBB4:
+ 165:source\bsw/statemachine.c ****             {
+ 166:source\bsw/statemachine.c ****                 //Transition is valid
+ 167:source\bsw/statemachine.c ****                 acTransition = (*pInnerTable)[i].actionTransition;
+ 213              		.loc 1 167 0 is_stmt 1
+ 214 006e 4FEA4B02 		lsl	r2, fp, #1
+ 215 0072 02EB0B01 		add	r1, r2, fp
+ 216 0076 8B00     		lsls	r3, r1, #2
+ 217 0078 1946     		mov	r1, r3
+ 218 007a 3344     		add	r3, r3, r6
+ 219 007c 9B68     		ldr	r3, [r3, #8]
+ 220 007e 0393     		str	r3, [sp, #12]
+ 221              	.LVL24:
+ 168:source\bsw/statemachine.c ****                 toState = (*pInnerTable)[i].toState;
+ 222              		.loc 1 168 0
+ 223 0080 0B46     		mov	r3, r1
+ 224              	.LVL25:
+ 225 0082 3344     		add	r3, r3, r6
+ 226              	.LVL26:
+ 227 0084 5F78     		ldrb	r7, [r3, #1]	@ zero_extendqisi2
+ 228              	.LVL27:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 8
+
+
+ 169:source\bsw/statemachine.c ****                 
+ 170:source\bsw/statemachine.c ****                 //Now lets find the entry and exit actions
+ 171:source\bsw/statemachine.c ****                 uint16_t actionTableSize = me->actionTableSize;
+ 229              		.loc 1 171 0
+ 230 0086 B5F80CC0 		ldrh	ip, [r5, #12]
+ 231              	.LVL28:
+ 232              	.LBB5:
+ 172:source\bsw/statemachine.c ****                 for (uint16_t j = 0; j < actionTableSize; j++)
+ 233              		.loc 1 172 0
+ 234 008a 0023     		movs	r3, #0
+ 235              	.LVL29:
+ 236 008c DDF808B0 		ldr	fp, [sp, #8]
+ 237 0090 16E0     		b	.L14
+ 238              	.LVL30:
+ 239              	.L17:
+ 173:source\bsw/statemachine.c ****                 {
+ 174:source\bsw/statemachine.c ****                     if (currentState == (*me->actionTable)[j].state)
+ 240              		.loc 1 174 0
+ 241 0092 A968     		ldr	r1, [r5, #8]
+ 242 0094 1846     		mov	r0, r3
+ 243 0096 03EB430E 		add	lr, r3, r3, lsl #1
+ 244 009a 4FEA8E02 		lsl	r2, lr, #2
+ 245 009e 9646     		mov	lr, r2
+ 246 00a0 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
+ 247 00a2 9045     		cmp	r8, r2
+ 248 00a4 02D1     		bne	.L15
+ 175:source\bsw/statemachine.c ****                     {
+ 176:source\bsw/statemachine.c ****                         acExit = (*me->actionTable)[j].actionExit;
+ 249              		.loc 1 176 0
+ 250 00a6 8E44     		add	lr, lr, r1
+ 251 00a8 DEF808B0 		ldr	fp, [lr, #8]
+ 252              	.LVL31:
+ 253              	.L15:
+ 177:source\bsw/statemachine.c ****                     }
+ 178:source\bsw/statemachine.c ****                     if (toState == (*me->actionTable)[j].state)
+ 254              		.loc 1 178 0
+ 255 00ac 9742     		cmp	r7, r2
+ 256 00ae 05D1     		bne	.L16
+ 179:source\bsw/statemachine.c ****                     {
+ 180:source\bsw/statemachine.c ****                         acEntry = (*me->actionTable)[j].actionEntry;
+ 257              		.loc 1 180 0
+ 258 00b0 00EB4000 		add	r0, r0, r0, lsl #1
+ 259 00b4 8200     		lsls	r2, r0, #2
+ 260 00b6 1144     		add	r1, r1, r2
+ 261 00b8 4A68     		ldr	r2, [r1, #4]
+ 262 00ba 0192     		str	r2, [sp, #4]
+ 263              	.LVL32:
+ 264              	.L16:
+ 172:source\bsw/statemachine.c ****                 {
+ 265              		.loc 1 172 0 discriminator 2
+ 266 00bc 0133     		adds	r3, r3, #1
+ 267              	.LVL33:
+ 268 00be 9BB2     		uxth	r3, r3
+ 269              	.LVL34:
+ 270              	.L14:
+ 172:source\bsw/statemachine.c ****                 {
+ 271              		.loc 1 172 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 9
+
+
+ 272 00c0 6345     		cmp	r3, ip
+ 273 00c2 E6D3     		bcc	.L17
+ 274 00c4 5B46     		mov	r3, fp
+ 275              	.LVL35:
+ 276 00c6 CDF808B0 		str	fp, [sp, #8]
+ 277              	.LBE5:
+ 181:source\bsw/statemachine.c ****                     }
+ 182:source\bsw/statemachine.c ****                 }
+ 183:source\bsw/statemachine.c **** 
+ 184:source\bsw/statemachine.c ****                 //Lets call the actions
+ 185:source\bsw/statemachine.c ****                 if (0 != acExit) acExit();
+ 278              		.loc 1 185 0 is_stmt 1
+ 279 00ca 03B1     		cbz	r3, .L18
+ 280              		.loc 1 185 0 is_stmt 0 discriminator 1
+ 281 00cc D847     		blx	fp
+ 282              	.LVL36:
+ 283              	.L18:
+ 186:source\bsw/statemachine.c ****                 if (0 != acTransition) acTransition();
+ 284              		.loc 1 186 0 is_stmt 1
+ 285 00ce 039B     		ldr	r3, [sp, #12]
+ 286 00d0 03B1     		cbz	r3, .L19
+ 287              		.loc 1 186 0 is_stmt 0 discriminator 1
+ 288 00d2 9847     		blx	r3
+ 289              	.LVL37:
+ 290              	.L19:
+ 187:source\bsw/statemachine.c ****                 if (0 != acEntry) acEntry();
+ 291              		.loc 1 187 0 is_stmt 1
+ 292 00d4 019B     		ldr	r3, [sp, #4]
+ 293 00d6 03B1     		cbz	r3, .L12
+ 294              		.loc 1 187 0 is_stmt 0 discriminator 1
+ 295 00d8 9847     		blx	r3
+ 296              	.LVL38:
+ 297              	.L12:
+ 298              	.LBE4:
+ 158:source\bsw/statemachine.c ****     {
+ 299              		.loc 1 158 0 is_stmt 1 discriminator 2
+ 300 00da 0134     		adds	r4, r4, #1
+ 301              	.LVL39:
+ 302 00dc A4B2     		uxth	r4, r4
+ 303              	.LVL40:
+ 304              	.L11:
+ 158:source\bsw/statemachine.c ****     {
+ 305              		.loc 1 158 0 is_stmt 0 discriminator 1
+ 306 00de A145     		cmp	r9, r4
+ 307 00e0 B5D8     		bhi	.L20
+ 308              	.LBE3:
+ 188:source\bsw/statemachine.c ****                 
+ 189:source\bsw/statemachine.c **** 
+ 190:source\bsw/statemachine.c ****                 
+ 191:source\bsw/statemachine.c ****                 //If we want to fire only one transition, the break must be actiavted
+ 192:source\bsw/statemachine.c ****                 //Note: More than one transition only make sense, if the taregt states are identica
+ 193:source\bsw/statemachine.c ****                 //This must be ensured by the user
+ 194:source\bsw/statemachine.c ****                 //break;
+ 195:source\bsw/statemachine.c ****             }
+ 196:source\bsw/statemachine.c ****         }
+ 197:source\bsw/statemachine.c ****     }
+ 198:source\bsw/statemachine.c ****     
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 10
+
+
+ 199:source\bsw/statemachine.c ****     //Copy local toState to external State Variable
+ 200:source\bsw/statemachine.c ****     me->state = toState;
+ 309              		.loc 1 200 0 is_stmt 1
+ 310 00e2 AF73     		strb	r7, [r5, #14]
+ 201:source\bsw/statemachine.c ****     
+ 202:source\bsw/statemachine.c ****  
+ 203:source\bsw/statemachine.c ****     return RC_SUCCESS;
+ 311              		.loc 1 203 0
+ 312 00e4 0020     		movs	r0, #0
+ 313 00e6 07E0     		b	.L9
+ 314              	.LVL41:
+ 315              	.L21:
+ 140:source\bsw/statemachine.c ****     }
+ 316              		.loc 1 140 0
+ 317 00e8 6FF00400 		mvn	r0, #4
+ 318              	.LVL42:
+ 319 00ec 04E0     		b	.L9
+ 320              	.LVL43:
+ 321              	.L23:
+ 154:source\bsw/statemachine.c ****     }
+ 322              		.loc 1 154 0
+ 323 00ee 6FF01600 		mvn	r0, #22
+ 324              	.LVL44:
+ 325 00f2 01E0     		b	.L9
+ 326              	.LVL45:
+ 327              	.L24:
+ 328 00f4 6FF01600 		mvn	r0, #22
+ 329              	.LVL46:
+ 330              	.L9:
+ 204:source\bsw/statemachine.c **** }
+ 331              		.loc 1 204 0
+ 332 00f8 05B0     		add	sp, sp, #20
+ 333              		.cfi_def_cfa_offset 36
+ 334              		@ sp needed
+ 335 00fa BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 336              		.cfi_endproc
+ 337              	.LFE2:
+ 338              		.size	STATE_processEvent, .-STATE_processEvent
+ 339 00fe 00BF     		.text
+ 340              	.Letext0:
+ 341              		.file 2 "source\\bsw\\global.h"
+ 342              		.file 3 "source\\bsw\\statemachine_type.h"
+ 343              		.file 4 "source\\bsw\\statemachine.h"
+ 344              		.section	.debug_info,"",%progbits
+ 345              	.Ldebug_info0:
+ 346 0000 57050000 		.4byte	0x557
+ 347 0004 0400     		.2byte	0x4
+ 348 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 349 000a 04       		.byte	0x4
+ 350 000b 01       		.uleb128 0x1
+ 351 000c F5040000 		.4byte	.LASF87
+ 352 0010 0C       		.byte	0xc
+ 353 0011 5C010000 		.4byte	.LASF88
+ 354 0015 89000000 		.4byte	.LASF89
+ 355 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 356 001d 00000000 		.4byte	0
+ 357 0021 00000000 		.4byte	.Ldebug_line0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 11
+
+
+ 358 0025 02       		.uleb128 0x2
+ 359 0026 01       		.byte	0x1
+ 360 0027 06       		.byte	0x6
+ 361 0028 DB020000 		.4byte	.LASF0
+ 362 002c 02       		.uleb128 0x2
+ 363 002d 01       		.byte	0x1
+ 364 002e 08       		.byte	0x8
+ 365 002f A8020000 		.4byte	.LASF1
+ 366 0033 03       		.uleb128 0x3
+ 367 0034 2C020000 		.4byte	.LASF3
+ 368 0038 02       		.byte	0x2
+ 369 0039 92       		.byte	0x92
+ 370 003a 3E000000 		.4byte	0x3e
+ 371 003e 02       		.uleb128 0x2
+ 372 003f 02       		.byte	0x2
+ 373 0040 05       		.byte	0x5
+ 374 0041 7F000000 		.4byte	.LASF2
+ 375 0045 03       		.uleb128 0x3
+ 376 0046 2E030000 		.4byte	.LASF4
+ 377 004a 02       		.byte	0x2
+ 378 004b 93       		.byte	0x93
+ 379 004c 50000000 		.4byte	0x50
+ 380 0050 02       		.uleb128 0x2
+ 381 0051 02       		.byte	0x2
+ 382 0052 07       		.byte	0x7
+ 383 0053 7A030000 		.4byte	.LASF5
+ 384 0057 02       		.uleb128 0x2
+ 385 0058 04       		.byte	0x4
+ 386 0059 05       		.byte	0x5
+ 387 005a 35020000 		.4byte	.LASF6
+ 388 005e 02       		.uleb128 0x2
+ 389 005f 04       		.byte	0x4
+ 390 0060 07       		.byte	0x7
+ 391 0061 42040000 		.4byte	.LASF7
+ 392 0065 02       		.uleb128 0x2
+ 393 0066 04       		.byte	0x4
+ 394 0067 04       		.byte	0x4
+ 395 0068 BC010000 		.4byte	.LASF8
+ 396 006c 02       		.uleb128 0x2
+ 397 006d 08       		.byte	0x8
+ 398 006e 04       		.byte	0x4
+ 399 006f 54040000 		.4byte	.LASF9
+ 400 0073 02       		.uleb128 0x2
+ 401 0074 08       		.byte	0x8
+ 402 0075 05       		.byte	0x5
+ 403 0076 E6010000 		.4byte	.LASF10
+ 404 007a 02       		.uleb128 0x2
+ 405 007b 08       		.byte	0x8
+ 406 007c 07       		.byte	0x7
+ 407 007d E7020000 		.4byte	.LASF11
+ 408 0081 03       		.uleb128 0x3
+ 409 0082 8C020000 		.4byte	.LASF12
+ 410 0086 02       		.byte	0x2
+ 411 0087 9C       		.byte	0x9c
+ 412 0088 2C000000 		.4byte	0x2c
+ 413 008c 02       		.uleb128 0x2
+ 414 008d 01       		.byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 12
+
+
+ 415 008e 08       		.byte	0x8
+ 416 008f BA030000 		.4byte	.LASF13
+ 417 0093 04       		.uleb128 0x4
+ 418 0094 01       		.byte	0x1
+ 419 0095 25000000 		.4byte	0x25
+ 420 0099 02       		.byte	0x2
+ 421 009a CF       		.byte	0xcf
+ 422 009b 3C010000 		.4byte	0x13c
+ 423 009f 05       		.uleb128 0x5
+ 424 00a0 23000000 		.4byte	.LASF14
+ 425 00a4 00       		.byte	0
+ 426 00a5 06       		.uleb128 0x6
+ 427 00a6 07040000 		.4byte	.LASF15
+ 428 00aa 7F       		.sleb128 -1
+ 429 00ab 06       		.uleb128 0x6
+ 430 00ac 45030000 		.4byte	.LASF16
+ 431 00b0 7E       		.sleb128 -2
+ 432 00b1 06       		.uleb128 0x6
+ 433 00b2 FC000000 		.4byte	.LASF17
+ 434 00b6 7D       		.sleb128 -3
+ 435 00b7 06       		.uleb128 0x6
+ 436 00b8 8A050000 		.4byte	.LASF18
+ 437 00bc 7C       		.sleb128 -4
+ 438 00bd 06       		.uleb128 0x6
+ 439 00be 9B010000 		.4byte	.LASF19
+ 440 00c2 7B       		.sleb128 -5
+ 441 00c3 06       		.uleb128 0x6
+ 442 00c4 72040000 		.4byte	.LASF20
+ 443 00c8 7A       		.sleb128 -6
+ 444 00c9 06       		.uleb128 0x6
+ 445 00ca 3E020000 		.4byte	.LASF21
+ 446 00ce 79       		.sleb128 -7
+ 447 00cf 06       		.uleb128 0x6
+ 448 00d0 D2030000 		.4byte	.LASF22
+ 449 00d4 78       		.sleb128 -8
+ 450 00d5 06       		.uleb128 0x6
+ 451 00d6 53030000 		.4byte	.LASF23
+ 452 00da 77       		.sleb128 -9
+ 453 00db 06       		.uleb128 0x6
+ 454 00dc 50020000 		.4byte	.LASF24
+ 455 00e0 76       		.sleb128 -10
+ 456 00e1 06       		.uleb128 0x6
+ 457 00e2 F3050000 		.4byte	.LASF25
+ 458 00e6 75       		.sleb128 -11
+ 459 00e7 06       		.uleb128 0x6
+ 460 00e8 20030000 		.4byte	.LASF26
+ 461 00ec 74       		.sleb128 -12
+ 462 00ed 06       		.uleb128 0x6
+ 463 00ee 5B040000 		.4byte	.LASF27
+ 464 00f2 73       		.sleb128 -13
+ 465 00f3 06       		.uleb128 0x6
+ 466 00f4 10000000 		.4byte	.LASF28
+ 467 00f8 72       		.sleb128 -14
+ 468 00f9 06       		.uleb128 0x6
+ 469 00fa 65000000 		.4byte	.LASF29
+ 470 00fe 71       		.sleb128 -15
+ 471 00ff 06       		.uleb128 0x6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 13
+
+
+ 472 0100 69020000 		.4byte	.LASF30
+ 473 0104 70       		.sleb128 -16
+ 474 0105 06       		.uleb128 0x6
+ 475 0106 0A010000 		.4byte	.LASF31
+ 476 010a 6F       		.sleb128 -17
+ 477 010b 06       		.uleb128 0x6
+ 478 010c D1000000 		.4byte	.LASF32
+ 479 0110 6E       		.sleb128 -18
+ 480 0111 06       		.uleb128 0x6
+ 481 0112 08020000 		.4byte	.LASF33
+ 482 0116 6D       		.sleb128 -19
+ 483 0117 06       		.uleb128 0x6
+ 484 0118 F4030000 		.4byte	.LASF34
+ 485 011c 6C       		.sleb128 -20
+ 486 011d 06       		.uleb128 0x6
+ 487 011e 7A020000 		.4byte	.LASF35
+ 488 0122 6B       		.sleb128 -21
+ 489 0123 06       		.uleb128 0x6
+ 490 0124 BC040000 		.4byte	.LASF36
+ 491 0128 6A       		.sleb128 -22
+ 492 0129 06       		.uleb128 0x6
+ 493 012a 7C010000 		.4byte	.LASF37
+ 494 012e 69       		.sleb128 -23
+ 495 012f 06       		.uleb128 0x6
+ 496 0130 1B020000 		.4byte	.LASF38
+ 497 0134 68       		.sleb128 -24
+ 498 0135 06       		.uleb128 0x6
+ 499 0136 CD010000 		.4byte	.LASF39
+ 500 013a 67       		.sleb128 -25
+ 501 013b 00       		.byte	0
+ 502 013c 03       		.uleb128 0x3
+ 503 013d EE050000 		.4byte	.LASF40
+ 504 0141 02       		.byte	0x2
+ 505 0142 EA       		.byte	0xea
+ 506 0143 93000000 		.4byte	0x93
+ 507 0147 07       		.uleb128 0x7
+ 508 0148 FE020000 		.4byte	.LASF48
+ 509 014c 01       		.byte	0x1
+ 510 014d 2C000000 		.4byte	0x2c
+ 511 0151 03       		.byte	0x3
+ 512 0152 29       		.byte	0x29
+ 513 0153 7C010000 		.4byte	0x17c
+ 514 0157 05       		.uleb128 0x5
+ 515 0158 9D040000 		.4byte	.LASF41
+ 516 015c 00       		.byte	0
+ 517 015d 05       		.uleb128 0x5
+ 518 015e 2E000000 		.4byte	.LASF42
+ 519 0162 01       		.byte	0x1
+ 520 0163 05       		.uleb128 0x5
+ 521 0164 88040000 		.4byte	.LASF43
+ 522 0168 02       		.byte	0x2
+ 523 0169 05       		.uleb128 0x5
+ 524 016a 93010000 		.4byte	.LASF44
+ 525 016e 03       		.byte	0x3
+ 526 016f 05       		.uleb128 0x5
+ 527 0170 00000000 		.4byte	.LASF45
+ 528 0174 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 14
+
+
+ 529 0175 05       		.uleb128 0x5
+ 530 0176 83040000 		.4byte	.LASF46
+ 531 017a 05       		.byte	0x5
+ 532 017b 00       		.byte	0
+ 533 017c 03       		.uleb128 0x3
+ 534 017d 37030000 		.4byte	.LASF47
+ 535 0181 03       		.byte	0x3
+ 536 0182 31       		.byte	0x31
+ 537 0183 47010000 		.4byte	0x147
+ 538 0187 07       		.uleb128 0x7
+ 539 0188 83050000 		.4byte	.LASF49
+ 540 018c 01       		.byte	0x1
+ 541 018d 2C000000 		.4byte	0x2c
+ 542 0191 03       		.byte	0x3
+ 543 0192 33       		.byte	0x33
+ 544 0193 BC010000 		.4byte	0x1bc
+ 545 0197 05       		.uleb128 0x5
+ 546 0198 C5020000 		.4byte	.LASF50
+ 547 019c 00       		.byte	0
+ 548 019d 05       		.uleb128 0x5
+ 549 019e 10040000 		.4byte	.LASF51
+ 550 01a2 01       		.byte	0x1
+ 551 01a3 05       		.uleb128 0x5
+ 552 01a4 26010000 		.4byte	.LASF52
+ 553 01a8 02       		.byte	0x2
+ 554 01a9 05       		.uleb128 0x5
+ 555 01aa E6000000 		.4byte	.LASF53
+ 556 01ae 03       		.byte	0x3
+ 557 01af 05       		.uleb128 0x5
+ 558 01b0 D4050000 		.4byte	.LASF54
+ 559 01b4 04       		.byte	0x4
+ 560 01b5 05       		.uleb128 0x5
+ 561 01b6 05030000 		.4byte	.LASF55
+ 562 01ba 05       		.byte	0x5
+ 563 01bb 00       		.byte	0
+ 564 01bc 03       		.uleb128 0x3
+ 565 01bd 57000000 		.4byte	.LASF56
+ 566 01c1 03       		.byte	0x3
+ 567 01c2 3C       		.byte	0x3c
+ 568 01c3 87010000 		.4byte	0x187
+ 569 01c7 03       		.uleb128 0x3
+ 570 01c8 AA010000 		.4byte	.LASF57
+ 571 01cc 04       		.byte	0x4
+ 572 01cd 30       		.byte	0x30
+ 573 01ce D2010000 		.4byte	0x1d2
+ 574 01d2 08       		.uleb128 0x8
+ 575 01d3 04       		.byte	0x4
+ 576 01d4 D8010000 		.4byte	0x1d8
+ 577 01d8 09       		.uleb128 0x9
+ 578 01d9 DF010000 		.4byte	0x1df
+ 579 01dd 0A       		.uleb128 0xa
+ 580 01de 00       		.byte	0
+ 581 01df 03       		.uleb128 0x3
+ 582 01e0 69030000 		.4byte	.LASF58
+ 583 01e4 04       		.byte	0x4
+ 584 01e5 35       		.byte	0x35
+ 585 01e6 EA010000 		.4byte	0x1ea
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 15
+
+
+ 586 01ea 08       		.uleb128 0x8
+ 587 01eb 04       		.byte	0x4
+ 588 01ec F0010000 		.4byte	0x1f0
+ 589 01f0 0B       		.uleb128 0xb
+ 590 01f1 81000000 		.4byte	0x81
+ 591 01f5 FB010000 		.4byte	0x1fb
+ 592 01f9 0A       		.uleb128 0xa
+ 593 01fa 00       		.byte	0
+ 594 01fb 0C       		.uleb128 0xc
+ 595 01fc 0C       		.byte	0xc
+ 596 01fd 04       		.byte	0x4
+ 597 01fe 3E       		.byte	0x3e
+ 598 01ff 34020000 		.4byte	0x234
+ 599 0203 0D       		.uleb128 0xd
+ 600 0204 3F010000 		.4byte	.LASF59
+ 601 0208 04       		.byte	0x4
+ 602 0209 40       		.byte	0x40
+ 603 020a 7C010000 		.4byte	0x17c
+ 604 020e 00       		.byte	0
+ 605 020f 0D       		.uleb128 0xd
+ 606 0210 E6050000 		.4byte	.LASF60
+ 607 0214 04       		.byte	0x4
+ 608 0215 41       		.byte	0x41
+ 609 0216 BC010000 		.4byte	0x1bc
+ 610 021a 01       		.byte	0x1
+ 611 021b 0D       		.uleb128 0xd
+ 612 021c 79000000 		.4byte	.LASF61
+ 613 0220 04       		.byte	0x4
+ 614 0221 42       		.byte	0x42
+ 615 0222 DF010000 		.4byte	0x1df
+ 616 0226 04       		.byte	0x4
+ 617 0227 0D       		.uleb128 0xd
+ 618 0228 27040000 		.4byte	.LASF62
+ 619 022c 04       		.byte	0x4
+ 620 022d 43       		.byte	0x43
+ 621 022e C7010000 		.4byte	0x1c7
+ 622 0232 08       		.byte	0x8
+ 623 0233 00       		.byte	0
+ 624 0234 03       		.uleb128 0x3
+ 625 0235 9D030000 		.4byte	.LASF63
+ 626 0239 04       		.byte	0x4
+ 627 023a 45       		.byte	0x45
+ 628 023b FB010000 		.4byte	0x1fb
+ 629 023f 0E       		.uleb128 0xe
+ 630 0240 34020000 		.4byte	0x234
+ 631 0244 4A020000 		.4byte	0x24a
+ 632 0248 0F       		.uleb128 0xf
+ 633 0249 00       		.byte	0
+ 634 024a 0C       		.uleb128 0xc
+ 635 024b 0C       		.byte	0xc
+ 636 024c 04       		.byte	0x4
+ 637 024d 4C       		.byte	0x4c
+ 638 024e 77020000 		.4byte	0x277
+ 639 0252 0D       		.uleb128 0xd
+ 640 0253 38040000 		.4byte	.LASF64
+ 641 0257 04       		.byte	0x4
+ 642 0258 4E       		.byte	0x4e
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 16
+
+
+ 643 0259 BC010000 		.4byte	0x1bc
+ 644 025d 00       		.byte	0
+ 645 025e 0D       		.uleb128 0xd
+ 646 025f 9A050000 		.4byte	.LASF65
+ 647 0263 04       		.byte	0x4
+ 648 0264 4F       		.byte	0x4f
+ 649 0265 7D020000 		.4byte	0x27d
+ 650 0269 04       		.byte	0x4
+ 651 026a 0D       		.uleb128 0xd
+ 652 026b 6D040000 		.4byte	.LASF66
+ 653 026f 04       		.byte	0x4
+ 654 0270 50       		.byte	0x50
+ 655 0271 82020000 		.4byte	0x282
+ 656 0275 08       		.byte	0x8
+ 657 0276 00       		.byte	0
+ 658 0277 08       		.uleb128 0x8
+ 659 0278 04       		.byte	0x4
+ 660 0279 3F020000 		.4byte	0x23f
+ 661 027d 10       		.uleb128 0x10
+ 662 027e 77020000 		.4byte	0x277
+ 663 0282 10       		.uleb128 0x10
+ 664 0283 45000000 		.4byte	0x45
+ 665 0287 03       		.uleb128 0x3
+ 666 0288 3A000000 		.4byte	.LASF67
+ 667 028c 04       		.byte	0x4
+ 668 028d 51       		.byte	0x51
+ 669 028e 4A020000 		.4byte	0x24a
+ 670 0292 0E       		.uleb128 0xe
+ 671 0293 87020000 		.4byte	0x287
+ 672 0297 9D020000 		.4byte	0x29d
+ 673 029b 0F       		.uleb128 0xf
+ 674 029c 00       		.byte	0
+ 675 029d 0C       		.uleb128 0xc
+ 676 029e 0C       		.byte	0xc
+ 677 029f 04       		.byte	0x4
+ 678 02a0 5A       		.byte	0x5a
+ 679 02a1 CA020000 		.4byte	0x2ca
+ 680 02a5 0D       		.uleb128 0xd
+ 681 02a6 96020000 		.4byte	.LASF68
+ 682 02aa 04       		.byte	0x4
+ 683 02ab 5C       		.byte	0x5c
+ 684 02ac BC010000 		.4byte	0x1bc
+ 685 02b0 00       		.byte	0
+ 686 02b1 0D       		.uleb128 0xd
+ 687 02b2 CE040000 		.4byte	.LASF69
+ 688 02b6 04       		.byte	0x4
+ 689 02b7 5D       		.byte	0x5d
+ 690 02b8 C7010000 		.4byte	0x1c7
+ 691 02bc 04       		.byte	0x4
+ 692 02bd 0D       		.uleb128 0xd
+ 693 02be 5E020000 		.4byte	.LASF70
+ 694 02c2 04       		.byte	0x4
+ 695 02c3 5E       		.byte	0x5e
+ 696 02c4 C7010000 		.4byte	0x1c7
+ 697 02c8 08       		.byte	0x8
+ 698 02c9 00       		.byte	0
+ 699 02ca 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 17
+
+
+ 700 02cb A8040000 		.4byte	.LASF71
+ 701 02cf 04       		.byte	0x4
+ 702 02d0 5F       		.byte	0x5f
+ 703 02d1 9D020000 		.4byte	0x29d
+ 704 02d5 0E       		.uleb128 0xe
+ 705 02d6 CA020000 		.4byte	0x2ca
+ 706 02da E0020000 		.4byte	0x2e0
+ 707 02de 0F       		.uleb128 0xf
+ 708 02df 00       		.byte	0
+ 709 02e0 0C       		.uleb128 0xc
+ 710 02e1 10       		.byte	0x10
+ 711 02e2 04       		.byte	0x4
+ 712 02e3 64       		.byte	0x64
+ 713 02e4 25030000 		.4byte	0x325
+ 714 02e8 0D       		.uleb128 0xd
+ 715 02e9 45010000 		.4byte	.LASF72
+ 716 02ed 04       		.byte	0x4
+ 717 02ee 65       		.byte	0x65
+ 718 02ef 25030000 		.4byte	0x325
+ 719 02f3 00       		.byte	0
+ 720 02f4 0D       		.uleb128 0xd
+ 721 02f5 F4010000 		.4byte	.LASF73
+ 722 02f9 04       		.byte	0x4
+ 723 02fa 66       		.byte	0x66
+ 724 02fb 45000000 		.4byte	0x45
+ 725 02ff 04       		.byte	0x4
+ 726 0300 0D       		.uleb128 0xd
+ 727 0301 9C020000 		.4byte	.LASF74
+ 728 0305 04       		.byte	0x4
+ 729 0306 67       		.byte	0x67
+ 730 0307 2B030000 		.4byte	0x32b
+ 731 030b 08       		.byte	0x8
+ 732 030c 0D       		.uleb128 0xd
+ 733 030d 8D030000 		.4byte	.LASF75
+ 734 0311 04       		.byte	0x4
+ 735 0312 68       		.byte	0x68
+ 736 0313 45000000 		.4byte	0x45
+ 737 0317 0C       		.byte	0xc
+ 738 0318 0D       		.uleb128 0xd
+ 739 0319 96020000 		.4byte	.LASF68
+ 740 031d 04       		.byte	0x4
+ 741 031e 69       		.byte	0x69
+ 742 031f BC010000 		.4byte	0x1bc
+ 743 0323 0E       		.byte	0xe
+ 744 0324 00       		.byte	0
+ 745 0325 08       		.uleb128 0x8
+ 746 0326 04       		.byte	0x4
+ 747 0327 92020000 		.4byte	0x292
+ 748 032b 08       		.uleb128 0x8
+ 749 032c 04       		.byte	0x4
+ 750 032d D5020000 		.4byte	0x2d5
+ 751 0331 03       		.uleb128 0x3
+ 752 0332 E6040000 		.4byte	.LASF76
+ 753 0336 04       		.byte	0x4
+ 754 0337 6A       		.byte	0x6a
+ 755 0338 E0020000 		.4byte	0x2e0
+ 756 033c 11       		.uleb128 0x11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 18
+
+
+ 757 033d C2010000 		.4byte	.LASF77
+ 758 0341 01       		.byte	0x1
+ 759 0342 51       		.byte	0x51
+ 760 0343 3C010000 		.4byte	0x13c
+ 761 0347 00000000 		.4byte	.LFB0
+ 762 034b 14000000 		.4byte	.LFE0-.LFB0
+ 763 034f 01       		.uleb128 0x1
+ 764 0350 9C       		.byte	0x9c
+ 765 0351 A9030000 		.4byte	0x3a9
+ 766 0355 12       		.uleb128 0x12
+ 767 0356 6D6500   		.ascii	"me\000"
+ 768 0359 01       		.byte	0x1
+ 769 035a 51       		.byte	0x51
+ 770 035b AF030000 		.4byte	0x3af
+ 771 035f 00000000 		.4byte	.LLST0
+ 772 0363 13       		.uleb128 0x13
+ 773 0364 45010000 		.4byte	.LASF72
+ 774 0368 01       		.byte	0x1
+ 775 0369 52       		.byte	0x52
+ 776 036a B4030000 		.4byte	0x3b4
+ 777 036e 01       		.uleb128 0x1
+ 778 036f 51       		.byte	0x51
+ 779 0370 13       		.uleb128 0x13
+ 780 0371 F4010000 		.4byte	.LASF73
+ 781 0375 01       		.byte	0x1
+ 782 0376 53       		.byte	0x53
+ 783 0377 45000000 		.4byte	0x45
+ 784 037b 01       		.uleb128 0x1
+ 785 037c 52       		.byte	0x52
+ 786 037d 14       		.uleb128 0x14
+ 787 037e 9C020000 		.4byte	.LASF74
+ 788 0382 01       		.byte	0x1
+ 789 0383 54       		.byte	0x54
+ 790 0384 B9030000 		.4byte	0x3b9
+ 791 0388 21000000 		.4byte	.LLST1
+ 792 038c 13       		.uleb128 0x13
+ 793 038d 8D030000 		.4byte	.LASF75
+ 794 0391 01       		.byte	0x1
+ 795 0392 55       		.byte	0x55
+ 796 0393 45000000 		.4byte	0x45
+ 797 0397 02       		.uleb128 0x2
+ 798 0398 91       		.byte	0x91
+ 799 0399 00       		.sleb128 0
+ 800 039a 13       		.uleb128 0x13
+ 801 039b 96020000 		.4byte	.LASF68
+ 802 039f 01       		.byte	0x1
+ 803 03a0 56       		.byte	0x56
+ 804 03a1 BC010000 		.4byte	0x1bc
+ 805 03a5 02       		.uleb128 0x2
+ 806 03a6 91       		.byte	0x91
+ 807 03a7 04       		.sleb128 4
+ 808 03a8 00       		.byte	0
+ 809 03a9 08       		.uleb128 0x8
+ 810 03aa 04       		.byte	0x4
+ 811 03ab 31030000 		.4byte	0x331
+ 812 03af 10       		.uleb128 0x10
+ 813 03b0 A9030000 		.4byte	0x3a9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 19
+
+
+ 814 03b4 10       		.uleb128 0x10
+ 815 03b5 25030000 		.4byte	0x325
+ 816 03b9 10       		.uleb128 0x10
+ 817 03ba 2B030000 		.4byte	0x32b
+ 818 03be 11       		.uleb128 0x11
+ 819 03bf B0050000 		.4byte	.LASF78
+ 820 03c3 01       		.byte	0x1
+ 821 03c4 62       		.byte	0x62
+ 822 03c5 33000000 		.4byte	0x33
+ 823 03c9 00000000 		.4byte	.LFB1
+ 824 03cd 26000000 		.4byte	.LFE1-.LFB1
+ 825 03d1 01       		.uleb128 0x1
+ 826 03d2 9C       		.byte	0x9c
+ 827 03d3 24040000 		.4byte	0x424
+ 828 03d7 14       		.uleb128 0x14
+ 829 03d8 45010000 		.4byte	.LASF72
+ 830 03dc 01       		.byte	0x1
+ 831 03dd 62       		.byte	0x62
+ 832 03de B4030000 		.4byte	0x3b4
+ 833 03e2 4F000000 		.4byte	.LLST2
+ 834 03e6 13       		.uleb128 0x13
+ 835 03e7 F4010000 		.4byte	.LASF73
+ 836 03eb 01       		.byte	0x1
+ 837 03ec 63       		.byte	0x63
+ 838 03ed 45000000 		.4byte	0x45
+ 839 03f1 01       		.uleb128 0x1
+ 840 03f2 51       		.byte	0x51
+ 841 03f3 13       		.uleb128 0x13
+ 842 03f4 96020000 		.4byte	.LASF68
+ 843 03f8 01       		.byte	0x1
+ 844 03f9 64       		.byte	0x64
+ 845 03fa BC010000 		.4byte	0x1bc
+ 846 03fe 01       		.uleb128 0x1
+ 847 03ff 52       		.byte	0x52
+ 848 0400 15       		.uleb128 0x15
+ 849 0401 09000000 		.4byte	.LASF79
+ 850 0405 01       		.byte	0x1
+ 851 0406 66       		.byte	0x66
+ 852 0407 33000000 		.4byte	0x33
+ 853 040b 7F       		.sleb128 -1
+ 854 040c 16       		.uleb128 0x16
+ 855 040d 02000000 		.4byte	.LBB2
+ 856 0411 1C000000 		.4byte	.LBE2-.LBB2
+ 857 0415 17       		.uleb128 0x17
+ 858 0416 6900     		.ascii	"i\000"
+ 859 0418 01       		.byte	0x1
+ 860 0419 68       		.byte	0x68
+ 861 041a 45000000 		.4byte	0x45
+ 862 041e 89000000 		.4byte	.LLST3
+ 863 0422 00       		.byte	0
+ 864 0423 00       		.byte	0
+ 865 0424 18       		.uleb128 0x18
+ 866 0425 BF030000 		.4byte	.LASF90
+ 867 0429 01       		.byte	0x1
+ 868 042a 7A       		.byte	0x7a
+ 869 042b 3C010000 		.4byte	0x13c
+ 870 042f 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 20
+
+
+ 871 0433 FE000000 		.4byte	.LFE2-.LFB2
+ 872 0437 01       		.uleb128 0x1
+ 873 0438 9C       		.byte	0x9c
+ 874 0439 12       		.uleb128 0x12
+ 875 043a 6D6500   		.ascii	"me\000"
+ 876 043d 01       		.byte	0x1
+ 877 043e 7A       		.byte	0x7a
+ 878 043f AF030000 		.4byte	0x3af
+ 879 0443 B3000000 		.4byte	.LLST4
+ 880 0447 12       		.uleb128 0x12
+ 881 0448 657600   		.ascii	"ev\000"
+ 882 044b 01       		.byte	0x1
+ 883 044c 7A       		.byte	0x7a
+ 884 044d 7C010000 		.4byte	0x17c
+ 885 0451 D1000000 		.4byte	.LLST5
+ 886 0455 19       		.uleb128 0x19
+ 887 0456 79000000 		.4byte	.LASF61
+ 888 045a 01       		.byte	0x1
+ 889 045b 7C       		.byte	0x7c
+ 890 045c DF010000 		.4byte	0x1df
+ 891 0460 F2000000 		.4byte	.LLST6
+ 892 0464 19       		.uleb128 0x19
+ 893 0465 C7050000 		.4byte	.LASF80
+ 894 0469 01       		.byte	0x1
+ 895 046a 7D       		.byte	0x7d
+ 896 046b C7010000 		.4byte	0x1c7
+ 897 046f 1D010000 		.4byte	.LLST7
+ 898 0473 19       		.uleb128 0x19
+ 899 0474 1E010000 		.4byte	.LASF81
+ 900 0478 01       		.byte	0x1
+ 901 0479 7E       		.byte	0x7e
+ 902 047a C7010000 		.4byte	0x1c7
+ 903 047e 9A010000 		.4byte	.LLST8
+ 904 0482 19       		.uleb128 0x19
+ 905 0483 55010000 		.4byte	.LASF82
+ 906 0487 01       		.byte	0x1
+ 907 0488 7F       		.byte	0x7f
+ 908 0489 C7010000 		.4byte	0x1c7
+ 909 048d C6010000 		.4byte	.LLST9
+ 910 0491 1A       		.uleb128 0x1a
+ 911 0492 E7030000 		.4byte	.LASF83
+ 912 0496 01       		.byte	0x1
+ 913 0497 83       		.byte	0x83
+ 914 0498 BC010000 		.4byte	0x1bc
+ 915 049c 01       		.uleb128 0x1
+ 916 049d 58       		.byte	0x58
+ 917 049e 19       		.uleb128 0x19
+ 918 049f E6050000 		.4byte	.LASF60
+ 919 04a3 01       		.byte	0x1
+ 920 04a4 84       		.byte	0x84
+ 921 04a5 BC010000 		.4byte	0x1bc
+ 922 04a9 09020000 		.4byte	.LLST10
+ 923 04ad 19       		.uleb128 0x19
+ 924 04ae 76010000 		.4byte	.LASF84
+ 925 04b2 01       		.byte	0x1
+ 926 04b3 87       		.byte	0x87
+ 927 04b4 33000000 		.4byte	0x33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 21
+
+
+ 928 04b8 32020000 		.4byte	.LLST11
+ 929 04bc 19       		.uleb128 0x19
+ 930 04bd DA040000 		.4byte	.LASF85
+ 931 04c1 01       		.byte	0x1
+ 932 04c2 8F       		.byte	0x8f
+ 933 04c3 7D020000 		.4byte	0x27d
+ 934 04c7 66020000 		.4byte	.LLST12
+ 935 04cb 19       		.uleb128 0x19
+ 936 04cc B6020000 		.4byte	.LASF86
+ 937 04d0 01       		.byte	0x1
+ 938 04d1 91       		.byte	0x91
+ 939 04d2 45000000 		.4byte	0x45
+ 940 04d6 84020000 		.4byte	.LLST13
+ 941 04da 1B       		.uleb128 0x1b
+ 942 04db 4E000000 		.4byte	.LBB3
+ 943 04df 94000000 		.4byte	.LBE3-.LBB3
+ 944 04e3 43050000 		.4byte	0x543
+ 945 04e7 17       		.uleb128 0x17
+ 946 04e8 6900     		.ascii	"i\000"
+ 947 04ea 01       		.byte	0x1
+ 948 04eb 9E       		.byte	0x9e
+ 949 04ec 45000000 		.4byte	0x45
+ 950 04f0 C5020000 		.4byte	.LLST14
+ 951 04f4 16       		.uleb128 0x16
+ 952 04f5 6E000000 		.4byte	.LBB4
+ 953 04f9 6C000000 		.4byte	.LBE4-.LBB4
+ 954 04fd 19       		.uleb128 0x19
+ 955 04fe 8D030000 		.4byte	.LASF75
+ 956 0502 01       		.byte	0x1
+ 957 0503 AB       		.byte	0xab
+ 958 0504 45000000 		.4byte	0x45
+ 959 0508 E3020000 		.4byte	.LLST15
+ 960 050c 1B       		.uleb128 0x1b
+ 961 050d 8A000000 		.4byte	.LBB5
+ 962 0511 40000000 		.4byte	.LBE5-.LBB5
+ 963 0515 27050000 		.4byte	0x527
+ 964 0519 17       		.uleb128 0x17
+ 965 051a 6A00     		.ascii	"j\000"
+ 966 051c 01       		.byte	0x1
+ 967 051d AC       		.byte	0xac
+ 968 051e 45000000 		.4byte	0x45
+ 969 0522 F6020000 		.4byte	.LLST16
+ 970 0526 00       		.byte	0
+ 971 0527 1C       		.uleb128 0x1c
+ 972 0528 CE000000 		.4byte	.LVL36
+ 973 052c 02       		.uleb128 0x2
+ 974 052d 7B       		.byte	0x7b
+ 975 052e 00       		.sleb128 0
+ 976 052f 1C       		.uleb128 0x1c
+ 977 0530 D4000000 		.4byte	.LVL37
+ 978 0534 03       		.uleb128 0x3
+ 979 0535 91       		.byte	0x91
+ 980 0536 54       		.sleb128 -44
+ 981 0537 06       		.byte	0x6
+ 982 0538 1C       		.uleb128 0x1c
+ 983 0539 DA000000 		.4byte	.LVL38
+ 984 053d 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 22
+
+
+ 985 053e 91       		.byte	0x91
+ 986 053f 4C       		.sleb128 -52
+ 987 0540 06       		.byte	0x6
+ 988 0541 00       		.byte	0
+ 989 0542 00       		.byte	0
+ 990 0543 1D       		.uleb128 0x1d
+ 991 0544 1A000000 		.4byte	.LVL16
+ 992 0548 BE030000 		.4byte	0x3be
+ 993 054c 1E       		.uleb128 0x1e
+ 994 054d 01       		.uleb128 0x1
+ 995 054e 50       		.byte	0x50
+ 996 054f 02       		.uleb128 0x2
+ 997 0550 74       		.byte	0x74
+ 998 0551 00       		.sleb128 0
+ 999 0552 1E       		.uleb128 0x1e
+ 1000 0553 01       		.uleb128 0x1
+ 1001 0554 52       		.byte	0x52
+ 1002 0555 02       		.uleb128 0x2
+ 1003 0556 78       		.byte	0x78
+ 1004 0557 00       		.sleb128 0
+ 1005 0558 00       		.byte	0
+ 1006 0559 00       		.byte	0
+ 1007 055a 00       		.byte	0
+ 1008              		.section	.debug_abbrev,"",%progbits
+ 1009              	.Ldebug_abbrev0:
+ 1010 0000 01       		.uleb128 0x1
+ 1011 0001 11       		.uleb128 0x11
+ 1012 0002 01       		.byte	0x1
+ 1013 0003 25       		.uleb128 0x25
+ 1014 0004 0E       		.uleb128 0xe
+ 1015 0005 13       		.uleb128 0x13
+ 1016 0006 0B       		.uleb128 0xb
+ 1017 0007 03       		.uleb128 0x3
+ 1018 0008 0E       		.uleb128 0xe
+ 1019 0009 1B       		.uleb128 0x1b
+ 1020 000a 0E       		.uleb128 0xe
+ 1021 000b 55       		.uleb128 0x55
+ 1022 000c 17       		.uleb128 0x17
+ 1023 000d 11       		.uleb128 0x11
+ 1024 000e 01       		.uleb128 0x1
+ 1025 000f 10       		.uleb128 0x10
+ 1026 0010 17       		.uleb128 0x17
+ 1027 0011 00       		.byte	0
+ 1028 0012 00       		.byte	0
+ 1029 0013 02       		.uleb128 0x2
+ 1030 0014 24       		.uleb128 0x24
+ 1031 0015 00       		.byte	0
+ 1032 0016 0B       		.uleb128 0xb
+ 1033 0017 0B       		.uleb128 0xb
+ 1034 0018 3E       		.uleb128 0x3e
+ 1035 0019 0B       		.uleb128 0xb
+ 1036 001a 03       		.uleb128 0x3
+ 1037 001b 0E       		.uleb128 0xe
+ 1038 001c 00       		.byte	0
+ 1039 001d 00       		.byte	0
+ 1040 001e 03       		.uleb128 0x3
+ 1041 001f 16       		.uleb128 0x16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 23
+
+
+ 1042 0020 00       		.byte	0
+ 1043 0021 03       		.uleb128 0x3
+ 1044 0022 0E       		.uleb128 0xe
+ 1045 0023 3A       		.uleb128 0x3a
+ 1046 0024 0B       		.uleb128 0xb
+ 1047 0025 3B       		.uleb128 0x3b
+ 1048 0026 0B       		.uleb128 0xb
+ 1049 0027 49       		.uleb128 0x49
+ 1050 0028 13       		.uleb128 0x13
+ 1051 0029 00       		.byte	0
+ 1052 002a 00       		.byte	0
+ 1053 002b 04       		.uleb128 0x4
+ 1054 002c 04       		.uleb128 0x4
+ 1055 002d 01       		.byte	0x1
+ 1056 002e 0B       		.uleb128 0xb
+ 1057 002f 0B       		.uleb128 0xb
+ 1058 0030 49       		.uleb128 0x49
+ 1059 0031 13       		.uleb128 0x13
+ 1060 0032 3A       		.uleb128 0x3a
+ 1061 0033 0B       		.uleb128 0xb
+ 1062 0034 3B       		.uleb128 0x3b
+ 1063 0035 0B       		.uleb128 0xb
+ 1064 0036 01       		.uleb128 0x1
+ 1065 0037 13       		.uleb128 0x13
+ 1066 0038 00       		.byte	0
+ 1067 0039 00       		.byte	0
+ 1068 003a 05       		.uleb128 0x5
+ 1069 003b 28       		.uleb128 0x28
+ 1070 003c 00       		.byte	0
+ 1071 003d 03       		.uleb128 0x3
+ 1072 003e 0E       		.uleb128 0xe
+ 1073 003f 1C       		.uleb128 0x1c
+ 1074 0040 0B       		.uleb128 0xb
+ 1075 0041 00       		.byte	0
+ 1076 0042 00       		.byte	0
+ 1077 0043 06       		.uleb128 0x6
+ 1078 0044 28       		.uleb128 0x28
+ 1079 0045 00       		.byte	0
+ 1080 0046 03       		.uleb128 0x3
+ 1081 0047 0E       		.uleb128 0xe
+ 1082 0048 1C       		.uleb128 0x1c
+ 1083 0049 0D       		.uleb128 0xd
+ 1084 004a 00       		.byte	0
+ 1085 004b 00       		.byte	0
+ 1086 004c 07       		.uleb128 0x7
+ 1087 004d 04       		.uleb128 0x4
+ 1088 004e 01       		.byte	0x1
+ 1089 004f 03       		.uleb128 0x3
+ 1090 0050 0E       		.uleb128 0xe
+ 1091 0051 0B       		.uleb128 0xb
+ 1092 0052 0B       		.uleb128 0xb
+ 1093 0053 49       		.uleb128 0x49
+ 1094 0054 13       		.uleb128 0x13
+ 1095 0055 3A       		.uleb128 0x3a
+ 1096 0056 0B       		.uleb128 0xb
+ 1097 0057 3B       		.uleb128 0x3b
+ 1098 0058 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 24
+
+
+ 1099 0059 01       		.uleb128 0x1
+ 1100 005a 13       		.uleb128 0x13
+ 1101 005b 00       		.byte	0
+ 1102 005c 00       		.byte	0
+ 1103 005d 08       		.uleb128 0x8
+ 1104 005e 0F       		.uleb128 0xf
+ 1105 005f 00       		.byte	0
+ 1106 0060 0B       		.uleb128 0xb
+ 1107 0061 0B       		.uleb128 0xb
+ 1108 0062 49       		.uleb128 0x49
+ 1109 0063 13       		.uleb128 0x13
+ 1110 0064 00       		.byte	0
+ 1111 0065 00       		.byte	0
+ 1112 0066 09       		.uleb128 0x9
+ 1113 0067 15       		.uleb128 0x15
+ 1114 0068 01       		.byte	0x1
+ 1115 0069 01       		.uleb128 0x1
+ 1116 006a 13       		.uleb128 0x13
+ 1117 006b 00       		.byte	0
+ 1118 006c 00       		.byte	0
+ 1119 006d 0A       		.uleb128 0xa
+ 1120 006e 18       		.uleb128 0x18
+ 1121 006f 00       		.byte	0
+ 1122 0070 00       		.byte	0
+ 1123 0071 00       		.byte	0
+ 1124 0072 0B       		.uleb128 0xb
+ 1125 0073 15       		.uleb128 0x15
+ 1126 0074 01       		.byte	0x1
+ 1127 0075 49       		.uleb128 0x49
+ 1128 0076 13       		.uleb128 0x13
+ 1129 0077 01       		.uleb128 0x1
+ 1130 0078 13       		.uleb128 0x13
+ 1131 0079 00       		.byte	0
+ 1132 007a 00       		.byte	0
+ 1133 007b 0C       		.uleb128 0xc
+ 1134 007c 13       		.uleb128 0x13
+ 1135 007d 01       		.byte	0x1
+ 1136 007e 0B       		.uleb128 0xb
+ 1137 007f 0B       		.uleb128 0xb
+ 1138 0080 3A       		.uleb128 0x3a
+ 1139 0081 0B       		.uleb128 0xb
+ 1140 0082 3B       		.uleb128 0x3b
+ 1141 0083 0B       		.uleb128 0xb
+ 1142 0084 01       		.uleb128 0x1
+ 1143 0085 13       		.uleb128 0x13
+ 1144 0086 00       		.byte	0
+ 1145 0087 00       		.byte	0
+ 1146 0088 0D       		.uleb128 0xd
+ 1147 0089 0D       		.uleb128 0xd
+ 1148 008a 00       		.byte	0
+ 1149 008b 03       		.uleb128 0x3
+ 1150 008c 0E       		.uleb128 0xe
+ 1151 008d 3A       		.uleb128 0x3a
+ 1152 008e 0B       		.uleb128 0xb
+ 1153 008f 3B       		.uleb128 0x3b
+ 1154 0090 0B       		.uleb128 0xb
+ 1155 0091 49       		.uleb128 0x49
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 25
+
+
+ 1156 0092 13       		.uleb128 0x13
+ 1157 0093 38       		.uleb128 0x38
+ 1158 0094 0B       		.uleb128 0xb
+ 1159 0095 00       		.byte	0
+ 1160 0096 00       		.byte	0
+ 1161 0097 0E       		.uleb128 0xe
+ 1162 0098 01       		.uleb128 0x1
+ 1163 0099 01       		.byte	0x1
+ 1164 009a 49       		.uleb128 0x49
+ 1165 009b 13       		.uleb128 0x13
+ 1166 009c 01       		.uleb128 0x1
+ 1167 009d 13       		.uleb128 0x13
+ 1168 009e 00       		.byte	0
+ 1169 009f 00       		.byte	0
+ 1170 00a0 0F       		.uleb128 0xf
+ 1171 00a1 21       		.uleb128 0x21
+ 1172 00a2 00       		.byte	0
+ 1173 00a3 00       		.byte	0
+ 1174 00a4 00       		.byte	0
+ 1175 00a5 10       		.uleb128 0x10
+ 1176 00a6 26       		.uleb128 0x26
+ 1177 00a7 00       		.byte	0
+ 1178 00a8 49       		.uleb128 0x49
+ 1179 00a9 13       		.uleb128 0x13
+ 1180 00aa 00       		.byte	0
+ 1181 00ab 00       		.byte	0
+ 1182 00ac 11       		.uleb128 0x11
+ 1183 00ad 2E       		.uleb128 0x2e
+ 1184 00ae 01       		.byte	0x1
+ 1185 00af 3F       		.uleb128 0x3f
+ 1186 00b0 19       		.uleb128 0x19
+ 1187 00b1 03       		.uleb128 0x3
+ 1188 00b2 0E       		.uleb128 0xe
+ 1189 00b3 3A       		.uleb128 0x3a
+ 1190 00b4 0B       		.uleb128 0xb
+ 1191 00b5 3B       		.uleb128 0x3b
+ 1192 00b6 0B       		.uleb128 0xb
+ 1193 00b7 27       		.uleb128 0x27
+ 1194 00b8 19       		.uleb128 0x19
+ 1195 00b9 49       		.uleb128 0x49
+ 1196 00ba 13       		.uleb128 0x13
+ 1197 00bb 11       		.uleb128 0x11
+ 1198 00bc 01       		.uleb128 0x1
+ 1199 00bd 12       		.uleb128 0x12
+ 1200 00be 06       		.uleb128 0x6
+ 1201 00bf 40       		.uleb128 0x40
+ 1202 00c0 18       		.uleb128 0x18
+ 1203 00c1 9742     		.uleb128 0x2117
+ 1204 00c3 19       		.uleb128 0x19
+ 1205 00c4 01       		.uleb128 0x1
+ 1206 00c5 13       		.uleb128 0x13
+ 1207 00c6 00       		.byte	0
+ 1208 00c7 00       		.byte	0
+ 1209 00c8 12       		.uleb128 0x12
+ 1210 00c9 05       		.uleb128 0x5
+ 1211 00ca 00       		.byte	0
+ 1212 00cb 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 26
+
+
+ 1213 00cc 08       		.uleb128 0x8
+ 1214 00cd 3A       		.uleb128 0x3a
+ 1215 00ce 0B       		.uleb128 0xb
+ 1216 00cf 3B       		.uleb128 0x3b
+ 1217 00d0 0B       		.uleb128 0xb
+ 1218 00d1 49       		.uleb128 0x49
+ 1219 00d2 13       		.uleb128 0x13
+ 1220 00d3 02       		.uleb128 0x2
+ 1221 00d4 17       		.uleb128 0x17
+ 1222 00d5 00       		.byte	0
+ 1223 00d6 00       		.byte	0
+ 1224 00d7 13       		.uleb128 0x13
+ 1225 00d8 05       		.uleb128 0x5
+ 1226 00d9 00       		.byte	0
+ 1227 00da 03       		.uleb128 0x3
+ 1228 00db 0E       		.uleb128 0xe
+ 1229 00dc 3A       		.uleb128 0x3a
+ 1230 00dd 0B       		.uleb128 0xb
+ 1231 00de 3B       		.uleb128 0x3b
+ 1232 00df 0B       		.uleb128 0xb
+ 1233 00e0 49       		.uleb128 0x49
+ 1234 00e1 13       		.uleb128 0x13
+ 1235 00e2 02       		.uleb128 0x2
+ 1236 00e3 18       		.uleb128 0x18
+ 1237 00e4 00       		.byte	0
+ 1238 00e5 00       		.byte	0
+ 1239 00e6 14       		.uleb128 0x14
+ 1240 00e7 05       		.uleb128 0x5
+ 1241 00e8 00       		.byte	0
+ 1242 00e9 03       		.uleb128 0x3
+ 1243 00ea 0E       		.uleb128 0xe
+ 1244 00eb 3A       		.uleb128 0x3a
+ 1245 00ec 0B       		.uleb128 0xb
+ 1246 00ed 3B       		.uleb128 0x3b
+ 1247 00ee 0B       		.uleb128 0xb
+ 1248 00ef 49       		.uleb128 0x49
+ 1249 00f0 13       		.uleb128 0x13
+ 1250 00f1 02       		.uleb128 0x2
+ 1251 00f2 17       		.uleb128 0x17
+ 1252 00f3 00       		.byte	0
+ 1253 00f4 00       		.byte	0
+ 1254 00f5 15       		.uleb128 0x15
+ 1255 00f6 34       		.uleb128 0x34
+ 1256 00f7 00       		.byte	0
+ 1257 00f8 03       		.uleb128 0x3
+ 1258 00f9 0E       		.uleb128 0xe
+ 1259 00fa 3A       		.uleb128 0x3a
+ 1260 00fb 0B       		.uleb128 0xb
+ 1261 00fc 3B       		.uleb128 0x3b
+ 1262 00fd 0B       		.uleb128 0xb
+ 1263 00fe 49       		.uleb128 0x49
+ 1264 00ff 13       		.uleb128 0x13
+ 1265 0100 1C       		.uleb128 0x1c
+ 1266 0101 0D       		.uleb128 0xd
+ 1267 0102 00       		.byte	0
+ 1268 0103 00       		.byte	0
+ 1269 0104 16       		.uleb128 0x16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 27
+
+
+ 1270 0105 0B       		.uleb128 0xb
+ 1271 0106 01       		.byte	0x1
+ 1272 0107 11       		.uleb128 0x11
+ 1273 0108 01       		.uleb128 0x1
+ 1274 0109 12       		.uleb128 0x12
+ 1275 010a 06       		.uleb128 0x6
+ 1276 010b 00       		.byte	0
+ 1277 010c 00       		.byte	0
+ 1278 010d 17       		.uleb128 0x17
+ 1279 010e 34       		.uleb128 0x34
+ 1280 010f 00       		.byte	0
+ 1281 0110 03       		.uleb128 0x3
+ 1282 0111 08       		.uleb128 0x8
+ 1283 0112 3A       		.uleb128 0x3a
+ 1284 0113 0B       		.uleb128 0xb
+ 1285 0114 3B       		.uleb128 0x3b
+ 1286 0115 0B       		.uleb128 0xb
+ 1287 0116 49       		.uleb128 0x49
+ 1288 0117 13       		.uleb128 0x13
+ 1289 0118 02       		.uleb128 0x2
+ 1290 0119 17       		.uleb128 0x17
+ 1291 011a 00       		.byte	0
+ 1292 011b 00       		.byte	0
+ 1293 011c 18       		.uleb128 0x18
+ 1294 011d 2E       		.uleb128 0x2e
+ 1295 011e 01       		.byte	0x1
+ 1296 011f 3F       		.uleb128 0x3f
+ 1297 0120 19       		.uleb128 0x19
+ 1298 0121 03       		.uleb128 0x3
+ 1299 0122 0E       		.uleb128 0xe
+ 1300 0123 3A       		.uleb128 0x3a
+ 1301 0124 0B       		.uleb128 0xb
+ 1302 0125 3B       		.uleb128 0x3b
+ 1303 0126 0B       		.uleb128 0xb
+ 1304 0127 27       		.uleb128 0x27
+ 1305 0128 19       		.uleb128 0x19
+ 1306 0129 49       		.uleb128 0x49
+ 1307 012a 13       		.uleb128 0x13
+ 1308 012b 11       		.uleb128 0x11
+ 1309 012c 01       		.uleb128 0x1
+ 1310 012d 12       		.uleb128 0x12
+ 1311 012e 06       		.uleb128 0x6
+ 1312 012f 40       		.uleb128 0x40
+ 1313 0130 18       		.uleb128 0x18
+ 1314 0131 9642     		.uleb128 0x2116
+ 1315 0133 19       		.uleb128 0x19
+ 1316 0134 00       		.byte	0
+ 1317 0135 00       		.byte	0
+ 1318 0136 19       		.uleb128 0x19
+ 1319 0137 34       		.uleb128 0x34
+ 1320 0138 00       		.byte	0
+ 1321 0139 03       		.uleb128 0x3
+ 1322 013a 0E       		.uleb128 0xe
+ 1323 013b 3A       		.uleb128 0x3a
+ 1324 013c 0B       		.uleb128 0xb
+ 1325 013d 3B       		.uleb128 0x3b
+ 1326 013e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 28
+
+
+ 1327 013f 49       		.uleb128 0x49
+ 1328 0140 13       		.uleb128 0x13
+ 1329 0141 02       		.uleb128 0x2
+ 1330 0142 17       		.uleb128 0x17
+ 1331 0143 00       		.byte	0
+ 1332 0144 00       		.byte	0
+ 1333 0145 1A       		.uleb128 0x1a
+ 1334 0146 34       		.uleb128 0x34
+ 1335 0147 00       		.byte	0
+ 1336 0148 03       		.uleb128 0x3
+ 1337 0149 0E       		.uleb128 0xe
+ 1338 014a 3A       		.uleb128 0x3a
+ 1339 014b 0B       		.uleb128 0xb
+ 1340 014c 3B       		.uleb128 0x3b
+ 1341 014d 0B       		.uleb128 0xb
+ 1342 014e 49       		.uleb128 0x49
+ 1343 014f 13       		.uleb128 0x13
+ 1344 0150 02       		.uleb128 0x2
+ 1345 0151 18       		.uleb128 0x18
+ 1346 0152 00       		.byte	0
+ 1347 0153 00       		.byte	0
+ 1348 0154 1B       		.uleb128 0x1b
+ 1349 0155 0B       		.uleb128 0xb
+ 1350 0156 01       		.byte	0x1
+ 1351 0157 11       		.uleb128 0x11
+ 1352 0158 01       		.uleb128 0x1
+ 1353 0159 12       		.uleb128 0x12
+ 1354 015a 06       		.uleb128 0x6
+ 1355 015b 01       		.uleb128 0x1
+ 1356 015c 13       		.uleb128 0x13
+ 1357 015d 00       		.byte	0
+ 1358 015e 00       		.byte	0
+ 1359 015f 1C       		.uleb128 0x1c
+ 1360 0160 898201   		.uleb128 0x4109
+ 1361 0163 00       		.byte	0
+ 1362 0164 11       		.uleb128 0x11
+ 1363 0165 01       		.uleb128 0x1
+ 1364 0166 9342     		.uleb128 0x2113
+ 1365 0168 18       		.uleb128 0x18
+ 1366 0169 00       		.byte	0
+ 1367 016a 00       		.byte	0
+ 1368 016b 1D       		.uleb128 0x1d
+ 1369 016c 898201   		.uleb128 0x4109
+ 1370 016f 01       		.byte	0x1
+ 1371 0170 11       		.uleb128 0x11
+ 1372 0171 01       		.uleb128 0x1
+ 1373 0172 31       		.uleb128 0x31
+ 1374 0173 13       		.uleb128 0x13
+ 1375 0174 00       		.byte	0
+ 1376 0175 00       		.byte	0
+ 1377 0176 1E       		.uleb128 0x1e
+ 1378 0177 8A8201   		.uleb128 0x410a
+ 1379 017a 00       		.byte	0
+ 1380 017b 02       		.uleb128 0x2
+ 1381 017c 18       		.uleb128 0x18
+ 1382 017d 9142     		.uleb128 0x2111
+ 1383 017f 18       		.uleb128 0x18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 29
+
+
+ 1384 0180 00       		.byte	0
+ 1385 0181 00       		.byte	0
+ 1386 0182 00       		.byte	0
+ 1387              		.section	.debug_loc,"",%progbits
+ 1388              	.Ldebug_loc0:
+ 1389              	.LLST0:
+ 1390 0000 00000000 		.4byte	.LVL0
+ 1391 0004 12000000 		.4byte	.LVL2
+ 1392 0008 0100     		.2byte	0x1
+ 1393 000a 50       		.byte	0x50
+ 1394 000b 12000000 		.4byte	.LVL2
+ 1395 000f 14000000 		.4byte	.LFE0
+ 1396 0013 0400     		.2byte	0x4
+ 1397 0015 F3       		.byte	0xf3
+ 1398 0016 01       		.uleb128 0x1
+ 1399 0017 50       		.byte	0x50
+ 1400 0018 9F       		.byte	0x9f
+ 1401 0019 00000000 		.4byte	0
+ 1402 001d 00000000 		.4byte	0
+ 1403              	.LLST1:
+ 1404 0021 00000000 		.4byte	.LVL0
+ 1405 0025 0A000000 		.4byte	.LVL1
+ 1406 0029 0100     		.2byte	0x1
+ 1407 002b 53       		.byte	0x53
+ 1408 002c 0A000000 		.4byte	.LVL1
+ 1409 0030 12000000 		.4byte	.LVL2
+ 1410 0034 0200     		.2byte	0x2
+ 1411 0036 70       		.byte	0x70
+ 1412 0037 08       		.sleb128 8
+ 1413 0038 12000000 		.4byte	.LVL2
+ 1414 003c 14000000 		.4byte	.LFE0
+ 1415 0040 0500     		.2byte	0x5
+ 1416 0042 F3       		.byte	0xf3
+ 1417 0043 01       		.uleb128 0x1
+ 1418 0044 50       		.byte	0x50
+ 1419 0045 23       		.byte	0x23
+ 1420 0046 08       		.uleb128 0x8
+ 1421 0047 00000000 		.4byte	0
+ 1422 004b 00000000 		.4byte	0
+ 1423              	.LLST2:
+ 1424 004f 00000000 		.4byte	.LVL3
+ 1425 0053 14000000 		.4byte	.LVL6
+ 1426 0057 0100     		.2byte	0x1
+ 1427 0059 50       		.byte	0x50
+ 1428 005a 14000000 		.4byte	.LVL6
+ 1429 005e 16000000 		.4byte	.LVL7
+ 1430 0062 0400     		.2byte	0x4
+ 1431 0064 F3       		.byte	0xf3
+ 1432 0065 01       		.uleb128 0x1
+ 1433 0066 50       		.byte	0x50
+ 1434 0067 9F       		.byte	0x9f
+ 1435 0068 16000000 		.4byte	.LVL7
+ 1436 006c 22000000 		.4byte	.LVL10
+ 1437 0070 0100     		.2byte	0x1
+ 1438 0072 50       		.byte	0x50
+ 1439 0073 22000000 		.4byte	.LVL10
+ 1440 0077 26000000 		.4byte	.LFE1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 30
+
+
+ 1441 007b 0400     		.2byte	0x4
+ 1442 007d F3       		.byte	0xf3
+ 1443 007e 01       		.uleb128 0x1
+ 1444 007f 50       		.byte	0x50
+ 1445 0080 9F       		.byte	0x9f
+ 1446 0081 00000000 		.4byte	0
+ 1447 0085 00000000 		.4byte	0
+ 1448              	.LLST3:
+ 1449 0089 02000000 		.4byte	.LVL4
+ 1450 008d 06000000 		.4byte	.LVL5
+ 1451 0091 0200     		.2byte	0x2
+ 1452 0093 30       		.byte	0x30
+ 1453 0094 9F       		.byte	0x9f
+ 1454 0095 06000000 		.4byte	.LVL5
+ 1455 0099 18000000 		.4byte	.LVL8
+ 1456 009d 0100     		.2byte	0x1
+ 1457 009f 53       		.byte	0x53
+ 1458 00a0 1A000000 		.4byte	.LVL9
+ 1459 00a4 26000000 		.4byte	.LFE1
+ 1460 00a8 0100     		.2byte	0x1
+ 1461 00aa 53       		.byte	0x53
+ 1462 00ab 00000000 		.4byte	0
+ 1463 00af 00000000 		.4byte	0
+ 1464              	.LLST4:
+ 1465 00b3 00000000 		.4byte	.LVL11
+ 1466 00b7 16000000 		.4byte	.LVL15
+ 1467 00bb 0100     		.2byte	0x1
+ 1468 00bd 50       		.byte	0x50
+ 1469 00be 16000000 		.4byte	.LVL15
+ 1470 00c2 FE000000 		.4byte	.LFE2
+ 1471 00c6 0100     		.2byte	0x1
+ 1472 00c8 55       		.byte	0x55
+ 1473 00c9 00000000 		.4byte	0
+ 1474 00cd 00000000 		.4byte	0
+ 1475              	.LLST5:
+ 1476 00d1 00000000 		.4byte	.LVL11
+ 1477 00d5 14000000 		.4byte	.LVL14
+ 1478 00d9 0100     		.2byte	0x1
+ 1479 00db 51       		.byte	0x51
+ 1480 00dc 14000000 		.4byte	.LVL14
+ 1481 00e0 FE000000 		.4byte	.LFE2
+ 1482 00e4 0400     		.2byte	0x4
+ 1483 00e6 F3       		.byte	0xf3
+ 1484 00e7 01       		.uleb128 0x1
+ 1485 00e8 51       		.byte	0x51
+ 1486 00e9 9F       		.byte	0x9f
+ 1487 00ea 00000000 		.4byte	0
+ 1488 00ee 00000000 		.4byte	0
+ 1489              	.LLST6:
+ 1490 00f2 0A000000 		.4byte	.LVL12
+ 1491 00f6 4E000000 		.4byte	.LVL21
+ 1492 00fa 0200     		.2byte	0x2
+ 1493 00fc 30       		.byte	0x30
+ 1494 00fd 9F       		.byte	0x9f
+ 1495 00fe 66000000 		.4byte	.LVL22
+ 1496 0102 69000000 		.4byte	.LVL23-1
+ 1497 0106 0100     		.2byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 31
+
+
+ 1498 0108 53       		.byte	0x53
+ 1499 0109 E8000000 		.4byte	.LVL41
+ 1500 010d F8000000 		.4byte	.LVL46
+ 1501 0111 0200     		.2byte	0x2
+ 1502 0113 30       		.byte	0x30
+ 1503 0114 9F       		.byte	0x9f
+ 1504 0115 00000000 		.4byte	0
+ 1505 0119 00000000 		.4byte	0
+ 1506              	.LLST7:
+ 1507 011d 0A000000 		.4byte	.LVL12
+ 1508 0121 4E000000 		.4byte	.LVL21
+ 1509 0125 0200     		.2byte	0x2
+ 1510 0127 30       		.byte	0x30
+ 1511 0128 9F       		.byte	0x9f
+ 1512 0129 80000000 		.4byte	.LVL24
+ 1513 012d 82000000 		.4byte	.LVL25
+ 1514 0131 0100     		.2byte	0x1
+ 1515 0133 53       		.byte	0x53
+ 1516 0134 82000000 		.4byte	.LVL25
+ 1517 0138 84000000 		.4byte	.LVL26
+ 1518 013c 0700     		.2byte	0x7
+ 1519 013e 76       		.byte	0x76
+ 1520 013f 00       		.sleb128 0
+ 1521 0140 71       		.byte	0x71
+ 1522 0141 00       		.sleb128 0
+ 1523 0142 22       		.byte	0x22
+ 1524 0143 23       		.byte	0x23
+ 1525 0144 08       		.uleb128 0x8
+ 1526 0145 84000000 		.4byte	.LVL26
+ 1527 0149 8C000000 		.4byte	.LVL29
+ 1528 014d 0200     		.2byte	0x2
+ 1529 014f 73       		.byte	0x73
+ 1530 0150 08       		.sleb128 8
+ 1531 0151 8C000000 		.4byte	.LVL29
+ 1532 0155 92000000 		.4byte	.LVL30
+ 1533 0159 0700     		.2byte	0x7
+ 1534 015b 76       		.byte	0x76
+ 1535 015c 00       		.sleb128 0
+ 1536 015d 71       		.byte	0x71
+ 1537 015e 00       		.sleb128 0
+ 1538 015f 22       		.byte	0x22
+ 1539 0160 23       		.byte	0x23
+ 1540 0161 08       		.uleb128 0x8
+ 1541 0162 92000000 		.4byte	.LVL30
+ 1542 0166 CD000000 		.4byte	.LVL36-1
+ 1543 016a 0E00     		.2byte	0xe
+ 1544 016c 74       		.byte	0x74
+ 1545 016d 00       		.sleb128 0
+ 1546 016e 31       		.byte	0x31
+ 1547 016f 24       		.byte	0x24
+ 1548 0170 74       		.byte	0x74
+ 1549 0171 00       		.sleb128 0
+ 1550 0172 22       		.byte	0x22
+ 1551 0173 32       		.byte	0x32
+ 1552 0174 24       		.byte	0x24
+ 1553 0175 76       		.byte	0x76
+ 1554 0176 00       		.sleb128 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 32
+
+
+ 1555 0177 22       		.byte	0x22
+ 1556 0178 23       		.byte	0x23
+ 1557 0179 08       		.uleb128 0x8
+ 1558 017a CD000000 		.4byte	.LVL36-1
+ 1559 017e DA000000 		.4byte	.LVL38
+ 1560 0182 0200     		.2byte	0x2
+ 1561 0184 91       		.byte	0x91
+ 1562 0185 54       		.sleb128 -44
+ 1563 0186 E8000000 		.4byte	.LVL41
+ 1564 018a F8000000 		.4byte	.LVL46
+ 1565 018e 0200     		.2byte	0x2
+ 1566 0190 30       		.byte	0x30
+ 1567 0191 9F       		.byte	0x9f
+ 1568 0192 00000000 		.4byte	0
+ 1569 0196 00000000 		.4byte	0
+ 1570              	.LLST8:
+ 1571 019a 0A000000 		.4byte	.LVL12
+ 1572 019e 4E000000 		.4byte	.LVL21
+ 1573 01a2 0200     		.2byte	0x2
+ 1574 01a4 30       		.byte	0x30
+ 1575 01a5 9F       		.byte	0x9f
+ 1576 01a6 4E000000 		.4byte	.LVL21
+ 1577 01aa E8000000 		.4byte	.LVL41
+ 1578 01ae 0200     		.2byte	0x2
+ 1579 01b0 91       		.byte	0x91
+ 1580 01b1 4C       		.sleb128 -52
+ 1581 01b2 E8000000 		.4byte	.LVL41
+ 1582 01b6 F8000000 		.4byte	.LVL46
+ 1583 01ba 0200     		.2byte	0x2
+ 1584 01bc 30       		.byte	0x30
+ 1585 01bd 9F       		.byte	0x9f
+ 1586 01be 00000000 		.4byte	0
+ 1587 01c2 00000000 		.4byte	0
+ 1588              	.LLST9:
+ 1589 01c6 0A000000 		.4byte	.LVL12
+ 1590 01ca 4E000000 		.4byte	.LVL21
+ 1591 01ce 0200     		.2byte	0x2
+ 1592 01d0 30       		.byte	0x30
+ 1593 01d1 9F       		.byte	0x9f
+ 1594 01d2 4E000000 		.4byte	.LVL21
+ 1595 01d6 92000000 		.4byte	.LVL30
+ 1596 01da 0200     		.2byte	0x2
+ 1597 01dc 91       		.byte	0x91
+ 1598 01dd 50       		.sleb128 -48
+ 1599 01de 92000000 		.4byte	.LVL30
+ 1600 01e2 DA000000 		.4byte	.LVL38
+ 1601 01e6 0100     		.2byte	0x1
+ 1602 01e8 5B       		.byte	0x5b
+ 1603 01e9 DA000000 		.4byte	.LVL38
+ 1604 01ed E8000000 		.4byte	.LVL41
+ 1605 01f1 0200     		.2byte	0x2
+ 1606 01f3 91       		.byte	0x91
+ 1607 01f4 50       		.sleb128 -48
+ 1608 01f5 E8000000 		.4byte	.LVL41
+ 1609 01f9 F8000000 		.4byte	.LVL46
+ 1610 01fd 0200     		.2byte	0x2
+ 1611 01ff 30       		.byte	0x30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 33
+
+
+ 1612 0200 9F       		.byte	0x9f
+ 1613 0201 00000000 		.4byte	0
+ 1614 0205 00000000 		.4byte	0
+ 1615              	.LLST10:
+ 1616 0209 0E000000 		.4byte	.LVL13
+ 1617 020d 4E000000 		.4byte	.LVL21
+ 1618 0211 0100     		.2byte	0x1
+ 1619 0213 58       		.byte	0x58
+ 1620 0214 4E000000 		.4byte	.LVL21
+ 1621 0218 E8000000 		.4byte	.LVL41
+ 1622 021c 0100     		.2byte	0x1
+ 1623 021e 57       		.byte	0x57
+ 1624 021f E8000000 		.4byte	.LVL41
+ 1625 0223 F8000000 		.4byte	.LVL46
+ 1626 0227 0100     		.2byte	0x1
+ 1627 0229 58       		.byte	0x58
+ 1628 022a 00000000 		.4byte	0
+ 1629 022e 00000000 		.4byte	0
+ 1630              	.LLST11:
+ 1631 0232 1A000000 		.4byte	.LVL16
+ 1632 0236 4E000000 		.4byte	.LVL21
+ 1633 023a 0100     		.2byte	0x1
+ 1634 023c 50       		.byte	0x50
+ 1635 023d E8000000 		.4byte	.LVL41
+ 1636 0241 EC000000 		.4byte	.LVL42
+ 1637 0245 0100     		.2byte	0x1
+ 1638 0247 50       		.byte	0x50
+ 1639 0248 EE000000 		.4byte	.LVL43
+ 1640 024c F2000000 		.4byte	.LVL44
+ 1641 0250 0100     		.2byte	0x1
+ 1642 0252 50       		.byte	0x50
+ 1643 0253 F4000000 		.4byte	.LVL45
+ 1644 0257 F8000000 		.4byte	.LVL46
+ 1645 025b 0100     		.2byte	0x1
+ 1646 025d 50       		.byte	0x50
+ 1647 025e 00000000 		.4byte	0
+ 1648 0262 00000000 		.4byte	0
+ 1649              	.LLST12:
+ 1650 0266 2C000000 		.4byte	.LVL17
+ 1651 026a E8000000 		.4byte	.LVL41
+ 1652 026e 0100     		.2byte	0x1
+ 1653 0270 56       		.byte	0x56
+ 1654 0271 EE000000 		.4byte	.LVL43
+ 1655 0275 F8000000 		.4byte	.LVL46
+ 1656 0279 0100     		.2byte	0x1
+ 1657 027b 56       		.byte	0x56
+ 1658 027c 00000000 		.4byte	0
+ 1659 0280 00000000 		.4byte	0
+ 1660              	.LLST13:
+ 1661 0284 2C000000 		.4byte	.LVL17
+ 1662 0288 34000000 		.4byte	.LVL18
+ 1663 028c 0200     		.2byte	0x2
+ 1664 028e 30       		.byte	0x30
+ 1665 028f 9F       		.byte	0x9f
+ 1666 0290 34000000 		.4byte	.LVL18
+ 1667 0294 36000000 		.4byte	.LVL19
+ 1668 0298 0100     		.2byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 34
+
+
+ 1669 029a 59       		.byte	0x59
+ 1670 029b 36000000 		.4byte	.LVL19
+ 1671 029f 3A000000 		.4byte	.LVL20
+ 1672 02a3 0200     		.2byte	0x2
+ 1673 02a5 30       		.byte	0x30
+ 1674 02a6 9F       		.byte	0x9f
+ 1675 02a7 3A000000 		.4byte	.LVL20
+ 1676 02ab E8000000 		.4byte	.LVL41
+ 1677 02af 0100     		.2byte	0x1
+ 1678 02b1 59       		.byte	0x59
+ 1679 02b2 EE000000 		.4byte	.LVL43
+ 1680 02b6 F8000000 		.4byte	.LVL46
+ 1681 02ba 0100     		.2byte	0x1
+ 1682 02bc 59       		.byte	0x59
+ 1683 02bd 00000000 		.4byte	0
+ 1684 02c1 00000000 		.4byte	0
+ 1685              	.LLST14:
+ 1686 02c5 4E000000 		.4byte	.LVL21
+ 1687 02c9 DC000000 		.4byte	.LVL39
+ 1688 02cd 0100     		.2byte	0x1
+ 1689 02cf 54       		.byte	0x54
+ 1690 02d0 DE000000 		.4byte	.LVL40
+ 1691 02d4 E8000000 		.4byte	.LVL41
+ 1692 02d8 0100     		.2byte	0x1
+ 1693 02da 54       		.byte	0x54
+ 1694 02db 00000000 		.4byte	0
+ 1695 02df 00000000 		.4byte	0
+ 1696              	.LLST15:
+ 1697 02e3 8A000000 		.4byte	.LVL28
+ 1698 02e7 CD000000 		.4byte	.LVL36-1
+ 1699 02eb 0100     		.2byte	0x1
+ 1700 02ed 5C       		.byte	0x5c
+ 1701 02ee 00000000 		.4byte	0
+ 1702 02f2 00000000 		.4byte	0
+ 1703              	.LLST16:
+ 1704 02f6 8A000000 		.4byte	.LVL28
+ 1705 02fa 92000000 		.4byte	.LVL30
+ 1706 02fe 0200     		.2byte	0x2
+ 1707 0300 30       		.byte	0x30
+ 1708 0301 9F       		.byte	0x9f
+ 1709 0302 92000000 		.4byte	.LVL30
+ 1710 0306 BE000000 		.4byte	.LVL33
+ 1711 030a 0100     		.2byte	0x1
+ 1712 030c 53       		.byte	0x53
+ 1713 030d C0000000 		.4byte	.LVL34
+ 1714 0311 C6000000 		.4byte	.LVL35
+ 1715 0315 0100     		.2byte	0x1
+ 1716 0317 53       		.byte	0x53
+ 1717 0318 00000000 		.4byte	0
+ 1718 031c 00000000 		.4byte	0
+ 1719              		.section	.debug_aranges,"",%progbits
+ 1720 0000 2C000000 		.4byte	0x2c
+ 1721 0004 0200     		.2byte	0x2
+ 1722 0006 00000000 		.4byte	.Ldebug_info0
+ 1723 000a 04       		.byte	0x4
+ 1724 000b 00       		.byte	0
+ 1725 000c 0000     		.2byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 35
+
+
+ 1726 000e 0000     		.2byte	0
+ 1727 0010 00000000 		.4byte	.LFB0
+ 1728 0014 14000000 		.4byte	.LFE0-.LFB0
+ 1729 0018 00000000 		.4byte	.LFB1
+ 1730 001c 26000000 		.4byte	.LFE1-.LFB1
+ 1731 0020 00000000 		.4byte	.LFB2
+ 1732 0024 FE000000 		.4byte	.LFE2-.LFB2
+ 1733 0028 00000000 		.4byte	0
+ 1734 002c 00000000 		.4byte	0
+ 1735              		.section	.debug_ranges,"",%progbits
+ 1736              	.Ldebug_ranges0:
+ 1737 0000 00000000 		.4byte	.LFB0
+ 1738 0004 14000000 		.4byte	.LFE0
+ 1739 0008 00000000 		.4byte	.LFB1
+ 1740 000c 26000000 		.4byte	.LFE1
+ 1741 0010 00000000 		.4byte	.LFB2
+ 1742 0014 FE000000 		.4byte	.LFE2
+ 1743 0018 00000000 		.4byte	0
+ 1744 001c 00000000 		.4byte	0
+ 1745              		.section	.debug_line,"",%progbits
+ 1746              	.Ldebug_line0:
+ 1747 0000 18010000 		.section	.debug_str,"MS",%progbits,1
+ 1747      02006500 
+ 1747      00000201 
+ 1747      FB0E0D00 
+ 1747      01010101 
+ 1748              	.LASF45:
+ 1749 0000 45565F32 		.ascii	"EV_250MS\000"
+ 1749      35304D53 
+ 1749      00
+ 1750              	.LASF79:
+ 1751 0009 72657375 		.ascii	"result\000"
+ 1751      6C7400
+ 1752              	.LASF28:
+ 1753 0010 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1753      52524F52 
+ 1753      5F524541 
+ 1753      445F4F4E 
+ 1753      4C5900
+ 1754              	.LASF14:
+ 1755 0023 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1755      55434345 
+ 1755      535300
+ 1756              	.LASF42:
+ 1757 002e 45565F4B 		.ascii	"EV_KEYRIGHT\000"
+ 1757      45595249 
+ 1757      47485400 
+ 1758              	.LASF67:
+ 1759 003a 53544154 		.ascii	"STATE_stateOuterTransition_t\000"
+ 1759      455F7374 
+ 1759      6174654F 
+ 1759      75746572 
+ 1759      5472616E 
+ 1760              	.LASF56:
+ 1761 0057 53544154 		.ascii	"STATE_state_t\000"
+ 1761      455F7374 
+ 1761      6174655F 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 36
+
+
+ 1761      7400
+ 1762              	.LASF29:
+ 1763 0065 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1763      52524F52 
+ 1763      5F575249 
+ 1763      54455F4F 
+ 1763      4E4C5900 
+ 1764              	.LASF61:
+ 1765 0079 67756172 		.ascii	"guard\000"
+ 1765      6400
+ 1766              	.LASF2:
+ 1767 007f 73686F72 		.ascii	"short int\000"
+ 1767      7420696E 
+ 1767      7400
+ 1768              	.LASF89:
+ 1769 0089 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\EAA\\ElectronicClock\\"
+ 1769      73657273 
+ 1769      5C7A616B 
+ 1769      69735C44 
+ 1769      6F63756D 
+ 1770 00b6 4C616232 		.ascii	"Lab2\\ElectronicClock.cydsn\000"
+ 1770      5C456C65 
+ 1770      6374726F 
+ 1770      6E696343 
+ 1770      6C6F636B 
+ 1771              	.LASF32:
+ 1772 00d1 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1772      52524F52 
+ 1772      5F575249 
+ 1772      54455F46 
+ 1772      41494C53 
+ 1773              	.LASF53:
+ 1774 00e6 434C4F43 		.ascii	"CLOCK_W_ISDISPPLAYING\000"
+ 1774      4B5F575F 
+ 1774      49534449 
+ 1774      5350504C 
+ 1774      4159494E 
+ 1775              	.LASF17:
+ 1776 00fc 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1776      52524F52 
+ 1776      5F5A4552 
+ 1776      4F00
+ 1777              	.LASF31:
+ 1778 010a 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1778      52524F52 
+ 1778      5F524541 
+ 1778      445F4641 
+ 1778      494C5300 
+ 1779              	.LASF81:
+ 1780 011e 6163456E 		.ascii	"acEntry\000"
+ 1780      74727900 
+ 1781              	.LASF52:
+ 1782 0126 434C4F43 		.ascii	"CLOCK_C_ISEDITINGMINUTES\000"
+ 1782      4B5F435F 
+ 1782      49534544 
+ 1782      4954494E 
+ 1782      474D494E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 37
+
+
+ 1783              	.LASF59:
+ 1784 013f 6576656E 		.ascii	"event\000"
+ 1784      7400
+ 1785              	.LASF72:
+ 1786 0145 7472616E 		.ascii	"transitionTable\000"
+ 1786      73697469 
+ 1786      6F6E5461 
+ 1786      626C6500 
+ 1787              	.LASF82:
+ 1788 0155 61634578 		.ascii	"acExit\000"
+ 1788      697400
+ 1789              	.LASF88:
+ 1790 015c 736F7572 		.ascii	"source\\bsw\\statemachine.c\000"
+ 1790      63655C62 
+ 1790      73775C73 
+ 1790      74617465 
+ 1790      6D616368 
+ 1791              	.LASF84:
+ 1792 0176 696E6465 		.ascii	"index\000"
+ 1792      7800
+ 1793              	.LASF37:
+ 1794 017c 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 1794      52524F52 
+ 1794      5F494E56 
+ 1794      414C4944 
+ 1794      5F535441 
+ 1795              	.LASF44:
+ 1796 0193 45565F31 		.ascii	"EV_1MIN\000"
+ 1796      4D494E00 
+ 1797              	.LASF19:
+ 1798 019b 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1798      52524F52 
+ 1798      5F52414E 
+ 1798      474500
+ 1799              	.LASF57:
+ 1800 01aa 53544154 		.ascii	"STATE_ActionPtr_t\000"
+ 1800      455F4163 
+ 1800      74696F6E 
+ 1800      5074725F 
+ 1800      7400
+ 1801              	.LASF8:
+ 1802 01bc 666C6F61 		.ascii	"float\000"
+ 1802      7400
+ 1803              	.LASF77:
+ 1804 01c2 53544154 		.ascii	"STATE_init\000"
+ 1804      455F696E 
+ 1804      697400
+ 1805              	.LASF39:
+ 1806 01cd 52435F45 		.ascii	"RC_ERROR_NOT_IMPLEMENTED\000"
+ 1806      52524F52 
+ 1806      5F4E4F54 
+ 1806      5F494D50 
+ 1806      4C454D45 
+ 1807              	.LASF10:
+ 1808 01e6 6C6F6E67 		.ascii	"long long int\000"
+ 1808      206C6F6E 
+ 1808      6720696E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 38
+
+
+ 1808      7400
+ 1809              	.LASF73:
+ 1810 01f4 7472616E 		.ascii	"transitionTableSize\000"
+ 1810      73697469 
+ 1810      6F6E5461 
+ 1810      626C6553 
+ 1810      697A6500 
+ 1811              	.LASF33:
+ 1812 0208 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1812      52524F52 
+ 1812      5F4E4F54 
+ 1812      5F4D4154 
+ 1812      434800
+ 1813              	.LASF38:
+ 1814 021b 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1814      52524F52 
+ 1814      5F554E4B 
+ 1814      4E4F574E 
+ 1814      00
+ 1815              	.LASF3:
+ 1816 022c 73696E74 		.ascii	"sint16_t\000"
+ 1816      31365F74 
+ 1816      00
+ 1817              	.LASF6:
+ 1818 0235 6C6F6E67 		.ascii	"long int\000"
+ 1818      20696E74 
+ 1818      00
+ 1819              	.LASF21:
+ 1820 023e 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1820      52524F52 
+ 1820      5F554E44 
+ 1820      45525255 
+ 1820      4E00
+ 1821              	.LASF24:
+ 1822 0250 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1822      52524F52 
+ 1822      5F425553 
+ 1822      5900
+ 1823              	.LASF70:
+ 1824 025e 61637469 		.ascii	"actionExit\000"
+ 1824      6F6E4578 
+ 1824      697400
+ 1825              	.LASF30:
+ 1826 0269 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1826      52524F52 
+ 1826      5F494E56 
+ 1826      414C4944 
+ 1826      00
+ 1827              	.LASF35:
+ 1828 027a 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1828      52524F52 
+ 1828      5F424144 
+ 1828      5F444154 
+ 1828      4100
+ 1829              	.LASF12:
+ 1830 028c 626F6F6C 		.ascii	"boolean_t\000"
+ 1830      65616E5F 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 39
+
+
+ 1830      7400
+ 1831              	.LASF68:
+ 1832 0296 73746174 		.ascii	"state\000"
+ 1832      6500
+ 1833              	.LASF74:
+ 1834 029c 61637469 		.ascii	"actionTable\000"
+ 1834      6F6E5461 
+ 1834      626C6500 
+ 1835              	.LASF1:
+ 1836 02a8 756E7369 		.ascii	"unsigned char\000"
+ 1836      676E6564 
+ 1836      20636861 
+ 1836      7200
+ 1837              	.LASF86:
+ 1838 02b6 696E6E65 		.ascii	"innerTableSize\000"
+ 1838      72546162 
+ 1838      6C655369 
+ 1838      7A6500
+ 1839              	.LASF50:
+ 1840 02c5 434C4F43 		.ascii	"CLOCK_C_ISDISPPLAYING\000"
+ 1840      4B5F435F 
+ 1840      49534449 
+ 1840      5350504C 
+ 1840      4159494E 
+ 1841              	.LASF0:
+ 1842 02db 7369676E 		.ascii	"signed char\000"
+ 1842      65642063 
+ 1842      68617200 
+ 1843              	.LASF11:
+ 1844 02e7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1844      206C6F6E 
+ 1844      6720756E 
+ 1844      7369676E 
+ 1844      65642069 
+ 1845              	.LASF48:
+ 1846 02fe 65457665 		.ascii	"eEvent\000"
+ 1846      6E7400
+ 1847              	.LASF55:
+ 1848 0305 434C4F43 		.ascii	"CLOCK_W_ISAUTOINCREMENTING\000"
+ 1848      4B5F575F 
+ 1848      49534155 
+ 1848      544F494E 
+ 1848      4352454D 
+ 1849              	.LASF26:
+ 1850 0320 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1850      52524F52 
+ 1850      5F4F5045 
+ 1850      4E00
+ 1851              	.LASF4:
+ 1852 032e 75696E74 		.ascii	"uint16_t\000"
+ 1852      31365F74 
+ 1852      00
+ 1853              	.LASF47:
+ 1854 0337 53544154 		.ascii	"STATE_event_t\000"
+ 1854      455F6576 
+ 1854      656E745F 
+ 1854      7400
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 40
+
+
+ 1855              	.LASF16:
+ 1856 0345 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1856      52524F52 
+ 1856      5F4E554C 
+ 1856      4C00
+ 1857              	.LASF23:
+ 1858 0353 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 1858      52524F52 
+ 1858      5F425546 
+ 1858      4645525F 
+ 1858      454D5450 
+ 1859              	.LASF58:
+ 1860 0369 53544154 		.ascii	"STATE_GuardPtr_t\000"
+ 1860      455F4775 
+ 1860      61726450 
+ 1860      74725F74 
+ 1860      00
+ 1861              	.LASF5:
+ 1862 037a 73686F72 		.ascii	"short unsigned int\000"
+ 1862      7420756E 
+ 1862      7369676E 
+ 1862      65642069 
+ 1862      6E7400
+ 1863              	.LASF75:
+ 1864 038d 61637469 		.ascii	"actionTableSize\000"
+ 1864      6F6E5461 
+ 1864      626C6553 
+ 1864      697A6500 
+ 1865              	.LASF63:
+ 1866 039d 53544154 		.ascii	"STATE_stateInnerTransition_t\000"
+ 1866      455F7374 
+ 1866      61746549 
+ 1866      6E6E6572 
+ 1866      5472616E 
+ 1867              	.LASF13:
+ 1868 03ba 63686172 		.ascii	"char\000"
+ 1868      00
+ 1869              	.LASF90:
+ 1870 03bf 53544154 		.ascii	"STATE_processEvent\000"
+ 1870      455F7072 
+ 1870      6F636573 
+ 1870      73457665 
+ 1870      6E7400
+ 1871              	.LASF22:
+ 1872 03d2 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1872      52524F52 
+ 1872      5F425546 
+ 1872      4645525F 
+ 1872      46554C4C 
+ 1873              	.LASF83:
+ 1874 03e7 63757272 		.ascii	"currentState\000"
+ 1874      656E7453 
+ 1874      74617465 
+ 1874      00
+ 1875              	.LASF34:
+ 1876 03f4 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1876      52524F52 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 41
+
+
+ 1876      5F424144 
+ 1876      5F504152 
+ 1876      414D00
+ 1877              	.LASF15:
+ 1878 0407 52435F45 		.ascii	"RC_ERROR\000"
+ 1878      52524F52 
+ 1878      00
+ 1879              	.LASF51:
+ 1880 0410 434C4F43 		.ascii	"CLOCK_C_ISEDITINGHOURS\000"
+ 1880      4B5F435F 
+ 1880      49534544 
+ 1880      4954494E 
+ 1880      47484F55 
+ 1881              	.LASF62:
+ 1882 0427 61637469 		.ascii	"actionTransition\000"
+ 1882      6F6E5472 
+ 1882      616E7369 
+ 1882      74696F6E 
+ 1882      00
+ 1883              	.LASF64:
+ 1884 0438 66726F6D 		.ascii	"fromState\000"
+ 1884      53746174 
+ 1884      6500
+ 1885              	.LASF7:
+ 1886 0442 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1886      20756E73 
+ 1886      69676E65 
+ 1886      6420696E 
+ 1886      7400
+ 1887              	.LASF9:
+ 1888 0454 646F7562 		.ascii	"double\000"
+ 1888      6C6500
+ 1889              	.LASF27:
+ 1890 045b 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 1890      52524F52 
+ 1890      5F434845 
+ 1890      434B5355 
+ 1890      4D00
+ 1891              	.LASF66:
+ 1892 046d 73697A65 		.ascii	"size\000"
+ 1892      00
+ 1893              	.LASF20:
+ 1894 0472 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1894      52524F52 
+ 1894      5F4F5645 
+ 1894      5252554E 
+ 1894      00
+ 1895              	.LASF46:
+ 1896 0483 4E4F4E45 		.ascii	"NONE\000"
+ 1896      00
+ 1897              	.LASF43:
+ 1898 0488 45565F4B 		.ascii	"EV_KEYRIGHTLONGPRESS\000"
+ 1898      45595249 
+ 1898      4748544C 
+ 1898      4F4E4750 
+ 1898      52455353 
+ 1899              	.LASF41:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 42
+
+
+ 1900 049d 45565F4B 		.ascii	"EV_KEYLEFT\000"
+ 1900      45594C45 
+ 1900      465400
+ 1901              	.LASF71:
+ 1902 04a8 53544154 		.ascii	"STATE_stateAction_t\000"
+ 1902      455F7374 
+ 1902      61746541 
+ 1902      6374696F 
+ 1902      6E5F7400 
+ 1903              	.LASF36:
+ 1904 04bc 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 1904      52524F52 
+ 1904      5F43414E 
+ 1904      43454C45 
+ 1904      4400
+ 1905              	.LASF69:
+ 1906 04ce 61637469 		.ascii	"actionEntry\000"
+ 1906      6F6E456E 
+ 1906      74727900 
+ 1907              	.LASF85:
+ 1908 04da 70496E6E 		.ascii	"pInnerTable\000"
+ 1908      65725461 
+ 1908      626C6500 
+ 1909              	.LASF76:
+ 1910 04e6 53544154 		.ascii	"STATEMACHINE_t\000"
+ 1910      454D4143 
+ 1910      48494E45 
+ 1910      5F7400
+ 1911              	.LASF87:
+ 1912 04f5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1912      43313120 
+ 1912      352E342E 
+ 1912      31203230 
+ 1912      31363036 
+ 1913 0528 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1913      20726576 
+ 1913      6973696F 
+ 1913      6E203233 
+ 1913      37373135 
+ 1914 055b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1914      66756E63 
+ 1914      74696F6E 
+ 1914      2D736563 
+ 1914      74696F6E 
+ 1915              	.LASF49:
+ 1916 0583 65537461 		.ascii	"eState\000"
+ 1916      746500
+ 1917              	.LASF18:
+ 1918 058a 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 1918      52524F52 
+ 1918      5F4D454D 
+ 1918      4F525900 
+ 1919              	.LASF65:
+ 1920 059a 70496E6E 		.ascii	"pInnerTransitionTable\000"
+ 1920      65725472 
+ 1920      616E7369 
+ 1920      74696F6E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccUepUpg.s 			page 43
+
+
+ 1920      5461626C 
+ 1921              	.LASF78:
+ 1922 05b0 53544154 		.ascii	"STATE__getIndexOfState\000"
+ 1922      455F5F67 
+ 1922      6574496E 
+ 1922      6465784F 
+ 1922      66537461 
+ 1923              	.LASF80:
+ 1924 05c7 61635472 		.ascii	"acTransition\000"
+ 1924      616E7369 
+ 1924      74696F6E 
+ 1924      00
+ 1925              	.LASF54:
+ 1926 05d4 434C4F43 		.ascii	"CLOCK_W_ISEDITING\000"
+ 1926      4B5F575F 
+ 1926      49534544 
+ 1926      4954494E 
+ 1926      4700
+ 1927              	.LASF60:
+ 1928 05e6 746F5374 		.ascii	"toState\000"
+ 1928      61746500 
+ 1929              	.LASF40:
+ 1930 05ee 52435F74 		.ascii	"RC_t\000"
+ 1930      00
+ 1931              	.LASF25:
+ 1932 05f3 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 1932      52524F52 
+ 1932      5F54494D 
+ 1932      455F4F55 
+ 1932      5400
+ 1933              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

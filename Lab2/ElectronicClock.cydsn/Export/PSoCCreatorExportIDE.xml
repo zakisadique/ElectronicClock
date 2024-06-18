@@ -50,6 +50,15 @@
           <File BuildType="BUILD" Toolchain="">source\asw\tsk_display.h</File>
           <File BuildType="BUILD" Toolchain="">source\asw\tsk_input.c</File>
           <File BuildType="BUILD" Toolchain="">source\asw\tsk_input.h</File>
+          <File BuildType="BUILD" Toolchain="">source\asw\statemachine_clock.h</File>
+        </Files>
+      </Folder>
+      <Folder BuildType="STRICT" Path="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
+        <Files Root="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
+          <File BuildType="BUILD" Toolchain="">source\bsw\statemachine_clock.c</File>
+          <File BuildType="BUILD" Toolchain="">source\rte.c</File>
+          <File BuildType="BUILD" Toolchain="">source\rte.h</File>
+          <File BuildType="BUILD" Toolchain="">source\rte_types.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
@@ -58,6 +67,9 @@
           <File BuildType="BUILD" Toolchain="">source\bsw\button.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\derivate.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\global.h</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\statemachine.c</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\statemachine.h</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\statemachine_type.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
@@ -131,13 +143,6 @@
           <File BuildType="BUILD" Toolchain="">source\bsw\Services\logging_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\Services\math_helper.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\Services\ringbuffer.h</File>
-        </Files>
-      </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
-        <Files Root="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">
-          <File BuildType="BUILD" Toolchain="">source\rte.c</File>
-          <File BuildType="BUILD" Toolchain="">source\rte.h</File>
-          <File BuildType="BUILD" Toolchain="">source\rte_types.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn">

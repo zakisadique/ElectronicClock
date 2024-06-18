@@ -44,6 +44,17 @@
 void OUTPUT_updateDataOnTFT_run(RTE_event ev){
 	
 	/* USER CODE START OUTPUT_updateDataOnTFT_run */
+    
+    
+    
+    RTE_SC_CLOCKDATA_pushPort(&SO_CLOCKDATA_signal);
+    
+    SC_CLOCKDATA_data_t output = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &output);
+    
+    output.m_hours.m_updateRequired = FALSE;
+    output.m_minutes.m_updateRequired = FALSE;
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, output);
 
     /* USER CODE END OUTPUT_updateDataOnTFT_run */
 }
@@ -62,6 +73,40 @@ void OUTPUT_updateDataOnTFT_run(RTE_event ev){
 void OUTPUT_blink1s_run(RTE_event ev){
 	
 	/* USER CODE START OUTPUT_blink1s_run */
+    
+    static boolean_t firstUse = TRUE;
+    
+    if (firstUse == TRUE){
+        SC_CLOCKDATA_data_t output = SC_CLOCKDATA_INIT_DATA;
+        RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &output);
+        
+        output.m_hours.m_updateRequired = TRUE;
+        output.m_minutes.m_updateRequired = TRUE;
+        RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, output);
+        
+        
+        firstUse = FALSE;
+    }
+    
+//    RTE_SC_CLOCKDATA_pushPort(&SO_CLOCKDATA_signal);
+ 
+    SC_CLOCKDATA_data_t output = SC_CLOCKDATA_INIT_DATA;
+    RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &output);
+    
+    if (output.m_hours.m_editing == FALSE && output.m_minutes.m_editing == FALSE){
+        output.blink = ~output.blink;
+    
+    } else {
+        output.blink = TRUE;
+    
+    }
+    
+    
+    
+    
+    RTE_SC_CLOCKDATA_set(&SO_CLOCKDATA_signal, output);
+    RTE_SC_CLOCKDATA_pushPort(&SO_CLOCKDATA_signal);
+    
 
     /* USER CODE END OUTPUT_blink1s_run */
 }

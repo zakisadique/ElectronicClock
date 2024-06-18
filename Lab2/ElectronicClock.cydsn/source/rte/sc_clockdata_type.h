@@ -29,6 +29,8 @@ typedef struct {
     boolean_t m_updateRequired;
     uint8_t value;
     boolean_t m_editing;
+    boolean_t isActive;
+    uint8_t maxValue;
 } CLOCK_Widget_t;
 
 /* USER CODE END SC_CLOCKDATA_USERDEFINITIONS */
@@ -41,14 +43,14 @@ struct
     
     CLOCK_Widget_t m_minutes;
     CLOCK_Widget_t m_hours;
-    
+    boolean_t blink;
 } 
 /* USER CODE END SC_CLOCKDATA_SIGNALDATADEFINITION */
 SC_CLOCKDATA_data_t;
 
 /* USER CODE START InitSC_CLOCKDATA */
 //#error "Provide a sensible init value"
-#define SC_CLOCKDATA_INIT_DATA ((SC_CLOCKDATA_data_t){{FALSE, 0, FALSE},{FALSE, 0, FALSE}})
+#define SC_CLOCKDATA_INIT_DATA ((SC_CLOCKDATA_data_t){{TRUE, 0, FALSE, FALSE, 60},{TRUE, 0, FALSE, FALSE, 24}, TRUE})
 /* USER CODE END InitSC_CLOCKDATA */
 
 

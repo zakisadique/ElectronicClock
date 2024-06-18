@@ -46,7 +46,28 @@ TASK(tsk_init)
     UART_Logs_Start();
 
     TFT_init();
-    TFT_setCursor(0, 0);
+    
+//    TFT_setCursor(20, 50);
+//    TFT_setTextSize(3);
+    
+//    uint8_t value = 0;
+//    unsigned char value_char = value + 48;
+//    TFT_drawChar(10, 60, value_char, WHITE, GRAY, 3);
+//    TFT_drawChar(30, 60, value_char, WHITE, GRAY, 3);
+//    TFT_drawChar(55, 60, ':', WHITE, GRAY, 3);
+//    TFT_drawChar(80, 60, value_char, WHITE, GRAY, 3);
+//    TFT_drawChar(100,60, value_char, WHITE, GRAY, 3);
+//    TFT_drawChar(30, 50, value_char, WHITE, GRAY, 3);
+    
+//        uint8_t hours = 0;
+//        
+//        uint8_t hoursFirstDigit = hours / 10;
+////        uint8_t hoursFirstDigit = 0;
+//        TFT_drawChar(10, 60, hoursFirstDigit + 48, WHITE, BLACK, 3);
+//        
+//        uint8_t hoursSecondDigit = hours % 10;
+//        TFT_drawChar(30, 60, hoursSecondDigit + 48, WHITE, BLACK, 3);
+    
     
 
     

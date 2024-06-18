@@ -108,7 +108,7 @@ void INPUT_readButtons_run(RTE_event ev){
 void INPUT_1min_run(RTE_event ev){
 	
 	/* USER CODE START INPUT_1sec_run */
-    UART_Logs_PutString("INPUT_1sec_run\n");
+//    UART_Logs_PutString("INPUT_1sec_run\n");
     
     SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
     event.m_event = EV_1MIN;
@@ -134,9 +134,9 @@ void INPUT_250ms_run(RTE_event ev){
 	/* USER CODE START INPUT_250ms_run */
 //    UART_Logs_PutString("INPUT_250ms_run\n");
     
-    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
-    event.m_event = EV_250MS;
-    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+//    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
+//    event.m_event = EV_250MS;
+//    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
 
     /* USER CODE END INPUT_250ms_run */
 }

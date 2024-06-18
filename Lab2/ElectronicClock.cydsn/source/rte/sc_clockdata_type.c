@@ -14,6 +14,7 @@
 #include "rte.h"
 #include "rte_types.h"
 #include "sc_clockdata_type.h"
+#include "tft.h"
 
 
 
@@ -41,7 +42,45 @@ inline RC_t SC_CLOCKDATA_driverOut(const SC_CLOCKDATA_data_t  *const data)
 {
 	/* USER CODE START driverOutSC_CLOCKDATA */
 //#error "Add your code here"
-    //pushport code here
+    
+    uint8_t fontSize = 3;
+    
+    
+    if (data -> m_hours.m_updateRequired == TRUE){
+        TFT_colors_t background = (data -> m_hours.m_editing == TRUE)? GRAY : BLACK;
+        
+        uint8_t hours = data -> m_hours.value;
+        
+        uint8_t hoursFirstDigit = hours / 10;
+        TFT_drawChar(10, 60, hoursFirstDigit + 48, WHITE, background, fontSize);
+        
+        uint8_t hoursSecondDigit = hours % 10;
+        TFT_drawChar(30, 60, hoursSecondDigit + 48, WHITE, background, fontSize);
+        
+        //whoever calls driver out makes it false
+        
+    }
+    
+    
+
+    if (data -> m_minutes.m_updateRequired == TRUE){
+        TFT_colors_t background = (data -> m_minutes.m_editing == TRUE)? GRAY : BLACK;
+        
+        uint8_t minutes = data -> m_minutes.value;
+        
+        uint8_t minutesFirstDigit = minutes / 10;
+        TFT_drawChar(80, 60, minutesFirstDigit + 48, WHITE, background, fontSize);
+        
+        uint8_t minutesSecondDigit = minutes % 10;
+        TFT_drawChar(100, 60, minutesSecondDigit + 48, WHITE, background, fontSize);
+        
+    }
+    
+    if (data ->blink == TRUE){
+        TFT_drawChar(55, 60, ':', WHITE, BLACK, fontSize);
+    } else {
+        TFT_drawChar(55, 60, ' ', WHITE, BLACK, fontSize);
+    }
     
     
 

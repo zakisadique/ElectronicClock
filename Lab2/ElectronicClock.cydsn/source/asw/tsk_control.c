@@ -25,6 +25,8 @@
 
 /* USER CODE START TSK_CONTROL_INCLUDE */
 
+#include "statemachine.h"
+
 /* USER CODE END TSK_CONTROL_INCLUDE */
 
 #include "swc_control.h"

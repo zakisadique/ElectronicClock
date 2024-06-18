@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock\asw\tsk_display.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock\asw\swc_output.c">
 <ExpandedNodeIds>
 <v>Lab2</v>
 <v>Lab2\ElectronicClock</v>
@@ -36,6 +36,8 @@
 <v>Lab2\ElectronicClock\asw</v>
 <v>Lab2\ElectronicClock\asw\cyapicallbacks.h</v>
 <v>Lab2\ElectronicClock\asw\main.c</v>
+<v>Lab2\ElectronicClock\asw\statemachine_clock.c</v>
+<v>Lab2\ElectronicClock\asw\statemachine_clock.h</v>
 <v>Lab2\ElectronicClock\asw\swc_control.c</v>
 <v>Lab2\ElectronicClock\asw\swc_control.h</v>
 <v>Lab2\ElectronicClock\asw\swc_input.c</v>
@@ -115,6 +117,9 @@
 <v>Lab2\ElectronicClock\bsw\button.h</v>
 <v>Lab2\ElectronicClock\bsw\derivate.h</v>
 <v>Lab2\ElectronicClock\bsw\global.h</v>
+<v>Lab2\ElectronicClock\bsw\statemachine.c</v>
+<v>Lab2\ElectronicClock\bsw\statemachine.h</v>
+<v>Lab2\ElectronicClock\bsw\statemachine_type.h</v>
 <v>Lab2\ElectronicClock\rte</v>
 <v>Lab2\ElectronicClock\rte\info.txt</v>
 <v>Lab2\ElectronicClock\rte\rte.c</v>
@@ -154,6 +159,8 @@
 <v>Lab2\ElectronicClock\asw</v>
 <v>Lab2\ElectronicClock\asw\cyapicallbacks.h</v>
 <v>Lab2\ElectronicClock\asw\main.c</v>
+<v>Lab2\ElectronicClock\asw\statemachine_clock.c</v>
+<v>Lab2\ElectronicClock\asw\statemachine_clock.h</v>
 <v>Lab2\ElectronicClock\asw\swc_control.c</v>
 <v>Lab2\ElectronicClock\asw\swc_control.h</v>
 <v>Lab2\ElectronicClock\asw\swc_input.c</v>
@@ -177,6 +184,9 @@
 <v>Lab2\ElectronicClock\bsw\button.h</v>
 <v>Lab2\ElectronicClock\bsw\derivate.h</v>
 <v>Lab2\ElectronicClock\bsw\global.h</v>
+<v>Lab2\ElectronicClock\bsw\statemachine.c</v>
+<v>Lab2\ElectronicClock\bsw\statemachine.h</v>
+<v>Lab2\ElectronicClock\bsw\statemachine_type.h</v>
 <v>Lab2\ElectronicClock\rte</v>
 <v>Lab2\ElectronicClock\rte\info.txt</v>
 <v>Lab2\ElectronicClock\rte\rte.c</v>
@@ -188,11 +198,6 @@
 <v>Lab2\ElectronicClock\rte\sc_buttons_type.h</v>
 <v>Lab2\ElectronicClock\rte\sc_clockdata.c</v>
 <v>Lab2\ElectronicClock\rte\sc_clockdata.h</v>
-<v>Lab2\ElectronicClock\rte\sc_clockdata_type.c</v>
-<v>Lab2\ElectronicClock\rte\sc_clockdata_type.h</v>
-<v>Lab2\ElectronicClock\rte\sc_events.c</v>
-<v>Lab2\ElectronicClock\rte\sc_events.h</v>
-<v>Lab2\ElectronicClock\rte\sc_events_type.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock">
@@ -444,6 +449,8 @@
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_clockdata_type.lst</v>
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_events.lst</v>
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\sp_common.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\statemachine.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\statemachine_clock.lst</v>
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\swc_control.lst</v>
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\swc_input.lst</v>
 <v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\swc_output.lst</v>
@@ -478,58 +485,6 @@
 <VisibleNodeIds>
 <v>Lab2</v>
 <v>Lab2\ElectronicClock</v>
-<v>Lab2\ElectronicClock\CortexM3</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\button.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_1.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_2.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_3.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_4.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK_LED.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_common_ee_hal_structs.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_context.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_system_timer.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_utils.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_activate.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alcancel.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alget.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_algetbase.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetabs.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetrel.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_altick.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_chaintas.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evclear.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evget.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evset.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evwait.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_force_schedule.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getcountervalue.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getelapsedvalue.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskid.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskstate.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_change_context_isr.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_irq_stack.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_multi_context.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_oo.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_iparam.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_irqendin.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lockres.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lookup.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_exchg.lst</v>
-<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_first.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

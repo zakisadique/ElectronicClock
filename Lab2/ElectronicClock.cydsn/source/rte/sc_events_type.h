@@ -15,6 +15,8 @@
 #include "rte_types.h"
 
 /* USER CODE START SC_EVENTS_INCLUDES */
+    
+#include "statemachine_type.h"
 
 /* USER CODE END SC_EVENTS_INCLUDES */
 
@@ -25,14 +27,14 @@
  **********************************************************************/
 
 /* USER CODE START SC_EVENTS_USERDEFINITIONS */
-    typedef enum {
-        EV_KEYLEFT,
-        EV_KEYRIGHT,
-        EV_KEYRIGHTLONGPRESS,
-        EV_1MIN,
-        EV_250MS,
-        NONE
-    } EVENT_t;
+//    typedef enum {
+//        EV_KEYLEFT,
+//        EV_KEYRIGHT,
+//        EV_KEYRIGHTLONGPRESS,
+//        EV_1MIN,
+//        EV_250MS,
+//        NONE
+//    } EVENT_t;
 
 /* USER CODE END SC_EVENTS_USERDEFINITIONS */
 
@@ -42,7 +44,7 @@ struct
 {
 //	#error "Provide your data structure"
     
-    EVENT_t m_event;
+    STATE_event_t m_event;
     
 } 
 /* USER CODE END SC_EVENTS_SIGNALDATADEFINITION */

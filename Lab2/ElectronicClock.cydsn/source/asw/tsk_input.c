@@ -42,7 +42,7 @@
 /* Cyclic Table */
 
 const RTE_cyclicTable_t RTE_cyclicActivationTable_tsk_input[] = {
-	{ INPUT_1min_run, 60000 },	//Runnable
+	{ INPUT_1min_run, 500 },	//Runnable
 	{ INPUT_250ms_run, 250 },	//Runnable
 };
 const uint16_t RTE_cyclicActivation_tsk_input_size = sizeof (RTE_cyclicActivationTable_tsk_input) / sizeof(RTE_cyclicTable_t); 
