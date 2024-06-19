@@ -397,7 +397,7 @@
          ,"ev_1min"
     #endif
     #if EE_MAX_EVENT > 4
-         ,"ev_1min"
+         ,"ev_50ms"
     #endif
     #if EE_MAX_EVENT > 5
          ,"Event_6"
@@ -494,7 +494,7 @@
         ,ev_1min
     #endif
     #if EE_MAX_EVENT > 4
-        ,ev_1min
+        ,ev_50ms
     #endif
     #if EE_MAX_EVENT > 5
         ,Event_6
@@ -1579,7 +1579,7 @@
         ,{alrm1min_input}
     #endif
     #if EE_MAX_ALARM > 4
-        ,{alrm1min_input}
+        ,{alrm_50ms_input}
     #endif
     #if EE_MAX_ALARM > 5
         ,{Alarm_6}
@@ -1609,7 +1609,7 @@ const char* EE_ALARM_NAME[EE_MAX_ALARM]=
         ,"alrm1min_input"
     #endif
     #if EE_MAX_ALARM > 4
-        ,"alrm1min_input"
+        ,"alrm_50ms_input"
     #endif
     #if EE_MAX_ALARM > 5
         ,"Alarm_6"
@@ -1637,7 +1637,7 @@ const unsigned long EE_ALARM_ID[EE_MAX_ALARM]=
         ,alrm1min_input
     #endif
     #if EE_MAX_ALARM > 4
-        ,alrm1min_input
+        ,alrm_50ms_input
     #endif
     #if EE_MAX_ALARM > 5
         ,Alarm_6
@@ -1697,7 +1697,7 @@ const unsigned long EE_ALARM_ID[EE_MAX_ALARM]=
         ,{0, alrm1min_input, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 4
-        ,{0, alrm1min_input, EE_ALARM }
+        ,{0, alrm_50ms_input, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 5
         ,{0, Alarm_6, EE_ALARM }

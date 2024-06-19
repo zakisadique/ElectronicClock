@@ -36,6 +36,7 @@ struct
     boolean_t m_buttonRightPressed;
     boolean_t m_buttonLeftPressed;
     
+    uint8_t m_buttonLeftPressedTime;
     uint8_t m_buttonRightPressedTime;
 } 
 /* USER CODE END SC_BUTTONS_SIGNALDATADEFINITION */

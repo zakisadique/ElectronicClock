@@ -55,21 +55,31 @@ void INPUT_readButtons_run(RTE_event ev){
     SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
     
     
-    if (input.m_buttonLeftPressed == TRUE){
+    if (input.m_buttonLeftPressed == FALSE && input.m_buttonRightPressed == FALSE){
         
-        event.m_event = EV_KEYLEFT;
-        RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+        if (input.m_buttonLeftPressedTime != 0){
+            input.m_buttonLeftPressedTime = 0;
+            RTE_SC_BUTTONS_set(&SO_BUTTONS_signal, input);
+            
+            event.m_event = EV_KEYLEFT;
+            
+            UART_Logs_PutString("EV_KEYLEFT\n");
+            RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+           
+
         
-        UART_Logs_PutString("EV_KEYLEFT\n");
+        }
         
-        CancelAlarm(alrm_buttonPressed);
-        
-    } else if (input.m_buttonLeftPressed == FALSE && input.m_buttonRightPressed == FALSE){
-        if ((input.m_buttonRightPressedTime >= 0) && (input.m_buttonRightPressedTime < 20)){
+        else if ((input.m_buttonRightPressedTime > 0) && (input.m_buttonRightPressedTime < 20)){
+            
+            
+            input.m_buttonRightPressedTime = 0;
+            RTE_SC_BUTTONS_set(&SO_BUTTONS_signal, input);
+            
             
             event.m_event = EV_KEYRIGHT;
             RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
-            
+
             UART_Logs_PutString("EV_KEYRIGHT\n");
             
         } else if (input.m_buttonRightPressedTime >= 20){
@@ -83,7 +93,7 @@ void INPUT_readButtons_run(RTE_event ev){
             RTE_SC_BUTTONS_set(&SO_BUTTONS_signal, input);
         }
 
-        CancelAlarm(alrm_buttonPressed);
+//        CancelAlarm(alrm_buttonPressed);
     }
     
     

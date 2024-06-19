@@ -86,7 +86,7 @@
     #endif
     
     /* ALARM definition */
-    #define EE_MAX_ALARM 4U
+    #define EE_MAX_ALARM 5U
     #if EE_MAX_ALARM > 0
     #define alrm_250ms_input 0U
     #endif
@@ -100,7 +100,7 @@
     #define alrm1min_input 3U
     #endif
     #if EE_MAX_ALARM > 4
-    #define alrm1min_input 4U
+    #define alrm_50ms_input 4U
     #endif
     #if EE_MAX_ALARM > 5
     #define Alarm_6 5U

@@ -47,7 +47,7 @@ const uint16_t RTE_cyclicActivation_tsk_input_size = sizeof (RTE_cyclicActivatio
 
 /* Event Table */
 const RTE_eventTable_t RTE_eventActivationTable_tsk_input[] = {
-    { INPUT_readButtons_run, ev_ButtonsPressed },  //Runnable
+    { INPUT_readButtons_run, ev_50ms },  //Runnable
     { INPUT_250ms_run, ev_250ms },	//Runnable
     { INPUT_1min_run, ev_1min },	//Runnable
 }; 
@@ -83,7 +83,7 @@ TASK(tsk_input)
     while(1)
     {
         //Wait, read and clear the event
-        WaitEvent(ev_250ms|ev_1min|ev_ButtonsPressed);
+        WaitEvent(ev_250ms|ev_1min|ev_50ms);
         GetEvent(tsk_input,&ev);
         ClearEvent(ev);
     
@@ -112,7 +112,7 @@ TASK(tsk_input)
 /* USER CODE START TSK_INPUT_ISR */
 ISR2(isr_Button){
     
-    SetRelAlarm(alrm_buttonPressed,50,50);
+//    SetRelAlarm(alrm_buttonPressed,50,50);
     
 }
 

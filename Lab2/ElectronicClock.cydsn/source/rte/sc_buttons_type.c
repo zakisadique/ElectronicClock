@@ -51,12 +51,14 @@ inline RC_t SC_BUTTONS_driverIn(SC_BUTTONS_data_t *const data)
         data -> m_buttonRightPressed = FALSE;
         data -> m_buttonLeftPressed = TRUE;
         data -> m_buttonRightPressedTime = 0;
+        data -> m_buttonLeftPressedTime += 1;
     
     } 
     if (BUTTON_2_Read() == 1 || BUTTON_4_Read() == 1){
         data -> m_buttonRightPressed = TRUE;
         data -> m_buttonLeftPressed = FALSE;
         
+        data -> m_buttonLeftPressedTime = 0;
         data -> m_buttonRightPressedTime += 1;
         
     }

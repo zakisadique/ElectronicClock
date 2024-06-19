@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   29:source\asw/swc_control.c **** #include "statemachine_clock_cfg.h"
   30:source\asw/swc_control.c **** 
   31:source\asw/swc_control.c **** /* USER CODE END SWC_CONTROL_USERDEFINITIONS */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 2
 
 
   32:source\asw/swc_control.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   86:source\asw/swc_control.c ****     return;
   87:source\asw/swc_control.c **** 
   88:source\asw/swc_control.c **** }
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 3
 
 
   89:source\asw/swc_control.c **** static void CLOCK_dispatch_KRLP_Hours(){
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  143:source\asw/swc_control.c ****         clockData.m_hours.m_editing = TRUE;
  144:source\asw/swc_control.c ****         clockData.m_hours.m_updateRequired = TRUE;
  145:source\asw/swc_control.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 4
 
 
  146:source\asw/swc_control.c ****     }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  200:source\asw/swc_control.c ****     RTE_SC_CLOCKDATA_getThreadSafe(&SO_CLOCKDATA_signal, &clockData);
  201:source\asw/swc_control.c ****     
  202:source\asw/swc_control.c ****     if (widget == WIDGET_HOUR){
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 5
 
 
  203:source\asw/swc_control.c ****         clockData.m_hours.isActive = TRUE;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   57              	CLOCK_increment1Minute:
   58              	.LFB153:
  114:source\asw/swc_control.c ****     
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 6
 
 
   59              		.loc 1 114 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   40:.\source\rte/sc_clockdata.h **** /**
   41:.\source\rte/sc_clockdata.h ****  *  Definition of function types for driver interfaces.
   42:.\source\rte/sc_clockdata.h ****  *  O-Port
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 7
 
 
   43:.\source\rte/sc_clockdata.h ****  */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   97:.\source\rte/sc_clockdata.h **** 	
   98:.\source\rte/sc_clockdata.h **** 	/**
   99:.\source\rte/sc_clockdata.h **** 	 * Ressourse is active? We need an additional boolean as a ressource value 0 is valid.
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 8
 
 
  100:.\source\rte/sc_clockdata.h **** 	 */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  154:.\source\rte/sc_clockdata.h ****  * Signal status will change from RTE_SIGNALSTATUS_STARTUP to RTE_SIGNALSTATUS_INITIALIZED.
  155:.\source\rte/sc_clockdata.h ****  *
  156:.\source\rte/sc_clockdata.h ****  * @param  SC_CLOCKDATA_t * const signal: Pointer to the signal object which will be initialised
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 9
 
 
  157:.\source\rte/sc_clockdata.h ****  * @return RC_t: standard return code, currently only RC_SUCCESS
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  211:.\source\rte/sc_clockdata.h **** 				TaskType task = (*pTaskArray)[taskNum];
  212:.\source\rte/sc_clockdata.h **** 				SetEvent( task, signal->pSigCfg->evOnError);
  213:.\source\rte/sc_clockdata.h **** 			}
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 10
 
 
  214:.\source\rte/sc_clockdata.h **** 		}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  268:.\source\rte/sc_clockdata.h ****  * Returns the current application value of the passed signal instance.
  269:.\source\rte/sc_clockdata.h ****  *
  270:.\source\rte/sc_clockdata.h ****  * @param  SC_CLOCKDATA_t * const signal: Pointer to the signal object
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 11
 
 
  271:.\source\rte/sc_clockdata.h ****  * @return sc_clockdata_data_t: current value of the application data buffer
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  106              	.LBE29:
  119:source\asw/swc_control.c ****     
  107              		.loc 1 119 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 12
 
 
  108 0038 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  310:.\source\rte/sc_clockdata.h **** {
  311:.\source\rte/sc_clockdata.h **** 
  312:.\source\rte/sc_clockdata.h ****    RC_t ret = RC_SUCCESS;
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 13
 
 
  313:.\source\rte/sc_clockdata.h ****    size_t taskNum=0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  182 00ca 3DB9     		cbnz	r5, .L15
  183 00cc 0CE0     		b	.L6
  184              	.LVL12:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 14
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 14
 
 
  185              	.L14:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  231              	CLOCK_setEditFonts:
  232              	.LFB154:
  138:source\asw/swc_control.c ****     SC_CLOCKDATA_data_t clockData = SC_CLOCKDATA_INIT_DATA;
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 15
 
 
  233              		.loc 1 138 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  283 003e 03D1     		bne	.L22
  143:source\asw/swc_control.c ****         clockData.m_hours.m_updateRequired = TRUE;
  284              		.loc 1 143 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 16
 
 
  285 0040 8DF81330 		strb	r3, [sp, #19]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  331 0092 0223     		movs	r3, #2
  332 0094 E372     		strb	r3, [r4, #11]
  320:.\source\rte/sc_clockdata.h **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 17
 
 
  333              		.loc 2 320 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  381              		.loc 1 155 0
  382 00ce 07B0     		add	sp, sp, #28
  383              		.cfi_def_cfa_offset 12
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 18
 
 
  384              		@ sp needed
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  435 0026 1A70     		strb	r2, [r3]
  292:.\source\rte/sc_clockdata.h **** 
  436              		.loc 2 292 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 19
 
 
  437 0028 2369     		ldr	r3, [r4, #16]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  485 0090 1A70     		strb	r2, [r3]
  486              	.LVL46:
  487              	.LBB41:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 20
 
 
  488              	.LBB42:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  535              		.loc 2 329 0
  536 00dc 9968     		ldr	r1, [r3, #8]
  537 00de 55F82400 		ldr	r0, [r5, r4, lsl #2]
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 21
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 21
 
 
  538 00e2 FFF7FEFF 		bl	EE_oo_SetEvent
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  587              		.cfi_offset 4, -12
  588              		.cfi_offset 5, -8
  589              		.cfi_offset 14, -4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 22
 
 
  590 0002 87B0     		sub	sp, sp, #28
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  638              	.L50:
  186:source\asw/swc_control.c ****         clockData.m_minutes.m_editing = FALSE;
  639              		.loc 1 186 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 23
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 23
 
 
  640 004c 9DF80F30 		ldrb	r3, [sp, #15]	@ zero_extendqisi2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  687 00a0 93F82020 		ldrb	r2, [r3, #32]	@ zero_extendqisi2
  688 00a4 012A     		cmp	r2, #1
  689 00a6 02D1     		bne	.L53
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 24
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 24
 
 
  690 00a8 586A     		ldr	r0, [r3, #36]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  738              	.LVL75:
  739              	.L60:
  740 00da 00BF     		.align	2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 25
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 25
 
 
  741              	.L59:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  792 002a 1A70     		strb	r2, [r3]
  292:.\source\rte/sc_clockdata.h **** 
  793              		.loc 2 292 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 26
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 26
 
 
  794 002c 2369     		ldr	r3, [r4, #16]
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  841 0078 586A     		ldr	r0, [r3, #36]
  842 007a FFF7FEFF 		bl	EE_oo_GetResource
  843              	.LVL87:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 27
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 27
 
 
  844              	.L66:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  891              	.LVL93:
  892              	.L71:
  325:.\source\rte/sc_clockdata.h ****       for( taskNum=0 ; taskNum < signal->pSigCfg->onUpdateTaskCount ;taskNum++){
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 28
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 28
 
 
  893              		.loc 2 325 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  942 0004 0846     		mov	r0, r1
  943 0006 FFF7FEFF 		bl	CLOCK_DISPATCH_WRAPPER
  944              	.LVL97:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 29
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 29
 
 
  945 000a 08BD     		pop	{r3, pc}
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  995              	.LFE149:
  996              		.size	CLOCK_dispatch_KRLP_Hours, .-CLOCK_dispatch_KRLP_Hours
  997              		.section	.text.CLOCK_dispatch_KR_Hours,"ax",%progbits
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 30
 
 
  998              		.align	2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1047              		.cfi_endproc
  1048              	.LFE146:
  1049              		.size	CLOCK_dispatch_KL_HoursMins, .-CLOCK_dispatch_KL_HoursMins
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 31
 
 
  1050              		.section	.text.CLOCK_dispatch_250MS_Mins,"ax",%progbits
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1100              		.thumb
  1101              		.thumb_func
  1102              		.type	CLOCK_dispatch_KR_Mins, %function
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 32
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 32
 
 
  1103              	CLOCK_dispatch_KR_Mins:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1153              	.LFB143:
   46:source\asw/swc_control.c **** 	
  1154              		.loc 1 46 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 33
 
 
  1155              		.cfi_startproc
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
   43:.\source\rte/sc_events.h ****  */
   44:.\source\rte/sc_events.h **** typedef RC_t (*SC_EVENTS_driverOut_t)( const SC_EVENTS_data_t * const);
   45:.\source\rte/sc_events.h **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 34
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 34
 
 
   46:.\source\rte/sc_events.h **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  100:.\source\rte/sc_events.h **** 	 */
  101:.\source\rte/sc_events.h **** 	 boolean_t const resourceActive;
  102:.\source\rte/sc_events.h **** 	 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 35
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 35
 
 
  103:.\source\rte/sc_events.h **** 	/**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  157:.\source\rte/sc_events.h ****  * @return RC_t: standard return code, currently only RC_SUCCESS
  158:.\source\rte/sc_events.h ****  *
  159:.\source\rte/sc_events.h ****  **/
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 36
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 36
 
 
  160:.\source\rte/sc_events.h **** inline RC_t RTE_SC_EVENTS_init( SC_EVENTS_t * const signal )
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  214:.\source\rte/sc_events.h **** 		}
  215:.\source\rte/sc_events.h ****    }
  216:.\source\rte/sc_events.h ****    
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 37
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 37
 
 
  217:.\source\rte/sc_events.h ****    return RC_SUCCESS;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  271:.\source\rte/sc_events.h ****  * @return sc_events_data_t: current value of the application data buffer
  272:.\source\rte/sc_events.h ****  *
  273:.\source\rte/sc_events.h ****  **/
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 38
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 38
 
 
  274:.\source\rte/sc_events.h **** inline SC_EVENTS_data_t RTE_SC_EVENTS_get( const SC_EVENTS_t * const signal )
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1201              	.L97:
  1202 0034 00000000 		.word	SO_EVENTS_signal
  1203 0038 10000000 		.word	.LANCHOR0+16
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 39
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 39
 
 
  1204              		.cfi_endproc
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1258 0038 04       		.byte	4
  1259 0039 000000   		.space	3
  1260 003c 00000000 		.word	STATE_CLOCK_W_ISEDITING_Transitions
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 40
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 40
 
 
  1261 0040 0300     		.short	3
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1315 009c 00       		.byte	0
  1316 009d 000000   		.space	3
  1317 00a0 00000000 		.word	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 41
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 41
 
 
  1318 00a4 00000000 		.word	0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1372 0114 00000000 		.word	CLOCK_dispatch_250MS_Mins
  1373              		.type	STATE_CLOCK_C_ISEDITINGHOURS_Transitions, %object
  1374              		.size	STATE_CLOCK_C_ISEDITINGHOURS_Transitions, 48
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 42
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 42
 
 
  1375              	STATE_CLOCK_C_ISEDITINGHOURS_Transitions:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1429 001c 0300     		.short	3
  1430 001e 00       		.byte	0
  1431 001f 00       		.space	1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 43
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 43
 
 
  1432              		.text
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1486 0046 030B0000 		.4byte	.LASF4
  1487 004a 04       		.byte	0x4
  1488 004b 2B       		.byte	0x2b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 44
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 44
 
 
  1489 004c 50000000 		.4byte	0x50
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1543 00b8 03       		.uleb128 0x3
  1544 00b9 080C0000 		.4byte	.LASF16
  1545 00bd 05       		.byte	0x5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 45
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 45
 
 
  1546 00be 30       		.byte	0x30
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1600 012e 88000000 		.4byte	.LASF28
  1601 0132 09       		.byte	0x9
  1602 0133 2102     		.2byte	0x221
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 46
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 46
 
 
  1603 0135 00010000 		.4byte	0x100
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1657 01a5 08       		.uleb128 0x8
  1658 01a6 B4010000 		.4byte	.LASF43
  1659 01aa 75       		.sleb128 -11
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 47
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 47
 
 
  1660 01ab 08       		.uleb128 0x8
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1714 0217 21010000 		.4byte	0x121
  1715 021b 21020000 		.4byte	0x221
  1716 021f 0A       		.uleb128 0xa
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 48
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 48
 
 
  1717 0220 00       		.byte	0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1771 0292 E6030000 		.4byte	.LASF67
  1772 0296 01       		.byte	0x1
  1773 0297 07       		.uleb128 0x7
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 49
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 49
 
 
  1774 0298 0B0D0000 		.4byte	.LASF68
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1828 0304 AB080000 		.4byte	.LASF85
  1829 0308 0E       		.byte	0xe
  1830 0309 2F       		.byte	0x2f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 50
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 50
 
 
  1831 030a B0020000 		.4byte	0x2b0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1885 0382 0F       		.uleb128 0xf
  1886 0383 30080000 		.4byte	.LASF86
  1887 0387 03       		.byte	0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 51
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 51
 
 
  1888 0388 3B       		.byte	0x3b
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1942 03f4 6A       		.byte	0x6a
  1943 03f5 76020000 		.4byte	0x276
  1944 03f9 24       		.byte	0x24
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 52
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 52
 
 
  1945 03fa 00       		.byte	0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  1999 0469 05       		.byte	0x5
  2000 046a 0F       		.byte	0xf
  2001 046b 1C       		.byte	0x1c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 53
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 53
 
 
  2002 046c AD040000 		.4byte	0x4ad
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2056 04d8 0F       		.uleb128 0xf
  2057 04d9 F80B0000 		.4byte	.LASF110
  2058 04dd 0F       		.byte	0xf
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 54
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 54
 
 
  2059 04de 2E       		.byte	0x2e
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2113 0553 D0050000 		.4byte	0x5d0
  2114 0557 0F       		.uleb128 0xf
  2115 0558 30080000 		.4byte	.LASF86
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 55
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 55
 
 
  2116 055c 02       		.byte	0x2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2170 05c8 02       		.byte	0x2
  2171 05c9 6A       		.byte	0x6a
  2172 05ca 76020000 		.4byte	0x276
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 56
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 56
 
 
  2173 05ce 24       		.byte	0x24
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2227 063d 03       		.uleb128 0x3
  2228 063e A70D0000 		.4byte	.LASF118
  2229 0642 10       		.byte	0x10
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 57
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 57
 
 
  2230 0643 30       		.byte	0x30
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2284 06af 10       		.byte	0x10
  2285 06b0 45       		.byte	0x45
  2286 06b1 71060000 		.4byte	0x671
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 58
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 58
 
 
  2287 06b5 09       		.uleb128 0x9
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2341 0721 5C       		.byte	0x5c
  2342 0722 F0020000 		.4byte	0x2f0
  2343 0726 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 59
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 59
 
 
  2344 0727 0F       		.uleb128 0xf
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2398 0793 10       		.byte	0x10
  2399 0794 69       		.byte	0x69
  2400 0795 F0020000 		.4byte	0x2f0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 60
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 60
 
 
  2401 0799 0E       		.byte	0xe
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2455 080b 0B       		.uleb128 0xb
  2456 080c 00080000 		.4byte	0x800
  2457 0810 17       		.uleb128 0x17
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 61
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 61
 
 
  2458 0811 FB020000 		.4byte	.LASF144
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2512 088e 2001     		.2byte	0x120
  2513 0890 AC080000 		.4byte	0x8ac
  2514 0894 18       		.uleb128 0x18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 62
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 62
 
 
  2515 0895 7E0B0000 		.4byte	.LASF142
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2569 0914 38000000 		.4byte	.LVL6
  2570 0918 26110000 		.4byte	0x1126
  2571 091c 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 63
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 63
 
 
  2572 091d 23       		.uleb128 0x23
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2626 09a4 1E       		.uleb128 0x1e
  2627 09a5 F2030000 		.4byte	.LASF151
  2628 09a9 01       		.byte	0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 64
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 64
 
 
  2629 09aa 8B       		.byte	0x8b
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2683 0a31 5E080000 		.4byte	0x85e
  2684 0a35 39010000 		.4byte	.LLST7
  2685 0a39 22       		.uleb128 0x22
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 65
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 65
 
 
  2686 0a3a BE000000 		.4byte	.LVL32
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2740 0abe 24       		.uleb128 0x24
  2741 0abf 2D080000 		.4byte	0x82d
  2742 0ac3 02       		.uleb128 0x2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 66
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 66
 
 
  2743 0ac4 91       		.byte	0x91
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2797 0b45 D6070000 		.4byte	0x7d6
  2798 0b49 04000000 		.4byte	.LBB44
  2799 0b4d 34000000 		.4byte	.LBE44-.LBB44
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 67
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 67
 
 
  2800 0b51 01       		.byte	0x1
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2854 0bde 22       		.uleb128 0x22
  2855 0bdf AE000000 		.4byte	.LVL67
  2856 0be3 26110000 		.4byte	0x1126
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 68
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 68
 
 
  2857 0be7 00       		.byte	0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2911 0c68 64000000 		.4byte	.LBE51-.LBB51
  2912 0c6c 01       		.byte	0x1
  2913 0c6d D3       		.byte	0xd3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 69
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 69
 
 
  2914 0c6e D40C0000 		.4byte	0xcd4
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  2968 0cec 00       		.byte	0
  2969 0ced 00       		.byte	0
  2970 0cee 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 70
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 70
 
 
  2971 0cef CC0C0000 		.4byte	.LASF155
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3025 0d52 9C       		.byte	0x9c
  3026 0d53 6C0D0000 		.4byte	0xd6c
  3027 0d57 2B       		.uleb128 0x2b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 71
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 71
 
 
  3028 0d58 0A000000 		.4byte	.LVL99
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3082 0dbb 01       		.uleb128 0x1
  3083 0dbc 30       		.byte	0x30
  3084 0dbd 2C       		.uleb128 0x2c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 72
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 72
 
 
  3085 0dbe 01       		.uleb128 0x1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3139 0e18 0A000000 		.4byte	.LVL104
  3140 0e1c EA0B0000 		.4byte	0xbea
  3141 0e20 2C       		.uleb128 0x2c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 73
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 73
 
 
  3142 0e21 01       		.uleb128 0x1
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3196 0e7b 51       		.byte	0x51
  3197 0e7c 01       		.uleb128 0x1
  3198 0e7d 30       		.byte	0x30
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 74
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 74
 
 
  3199 0e7e 00       		.byte	0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3253 0efe 03       		.byte	0x3
  3254 0eff 10000000 		.4byte	.LANCHOR0+16
  3255 0f03 2C       		.uleb128 0x2c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 75
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 75
 
 
  3256 0f04 01       		.uleb128 0x1
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3310 0f77 01       		.byte	0x1
  3311 0f78 00       		.byte	0
  3312 0f79 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 76
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 76
 
 
  3313 0f7a AA060000 		.4byte	0x6aa
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3367 0ff2 00000000 		.4byte	CLOCK_Container_Transitions
  3368 0ff6 0B       		.uleb128 0xb
  3369 0ff7 D00F0000 		.4byte	0xfd0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 77
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 77
 
 
  3370 0ffb 36       		.uleb128 0x36
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3424 1070 7A100000 		.4byte	0x107a
  3425 1074 05       		.uleb128 0x5
  3426 1075 03       		.byte	0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 78
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 78
 
 
  3427 1076 00000000 		.4byte	STATE_CLOCK_W_ISDISPLAYING_Transitions
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3481 10ee 03       		.byte	0x3
  3482 10ef 00000000 		.4byte	CLOCK_Widget_StateActions
  3483 10f3 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 79
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 79
 
 
  3484 10f4 0C100000 		.4byte	0x100c
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3538 000e 01       		.uleb128 0x1
  3539 000f 10       		.uleb128 0x10
  3540 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 80
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 80
 
 
  3541 0011 00       		.byte	0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3595 0047 0B       		.uleb128 0xb
  3596 0048 49       		.uleb128 0x49
  3597 0049 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 81
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 81
 
 
  3598 004a 3A       		.uleb128 0x3a
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3652 0080 00       		.byte	0
  3653 0081 00       		.byte	0
  3654 0082 0D       		.uleb128 0xd
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 82
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 82
 
 
  3655 0083 04       		.uleb128 0x4
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3709 00b9 00       		.byte	0
  3710 00ba 11       		.uleb128 0x11
  3711 00bb 05       		.uleb128 0x5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 83
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 83
 
 
  3712 00bc 00       		.byte	0
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3766 00f2 00       		.byte	0
  3767 00f3 00       		.byte	0
  3768 00f4 17       		.uleb128 0x17
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 84
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 84
 
 
  3769 00f5 2E       		.uleb128 0x2e
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3823 012b 05       		.uleb128 0x5
  3824 012c 49       		.uleb128 0x49
  3825 012d 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 85
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 85
 
 
  3826 012e 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3880 0166 3A       		.uleb128 0x3a
  3881 0167 0B       		.uleb128 0xb
  3882 0168 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 86
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 86
 
 
  3883 0169 0B       		.uleb128 0xb
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3937 01a1 11       		.uleb128 0x11
  3938 01a2 01       		.uleb128 0x1
  3939 01a3 12       		.uleb128 0x12
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 87
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 87
 
 
  3940 01a4 06       		.uleb128 0x6
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  3994 01da 29       		.uleb128 0x29
  3995 01db 2E       		.uleb128 0x2e
  3996 01dc 01       		.byte	0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 88
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 88
 
 
  3997 01dd 03       		.uleb128 0x3
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4051 0219 898201   		.uleb128 0x4109
  4052 021c 01       		.byte	0x1
  4053 021d 11       		.uleb128 0x11
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 89
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 89
 
 
  4054 021e 01       		.uleb128 0x1
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4108 0255 3B       		.uleb128 0x3b
  4109 0256 0B       		.uleb128 0xb
  4110 0257 49       		.uleb128 0x49
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 90
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 90
 
 
  4111 0258 13       		.uleb128 0x13
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4165 028e 00       		.byte	0
  4166 028f 49       		.uleb128 0x49
  4167 0290 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 91
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 91
 
 
  4168 0291 00       		.byte	0
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4222 02c7 03       		.uleb128 0x3
  4223 02c8 0E       		.uleb128 0xe
  4224 02c9 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 92
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 92
 
 
  4225 02ca 0B       		.uleb128 0xb
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4279 006a DE000000 		.4byte	.LVL16
  4280 006e E8000000 		.4byte	.LVL17
  4281 0072 0100     		.2byte	0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 93
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 93
 
 
  4282 0074 54       		.byte	0x54
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4336              	.LLST5:
  4337 00f0 6A000000 		.4byte	.LVL27
  4338 00f4 B4000000 		.4byte	.LVL31
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 94
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 94
 
 
  4339 00f8 0200     		.2byte	0x2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4393 0176 9F       		.byte	0x9f
  4394 0177 24000000 		.4byte	.LVL42
  4395 017b 2A000000 		.4byte	.LVL43
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 95
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 95
 
 
  4396 017f 0300     		.2byte	0x3
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4450 01fb 04000000 		.4byte	.LVL57
  4451 01ff 1A000000 		.4byte	.LVL59
  4452 0203 0300     		.2byte	0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 96
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 96
 
 
  4453 0205 91       		.byte	0x91
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4507 0287 00000000 		.4byte	0
  4508              	.LLST15:
  4509 028b BC000000 		.4byte	.LVL69
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 97
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 97
 
 
  4510 028f C5000000 		.4byte	.LVL70-1
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4564 0309 78       		.sleb128 -8
  4565 030a 9F       		.byte	0x9f
  4566 030b 28000000 		.4byte	.LVL82
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 98
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 98
 
 
  4567 030f 2E000000 		.4byte	.LVL83
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4621              	.LLST22:
  4622 038f 00000000 		.4byte	.LVL107
  4623 0393 10000000 		.4byte	.LVL109
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 99
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 99
 
 
  4624 0397 0100     		.2byte	0x1
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4678 005c 0C000000 		.4byte	.LFE147-.LFB147
  4679 0060 00000000 		.4byte	.LFB146
  4680 0064 14000000 		.4byte	.LFE146-.LFB146
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 100
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 100
 
 
  4681 0068 00000000 		.4byte	.LFB152
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4731      01010101 
  4732              	.LASF71:
  4733 0000 4E4F4E45 		.ascii	"NONE\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 101
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 101
 
 
  4733      00
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4757 00bc 434C4F43 		.ascii	"CLOCK_W_ISAUTOINCREMENTING\000"
  4757      4B5F575F 
  4757      49534155 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 102
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 102
 
 
  4757      544F494E 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4779 0184 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
  4779      52524F52 
  4779      5F424144 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 103
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 103
 
 
  4779      5F444154 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4799      626C6553 
  4799      697A6500 
  4800              	.LASF88:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 104
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 104
 
 
  4801 025b 65764F6E 		.ascii	"evOnUpdate\000"
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4821      63685F4B 
  4821      525F486F 
  4822              	.LASF44:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 105
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 105
 
 
  4823 0328 52435F45 		.ascii	"RC_ERROR_OPEN\000"
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4842              	.LASF67:
  4843 03e6 45565F4B 		.ascii	"EV_KEYRIGHT\000"
  4843      45595249 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 106
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 106
 
 
  4843      47485400 
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4869      20756E73 
  4869      69676E65 
  4869      6420696E 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 107
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 107
 
 
  4869      7400
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4893      4645525F 
  4893      46554C4C 
  4894              	.LASF184:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 108
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 108
 
 
  4895 053b 434C4F43 		.ascii	"CLOCK_Widget_Transitions\000"
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4915      52524F52 
  4915      5F4E4F54 
  4915      5F4D4154 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 109
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 109
 
 
  4915      434800
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4934      00
  4935              	.LASF78:
  4936 06e1 434C4F43 		.ascii	"CLOCK_W_ISDISPPLAYING\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 110
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 110
 
 
  4936      4B5F575F 
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4955              	.LASF167:
  4956 07ac 45455F41 		.ascii	"EE_ApplicationMode\000"
  4956      70706C69 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 111
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 111
 
 
  4956      63617469 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4976      4B5F696E 
  4976      6372656D 
  4976      656E7431 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 112
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 112
 
 
  4976      4D696E75 
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  4998      4F434B5F 
  4998      435F4953 
  4998      45444954 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 113
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 113
 
 
  4999              	.LASF182:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  5018      74696F6E 
  5018      2D736563 
  5018      74696F6E 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 114
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 114
 
 
  5019              	.LASF89:
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  5044 0b35 52435F45 		.ascii	"RC_ERROR_NOT_IMPLEMENTED\000"
  5044      52524F52 
  5044      5F4E4F54 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 115
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 115
 
 
  5044      5F494D50 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  5066      74696F6E 
  5066      00
  5067              	.LASF145:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 116
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 116
 
 
  5068 0bf0 7461736B 		.ascii	"taskNum\000"
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  5092 0c9e 75696E74 		.ascii	"uint8_t\000"
  5092      385F7400 
  5093              	.LASF116:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 117
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 117
 
 
  5094 0ca6 53435F43 		.ascii	"SC_CLOCKDATA_s\000"
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 1
  5114      4F555200 
  5115              	.LASF97:
  5116 0d5c 53435F45 		.ascii	"SC_EVENTS_cfg_s\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cclSsDNa.s 			page 118
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccTq86w3.s 			page 118
 
 
  5116      56454E54 
