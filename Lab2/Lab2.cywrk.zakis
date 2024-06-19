@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock\asw\statemachine_clock_cfg.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock\rte\sc_clockdata_type.c">
 <ExpandedNodeIds>
 <v>Lab2</v>
 <v>Lab2\ElectronicClock</v>
@@ -140,24 +140,8 @@
 <v>Lab2\ElectronicClock\rte\sp_common.h</v>
 <v>Lab2\ElectronicClock\Generated_Source</v>
 <v>Lab2\ElectronicClock\Generated_Source\PSoC5</v>
-<v>Lab2\ElectronicClock\Generated_Source\PSoC5\BUTTON_1</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\Clocks</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\Interrupts</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\DMA</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\System</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\Directives</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\Flash Security</v>
-<v>Lab2\ElectronicClock\ElectronicClock.cydwr\EEPROM</v>
-<v>Lab2\ElectronicClock\asw</v>
-<v>Lab2\ElectronicClock\asw\cyapicallbacks.h</v>
-<v>Lab2\ElectronicClock\asw\main.c</v>
-<v>Lab2\ElectronicClock\asw\statemachine_clock_cfg.h</v>
-<v>Lab2\ElectronicClock\asw\swc_control.c</v>
-<v>Lab2\ElectronicClock\asw\swc_control.h</v>
-<v>Lab2\ElectronicClock\asw\swc_input.c</v>
-<v>Lab2\ElectronicClock\asw\swc_input.h</v>
 <v>Lab2\ElectronicClock\asw\swc_output.c</v>
 <v>Lab2\ElectronicClock\asw\swc_output.h</v>
 <v>Lab2\ElectronicClock\asw\tsk_control.c</v>
@@ -198,6 +182,21 @@
 <v>Lab2\ElectronicClock\rte\sc_clockdata.h</v>
 <v>Lab2\ElectronicClock\rte\sc_clockdata_type.c</v>
 <v>Lab2\ElectronicClock\rte\sc_clockdata_type.h</v>
+<v>Lab2\ElectronicClock\rte\sc_events.c</v>
+<v>Lab2\ElectronicClock\rte\sc_events.h</v>
+<v>Lab2\ElectronicClock\rte\sc_events_type.h</v>
+<v>Lab2\ElectronicClock\rte\sp_common.c</v>
+<v>Lab2\ElectronicClock\rte\sp_common.h</v>
+<v>Lab2\ElectronicClock\Generated_Source</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\BUTTON_1</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\BUTTON_2</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\BUTTON_3</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\BUTTON_4</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\CLK_LED</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\cy_boot</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>Lab2\ElectronicClock\Generated_Source\PSoC5\ErikaOS_1</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2\ElectronicClock">
@@ -484,6 +483,58 @@
 <VisibleNodeIds>
 <v>Lab2</v>
 <v>Lab2\ElectronicClock</v>
+<v>Lab2\ElectronicClock\CortexM3</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\button.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_1.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_2.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_3.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_4.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK_LED.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_common_ee_hal_structs.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_context.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_system_timer.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_utils.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_activate.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alcancel.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alget.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_algetbase.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetabs.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetrel.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_altick.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_chaintas.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evclear.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evget.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evset.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evwait.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_force_schedule.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getcountervalue.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getelapsedvalue.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskid.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskstate.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_change_context_isr.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_irq_stack.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_multi_context.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_oo.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_iparam.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_irqendin.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lockres.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lookup.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_exchg.lst</v>
+<v>Lab2\ElectronicClock\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_first.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -498,21 +549,6 @@
 <v>Lab2\ElectronicClock\PSoC 5LP Architecture TRM</v>
 <v>Lab2\ElectronicClock\CY8C58LP Family Datasheet</v>
 <v>Lab2\ElectronicClock\System Reference Guides</v>
-<v>Lab2\ElectronicClock\System Reference Guides\cy_boot_v6_0</v>
-<v>Lab2\ElectronicClock\cy_clock_v2_20.pdf</v>
-<v>Lab2\ElectronicClock\cy_constant_v1_0</v>
-<v>Lab2\ElectronicClock\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\cy_isr_v1_70.pdf</v>
-<v>Lab2\ElectronicClock\cy_pins_v2_20</v>
-<v>Lab2\ElectronicClock\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Lab2\ElectronicClock\ErikaOS_v2_5_3.pdf</v>
-<v>Lab2\ElectronicClock\Gnd_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\or_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\Power_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\PWM_v3_30.pdf</v>
-<v>Lab2\ElectronicClock\Resistor_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\SPI_Master_v2_50.pdf</v>
-<v>Lab2\ElectronicClock\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Lab2</v>
@@ -520,21 +556,6 @@
 <v>Lab2\ElectronicClock\PSoC 5LP Architecture TRM</v>
 <v>Lab2\ElectronicClock\CY8C58LP Family Datasheet</v>
 <v>Lab2\ElectronicClock\System Reference Guides</v>
-<v>Lab2\ElectronicClock\System Reference Guides\cy_boot_v6_0</v>
-<v>Lab2\ElectronicClock\cy_clock_v2_20.pdf</v>
-<v>Lab2\ElectronicClock\cy_constant_v1_0</v>
-<v>Lab2\ElectronicClock\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\cy_isr_v1_70.pdf</v>
-<v>Lab2\ElectronicClock\cy_pins_v2_20</v>
-<v>Lab2\ElectronicClock\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Lab2\ElectronicClock\ErikaOS_v2_5_3.pdf</v>
-<v>Lab2\ElectronicClock\Gnd_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\or_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\Power_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\PWM_v3_30.pdf</v>
-<v>Lab2\ElectronicClock\Resistor_v1_0.pdf</v>
-<v>Lab2\ElectronicClock\SPI_Master_v2_50.pdf</v>
-<v>Lab2\ElectronicClock\UART_v2_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -543,7 +564,24 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\ElectronicClock.cydsn\source\rte\sc_events_type.h" />
+<name v=".\ElectronicClock.cydsn\source\bsw\Services\ringbuffer.h" />
+<name v=".\ElectronicClock.cydsn\source\bsw\Services\logging.h" />
+<name v=".\ElectronicClock.cydsn\source\asw\main.c" />
+<name v=".\ElectronicClock.cydsn\source\asw\swc_input.c" />
+<name v=".\ElectronicClock.cydsn\source\asw\swc_control.c" />
+<name v=".\ElectronicClock.cydsn\source\bsw\statemachine_type.h" />
+<name v=".\ElectronicClock.cydsn\source\asw\tsk_control.c" />
+<name v=".\ElectronicClock.cydsn\source\rte\sc_clockdata_type.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1193, 780" SelectedTabbedMdiWindow="bbb00011-d16e-4ed5-b942-ea4b4cda35fd"><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\rte\sc_events_type.h" Guid="392810df-6ce9-476e-a1b1-5544ed80b4b9" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\bsw\Services\ringbuffer.h" Guid="c501a46c-055d-4aab-a5ad-ae64196b0d59" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\bsw\Services\logging.h" Guid="79af7523-4c2e-4e42-886b-256705af056a" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\asw\main.c" Guid="c3e3ba43-fc73-4f1a-a420-9e30ba2ce2f1" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\asw\swc_input.c" Guid="153d61ed-8b2f-4d63-8602-e3273c5909f0" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\asw\swc_control.c" Guid="bbb00011-d16e-4ed5-b942-ea4b4cda35fd" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\bsw\statemachine_type.h" Guid="e1ea69e9-fc63-47d4-a9f1-315afab7a176" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\asw\tsk_control.c" Guid="97a473a9-b329-4f27-8efb-88446ccda2f5" /><DocumentWindow Key="C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\source\rte\sc_clockdata_type.h" Guid="4777c77d-dc3f-426d-b2cf-92e37f2b8a52" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

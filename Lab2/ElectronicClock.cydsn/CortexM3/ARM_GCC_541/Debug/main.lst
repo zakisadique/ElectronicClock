@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   38 0004 FFF7FEFF 		bl	EE_oo_IncrementCounter
   39              	.LVL0:
   40 0008 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 2
 
 
   41              		.cfi_endproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   24:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****  * module.  An independent module is a module which is not derived from
   25:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****  * or based on this library.  If you modify this code, you may extend
   26:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****  * this exception to your version of the code, but you are not
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 3
 
 
   27:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****  * obligated to do so.  If you do not wish to do so, delete this
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   81:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** 
   82:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** /* boolean type */
   83:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #ifndef EE_TYPEBOOL
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 4
 
 
   84:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** typedef EE_UREG EE_TYPEBOOL;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  138:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** 
  139:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #ifdef	__HAS_TYPES_H__
  140:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #include	"types.h"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 5
 
 
  141:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #endif
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  195:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** }
  196:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** 
  197:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** /**
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 6
 
 
  198:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****  * Disable interrupts
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  241:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** __INLINE__ EE_FREG  EE_cortex_mx_suspendIRQ(void)
  242:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** {
  243:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #ifndef __CCS__
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 7
 
 
  244:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** 	EE_FREG istat;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  298:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #else
  299:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** 	return EE_cortex_mx_are_IRQs_enabled(ie);
  300:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** #endif
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 8
 
 
  301:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  343:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** __INLINE__ void  EE_cortex_mx_set_int_prio(
  344:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc ****   EE_TYPEISR2PRIO prio
  345:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** )
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 9
 
 
  346:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  116 0036 22FA03F3 		lsr	r3, r2, r3
  117              	.LVL6:
  118 003a 06E0     		b	.L5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 10
 
 
  119              	.LVL7:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   15:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * conditions of the GNU General Public License cover the whole
   16:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * combination.
   17:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  *
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 11
 
 
   18:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * As a special exception, the copyright holders of this library give you
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   72:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc **** /* EE_decrement_IRQ_nesting_level() and EE_increment_IRQ_nesting_level() are
   73:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * used to keep track of the current IRQ nesting level.
   74:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * EE_std_enableIRQ_nested() and EE_std_disableIRQ_nested() are used to control
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 12
 
 
   75:Generated_Source\PSoC5/ErikaOS_1_common_ee_irqstub.inc ****  * when IRQ nesting is enabled.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  191              	.LBE69:
  192              	.LBE68:
  193              	.LBB70:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 13
 
 
  194              	.LBB71:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  227              	.LBB77:
  228              		.file 4 "Generated_Source\\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc"
    1:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc **** /* ###*B*###
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 14
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 14
 
 
    2:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   56:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc **** #ifndef __INCLUDE_CORTEX_MX_IRQ_CNG_CONTEXT_H__
   57:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc **** #define __INCLUDE_CORTEX_MX_IRQ_CNG_CONTEXT_H__
   58:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 15
 
 
   59:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc **** #ifdef __GNU__
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  271              	.LFB113:
   18:source\asw/main.c **** }
   19:source\asw/main.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 16
 
 
   20:source\asw/main.c **** int main()
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   32:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   33:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc ****  * GNU General Public License version 2 for more details.
   34:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc ****  *
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 17
 
 
   35:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc ****  * You should have received a copy of the GNU General Public License
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   89:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc **** */
   90:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc **** __INLINE__ void  EE_systick_stop(void)
   91:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc **** {
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 18
 
 
   92:Generated_Source\PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc ****   NVIC_ST_CTRL_R &= ~(NVIC_ST_CTRL_ENABLE);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  295 000a 1A60     		str	r2, [r3]
  296              	.LVL20:
  297              	.LBE81:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 19
 
 
  298              	.LBE80:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  335              		.loc 1 38 0
  336              		.syntax unified
  337              	@ 38 "source\asw\main.c" 1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 20
 
 
  338 0000 00BE     		bkpt
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   63:source\asw/main.c **** //        
   64:source\asw/main.c **** //        uint8_t hoursFirstDigit = hours / 10;
   65:source\asw/main.c **** ////        uint8_t hoursFirstDigit = 0;
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 21
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 21
 
 
   66:source\asw/main.c **** //        TFT_drawChar(10, 60, hoursFirstDigit + 48, WHITE, BLACK, 3);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
   89:source\asw/main.c ****     
   90:source\asw/main.c **** 
   91:source\asw/main.c ****     ActivateTask(tsk_input);
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 22
 
 
  398              		.loc 1 91 0
@@ -1280,9 +1280,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  411 004a 0120     		movs	r0, #1
  412 004c FFF7FEFF 		bl	EE_oo_ActivateTask
  413              	.LVL31:
-  95:source\asw/main.c **** 
-  96:source\asw/main.c ****     TerminateTask();
- 414              		.loc 1 96 0
+  95:source\asw/main.c ****     
+  96:source\asw/main.c ****     
+  97:source\asw/main.c **** 
+  98:source\asw/main.c ****     TerminateTask();
+ 414              		.loc 1 98 0
  415 0050 FFF7FEFF 		bl	EE_oo_TerminateTask
  416              	.LVL32:
  417 0054 08BD     		pop	{r3, pc}
@@ -1301,14 +1303,14 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  430              		.type	Functsk_background, %function
  431              	Functsk_background:
  432              	.LFB116:
-  97:source\asw/main.c ****     
-  98:source\asw/main.c **** }
-  99:source\asw/main.c **** 
- 100:source\asw/main.c **** 
+  99:source\asw/main.c ****     
+ 100:source\asw/main.c **** }
  101:source\asw/main.c **** 
- 102:source\asw/main.c **** TASK(tsk_background)
- 103:source\asw/main.c **** {
- 433              		.loc 1 103 0
+ 102:source\asw/main.c **** 
+ 103:source\asw/main.c **** 
+ 104:source\asw/main.c **** TASK(tsk_background)
+ 105:source\asw/main.c **** {
+ 433              		.loc 1 105 0
  434              		.cfi_startproc
  435              		@ Volatile: function does not return.
  436              		@ args = 0, pretend = 0, frame = 0
@@ -1316,11 +1318,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  438              		@ link register save eliminated.
  439              	.L22:
  440 0000 FEE7     		b	.L22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 23
+
+
  441              		.cfi_endproc
  442              	.LFE116:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 23
-
-
  443              		.size	Functsk_background, .-Functsk_background
  444 0002 00BF     		.text
  445              	.Letext0:
@@ -1376,11 +1378,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  495 004e 05       		.byte	0x5
  496 004f 69010000 		.4byte	.LASF4
  497 0053 02       		.uleb128 0x2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 24
+
+
  498 0054 04       		.byte	0x4
  499 0055 07       		.byte	0x7
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 24
-
-
  500 0056 8E030000 		.4byte	.LASF5
  501 005a 02       		.uleb128 0x2
  502 005b 08       		.byte	0x8
@@ -1436,11 +1438,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  552 00ba A8000000 		.4byte	0xa8
  553 00be 03       		.uleb128 0x3
  554 00bf B9000000 		.4byte	.LASF18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 25
+
+
  555 00c3 02       		.byte	0x2
  556 00c4 4F       		.byte	0x4f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 25
-
-
  557 00c5 A8000000 		.4byte	0xa8
  558 00c9 03       		.uleb128 0x3
  559 00ca 00000000 		.4byte	.LASF19
@@ -1496,11 +1498,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  609 0136 02       		.byte	0x2
  610 0137 C8       		.byte	0xc8
  611 0138 03       		.byte	0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 26
+
+
  612 0139 0A       		.uleb128 0xa
  613 013a C3030000 		.4byte	.LASF61
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 26
-
-
  614 013e 03       		.byte	0x3
  615 013f 42       		.byte	0x42
  616 0140 C9000000 		.4byte	0xc9
@@ -1556,11 +1558,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  666 019c 0A000000 		.4byte	.LFE112-.LFB112
  667 01a0 01       		.uleb128 0x1
  668 01a1 9C       		.byte	0x9c
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 27
+
+
  669 01a2 B6010000 		.4byte	0x1b6
  670 01a6 0F       		.uleb128 0xf
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 27
-
-
  671 01a7 08000000 		.4byte	.LVL0
  672 01ab EF040000 		.4byte	0x4ef
  673 01af 10       		.uleb128 0x10
@@ -1616,11 +1618,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  723 0220 01       		.byte	0x1
  724 0221 0F       		.byte	0xf
  725 0222 36020000 		.4byte	0x236
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 28
+
+
  726 0226 14       		.uleb128 0x14
  727 0227 0C000000 		.4byte	.LBB59
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 28
-
-
  728 022b 04000000 		.4byte	.LBE59-.LBB59
  729 022f 15       		.uleb128 0x15
  730 0230 24010000 		.4byte	0x124
@@ -1676,11 +1678,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  780 02ad F9000000 		.4byte	0xf9
  781 02b1 66000000 		.4byte	.LBB70
  782 02b5 04000000 		.4byte	.LBE70-.LBB70
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 29
+
+
  783 02b9 01       		.byte	0x1
  784 02ba 0F       		.byte	0xf
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 29
-
-
  785 02bb C9020000 		.4byte	0x2c9
  786 02bf 18       		.uleb128 0x18
  787 02c0 06010000 		.4byte	0x106
@@ -1736,11 +1738,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  837 0343 14       		.byte	0x14
  838 0344 68000000 		.4byte	0x68
  839 0348 00000000 		.4byte	.LFB113
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 30
+
+
  840 034c 28000000 		.4byte	.LFE113-.LFB113
  841 0350 01       		.uleb128 0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 30
-
-
  842 0351 9C       		.byte	0x9c
  843 0352 92030000 		.4byte	0x392
  844 0356 13       		.uleb128 0x13
@@ -1796,11 +1798,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  894 03c7 19       		.uleb128 0x19
  895 03c8 06000000 		.4byte	.LVL22
  896 03cc 33050000 		.4byte	0x533
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 31
+
+
  897 03d0 19       		.uleb128 0x19
  898 03d1 0A000000 		.4byte	.LVL23
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 31
-
-
  899 03d5 3E050000 		.4byte	0x53e
  900 03d9 19       		.uleb128 0x19
  901 03da 0E000000 		.4byte	.LVL24
@@ -1856,11 +1858,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  951 042f 10       		.uleb128 0x10
  952 0430 01       		.uleb128 0x1
  953 0431 50       		.byte	0x50
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 32
+
+
  954 0432 01       		.uleb128 0x1
  955 0433 31       		.byte	0x31
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 32
-
-
  956 0434 10       		.uleb128 0x10
  957 0435 01       		.uleb128 0x1
  958 0436 51       		.byte	0x51
@@ -1916,14 +1918,14 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1008 048c 19       		.uleb128 0x19
  1009 048d 54000000 		.4byte	.LVL32
  1010 0491 6C050000 		.4byte	0x56c
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 33
+
+
  1011 0495 00       		.byte	0
  1012 0496 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 33
-
-
  1013 0497 7F020000 		.4byte	.LASF65
  1014 049b 01       		.byte	0x1
- 1015 049c 66       		.byte	0x66
+ 1015 049c 68       		.byte	0x68
  1016 049d 00000000 		.4byte	.LFB116
  1017 04a1 02000000 		.4byte	.LFE116-.LFB116
  1018 04a5 01       		.uleb128 0x1
@@ -1976,11 +1978,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1065 050f 04       		.byte	0x4
  1066 0510 40       		.byte	0x40
  1067 0511 22       		.uleb128 0x22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 34
+
+
  1068 0512 31020000 		.4byte	.LASF48
  1069 0516 31020000 		.4byte	.LASF48
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 34
-
-
  1070 051a 0F       		.byte	0xf
  1071 051b 68       		.byte	0x68
  1072 051c 22       		.uleb128 0x22
@@ -2036,11 +2038,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1122 0007 03       		.uleb128 0x3
  1123 0008 0E       		.uleb128 0xe
  1124 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 35
+
+
  1125 000a 0E       		.uleb128 0xe
  1126 000b 55       		.uleb128 0x55
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 35
-
-
  1127 000c 17       		.uleb128 0x17
  1128 000d 11       		.uleb128 0x11
  1129 000e 01       		.uleb128 0x1
@@ -2096,11 +2098,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1179 0040 19       		.uleb128 0x19
  1180 0041 20       		.uleb128 0x20
  1181 0042 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 36
+
+
  1182 0043 00       		.byte	0
  1183 0044 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 36
-
-
  1184 0045 06       		.uleb128 0x6
  1185 0046 2E       		.uleb128 0x2e
  1186 0047 01       		.byte	0x1
@@ -2156,11 +2158,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1236 0079 03       		.uleb128 0x3
  1237 007a 0E       		.uleb128 0xe
  1238 007b 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 37
+
+
  1239 007c 0B       		.uleb128 0xb
  1240 007d 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 37
-
-
  1241 007e 05       		.uleb128 0x5
  1242 007f 49       		.uleb128 0x49
  1243 0080 13       		.uleb128 0x13
@@ -2216,11 +2218,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1293 00b2 00       		.byte	0
  1294 00b3 00       		.byte	0
  1295 00b4 0D       		.uleb128 0xd
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 38
+
+
  1296 00b5 05       		.uleb128 0x5
  1297 00b6 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 38
-
-
  1298 00b7 03       		.uleb128 0x3
  1299 00b8 0E       		.uleb128 0xe
  1300 00b9 3A       		.uleb128 0x3a
@@ -2276,11 +2278,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1350 00f1 00       		.byte	0
  1351 00f2 11       		.uleb128 0x11
  1352 00f3 34       		.uleb128 0x34
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 39
+
+
  1353 00f4 00       		.byte	0
  1354 00f5 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 39
-
-
  1355 00f6 08       		.uleb128 0x8
  1356 00f7 3A       		.uleb128 0x3a
  1357 00f8 0B       		.uleb128 0xb
@@ -2336,11 +2338,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1407 012a 15       		.uleb128 0x15
  1408 012b 34       		.uleb128 0x34
  1409 012c 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 40
+
+
  1410 012d 31       		.uleb128 0x31
  1411 012e 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 40
-
-
  1412 012f 00       		.byte	0
  1413 0130 00       		.byte	0
  1414 0131 16       		.uleb128 0x16
@@ -2396,11 +2398,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1464 0166 01       		.uleb128 0x1
  1465 0167 12       		.uleb128 0x12
  1466 0168 06       		.uleb128 0x6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 41
+
+
  1467 0169 40       		.uleb128 0x40
  1468 016a 18       		.uleb128 0x18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 41
-
-
  1469 016b 9742     		.uleb128 0x2117
  1470 016d 19       		.uleb128 0x19
  1471 016e 01       		.uleb128 0x1
@@ -2456,11 +2458,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1521 01a4 19       		.uleb128 0x19
  1522 01a5 11       		.uleb128 0x11
  1523 01a6 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 42
+
+
  1524 01a7 12       		.uleb128 0x12
  1525 01a8 06       		.uleb128 0x6
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 42
-
-
  1526 01a9 40       		.uleb128 0x40
  1527 01aa 18       		.uleb128 0x18
  1528 01ab 9742     		.uleb128 0x2117
@@ -2516,11 +2518,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1578 01de 3C       		.uleb128 0x3c
  1579 01df 19       		.uleb128 0x19
  1580 01e0 6E       		.uleb128 0x6e
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 43
+
+
  1581 01e1 0E       		.uleb128 0xe
  1582 01e2 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 43
-
-
  1583 01e3 0E       		.uleb128 0xe
  1584 01e4 3A       		.uleb128 0x3a
  1585 01e5 0B       		.uleb128 0xb
@@ -2576,11 +2578,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1635 0041 3A000000 		.4byte	.LVL6
  1636 0045 0200     		.2byte	0x2
  1637 0047 30       		.byte	0x30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 44
+
+
  1638 0048 9F       		.byte	0x9f
  1639 0049 3A000000 		.4byte	.LVL6
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 44
-
-
  1640 004d 3C000000 		.4byte	.LVL7
  1641 0051 0100     		.2byte	0x1
  1642 0053 53       		.byte	0x53
@@ -2636,11 +2638,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1692 0034 5C000000 		.4byte	.LFE115-.LFB115
  1693 0038 00000000 		.4byte	.LFB116
  1694 003c 02000000 		.4byte	.LFE116-.LFB116
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 45
+
+
  1695 0040 00000000 		.4byte	0
  1696 0044 00000000 		.4byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 45
-
-
  1697              		.section	.debug_ranges,"",%progbits
  1698              	.Ldebug_ranges0:
  1699 0000 00000000 		.4byte	.LFB112
@@ -2696,11 +2698,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1728              	.LASF2:
  1729 005e 73686F72 		.ascii	"short int\000"
  1729      7420696E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 46
+
+
  1729      7400
  1730              	.LASF59:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 46
-
-
  1731 0068 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\EAA\\ElectronicClock\\"
  1731      73657273 
  1731      5C7A616B 
@@ -2756,11 +2758,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1752      52515F6E 
  1752      65737469 
  1752      6E675F6C 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 47
+
+
  1752      6576656C 
  1753              	.LASF56:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 47
-
-
  1754 013c 45455F6F 		.ascii	"EE_oo_TerminateTask\000"
  1754      6F5F5465 
  1754      726D696E 
@@ -2816,11 +2818,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1774      626C6500 
  1775              	.LASF23:
  1776 01e2 45455F69 		.ascii	"EE_increment_IRQ_nesting_level\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 48
+
+
  1776      6E637265 
  1776      6D656E74 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 48
-
-
  1776      5F495251 
  1776      5F6E6573 
  1777              	.LASF1:
@@ -2876,11 +2878,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1796      6E657874 
  1797              	.LASF15:
  1798 02b2 45455F49 		.ascii	"EE_INT32\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 49
+
+
  1798      4E543332 
  1798      00
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 49
-
-
  1799              	.LASF28:
  1800 02bb 45455F63 		.ascii	"EE_cortex_mx_IRQ_active_change_context\000"
  1800      6F727465 
@@ -2936,11 +2938,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1818      63617469 
  1818      6F6E4D6F 
  1818      646500
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 50
+
+
  1819              	.LASF5:
  1820 038e 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 50
-
-
  1820      20756E73 
  1820      69676E65 
  1820      6420696E 
@@ -2996,11 +2998,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 1
  1840      52784275 
  1840      66666572 
  1840      00
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc3ayyza.s 			page 51
+
+
  1841              	.LASF57:
  1842 044d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cca97Vj2.s 			page 51
-
-
  1842      43313120 
  1842      352E342E 
  1842      31203230 

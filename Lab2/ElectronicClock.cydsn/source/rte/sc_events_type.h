@@ -17,6 +17,7 @@
 /* USER CODE START SC_EVENTS_INCLUDES */
     
 #include "statemachine_type.h"
+#include "ringbuffer.h"
 
 /* USER CODE END SC_EVENTS_INCLUDES */
 
@@ -27,14 +28,7 @@
  **********************************************************************/
 
 /* USER CODE START SC_EVENTS_USERDEFINITIONS */
-//    typedef enum {
-//        EV_KEYLEFT,
-//        EV_KEYRIGHT,
-//        EV_KEYRIGHTLONGPRESS,
-//        EV_1MIN,
-//        EV_250MS,
-//        NONE
-//    } EVENT_t;
+    
 
 /* USER CODE END SC_EVENTS_USERDEFINITIONS */
 
@@ -45,6 +39,9 @@ struct
 //	#error "Provide your data structure"
     
     STATE_event_t m_event;
+    ringbuffer_hdl_t *eventBuffer;
+    
+    
     
 } 
 /* USER CODE END SC_EVENTS_SIGNALDATADEFINITION */
@@ -52,7 +49,24 @@ SC_EVENTS_data_t;
 
 /* USER CODE START InitSC_EVENTS */
 //#error "Provide a sensible init value"
-#define SC_EVENTS_INIT_DATA ((SC_EVENTS_data_t){NONE})
+//#define SC_EVENTS_INIT_DATA ((SC_EVENTS_data_t){NULL})
+#define INIT_RINGBUFFER {    \
+    .erika_ressource = res_events_Lock,           \
+    .idx_read = 0,                  \
+    .idx_write = 0,                 \
+    .filled = 0,                    \
+    .p_payload = NULL,              \
+    .size = 200                    \
+}
+
+static ringbuffer_hdl_t ringbuffer = INIT_RINGBUFFER;
+
+#define SC_EVENTS_INIT_DATA  (SC_EVENTS_data_t) { \
+    .m_event = NONE, \
+    .eventBuffer = &ringbuffer                         \
+}
+
+
 /* USER CODE END InitSC_EVENTS */
 
 

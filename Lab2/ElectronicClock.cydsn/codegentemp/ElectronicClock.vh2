@@ -2,7 +2,7 @@
 --	Conversion of ElectronicClock.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Jun 18 22:26:53 2024
+--	Tue Jun 18 23:22:36 2024
 --
 
 USE cypress.cypress.all;

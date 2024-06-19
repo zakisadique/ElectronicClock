@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
   28:source\rte/sc_clockdata_type.c **** /* USER CODE START SC_CLOCKDATA_USERDEFINITIONS */
   29:source\rte/sc_clockdata_type.c **** 
   30:source\rte/sc_clockdata_type.c **** /* USER CODE END SC_CLOCKDATA_USERDEFINITIONS */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 2
 
 
   31:source\rte/sc_clockdata_type.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
   61              		.loc 1 51 0 discriminator 4
   62 001e 012B     		cmp	r3, #1
   63 0020 01D1     		bne	.L11
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 3
 
 
   64              		.loc 1 51 0 is_stmt 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  110              	.LBE2:
   60:source\rte/sc_clockdata_type.c ****         
   61:source\rte/sc_clockdata_type.c ****         //whoever calls driver out makes it false
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 4
 
 
   62:source\rte/sc_clockdata_type.c ****         
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  152 00b0 FFF7FEFF 		bl	TFT_drawChar
  153              	.LVL17:
   75:source\rte/sc_clockdata_type.c ****         
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 5
 
 
   76:source\rte/sc_clockdata_type.c ****         uint8_t minutesSecondDigit = minutes % 10;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  199 0100 3C21     		movs	r1, #60
  200 0102 3720     		movs	r0, #55
  201 0104 FFF7FEFF 		bl	TFT_drawChar
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 6
 
 
  202              	.LVL24:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  245 0025 02       		.uleb128 0x2
  246 0026 08       		.byte	0x8
  247 0027 07       		.byte	0x7
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 7
 
 
  248 0028 CC020000 		.4byte	.LASF0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  302 0091 03       		.byte	0x3
  303 0092 2C       		.byte	0x2c
  304 0093 5A000000 		.4byte	0x5a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 8
 
 
  305 0097 02       		.uleb128 0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  359 0103 CF       		.byte	0xcf
  360 0104 A5010000 		.4byte	0x1a5
  361 0108 06       		.uleb128 0x6
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 9
 
 
  362 0109 15000000 		.4byte	.LASF24
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  416 0175 9E000000 		.4byte	.LASF42
  417 0179 6E       		.sleb128 -18
  418 017a 07       		.uleb128 0x7
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 10
 
 
  419 017b CB010000 		.4byte	.LASF43
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  473 01e7 03       		.byte	0x3
  474 01e8 09       		.uleb128 0x9
  475 01e9 0A020000 		.4byte	.LASF55
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 11
 
 
  476 01ed 07       		.byte	0x7
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  530 0258 0A       		.uleb128 0xa
  531 0259 B4050000 		.4byte	.LASF64
  532 025d 1FF8     		.2byte	0xf81f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 12
 
 
  533 025f 0A       		.uleb128 0xa
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  587 02db 08       		.byte	0x8
  588 02dc 72       		.byte	0x72
  589 02dd 38020000 		.4byte	0x238
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 13
 
 
  590 02e1 0C       		.uleb128 0xc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  644 0365 81000000 		.4byte	0x81
  645 0369 9E000000 		.4byte	.LLST5
  646 036d 11       		.uleb128 0x11
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 14
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 14
 
 
  647 036e 4E000000 		.4byte	.LVL7
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  701 03b3 3C       		.byte	0x3c
  702 03b4 12       		.uleb128 0x12
  703 03b5 01       		.uleb128 0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 15
 
 
  704 03b6 52       		.byte	0x52
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  758 040a 01       		.byte	0x1
  759 040b 47       		.byte	0x47
  760 040c 81000000 		.4byte	0x81
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 16
 
 
  761 0410 F6000000 		.4byte	.LLST8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  815 0464 00       		.sleb128 0
  816 0465 00       		.byte	0
  817 0466 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 17
 
 
  818 0467 D4000000 		.4byte	.LVL22
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  872 04a6 5A050000 		.4byte	0x55a
  873 04aa D3040000 		.4byte	0x4d3
  874 04ae 12       		.uleb128 0x12
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 18
 
 
  875 04af 01       		.uleb128 0x1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  929 04eb 02       		.uleb128 0x2
  930 04ec 08       		.byte	0x8
  931 04ed 20       		.byte	0x20
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 19
 
 
  932 04ee 12       		.uleb128 0x12
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  986 054e 0C       		.byte	0xc
  987 054f 1207     		.2byte	0x712
  988 0551 55050000 		.4byte	0x555
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 20
 
 
  989 0555 18       		.uleb128 0x18
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1043 002c 24       		.uleb128 0x24
  1044 002d 00       		.byte	0
  1045 002e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 21
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 21
 
 
  1046 002f 0B       		.uleb128 0xb
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1100 0065 0D       		.uleb128 0xd
  1101 0066 00       		.byte	0
  1102 0067 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 22
 
 
  1103 0068 0E       		.uleb128 0xe
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1157 009f 00       		.byte	0
  1158 00a0 00       		.byte	0
  1159 00a1 0D       		.uleb128 0xd
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 23
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 23
 
 
  1160 00a2 05       		.uleb128 0x5
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1214 00d8 00       		.byte	0
  1215 00d9 11       		.uleb128 0x11
  1216 00da 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 24
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 24
 
 
  1217 00dd 01       		.byte	0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1271 0118 3F       		.uleb128 0x3f
  1272 0119 19       		.uleb128 0x19
  1273 011a 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 25
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 25
 
 
  1274 011b 19       		.uleb128 0x19
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1328 0013 0100     		.2byte	0x1
  1329 0015 54       		.byte	0x54
  1330 0016 10010000 		.4byte	.LVL25
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 26
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 26
 
 
  1331 001a 14010000 		.4byte	.LFE111
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1384 0091 F7       		.byte	0xf7
  1385 0092 2C       		.uleb128 0x2c
  1386 0093 33       		.byte	0x33
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 27
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 27
 
 
  1387 0094 25       		.byte	0x25
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1441 0114 B8000000 		.4byte	.LVL18
  1442 0118 D4000000 		.4byte	.LVL22
  1443 011c 1C00     		.2byte	0x1c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 28
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 28
 
 
  1444 011e 76       		.byte	0x76
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1497 000c 0000     		.2byte	0
  1498 000e 0000     		.2byte	0
  1499 0010 00000000 		.4byte	.LFB111
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 29
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 29
 
 
  1500 0014 14010000 		.4byte	.LFE111-.LFB111
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1528      6374726F 
  1528      6E696343 
  1528      6C6F636B 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 30
 
 
  1529              	.LASF42:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1556 0132 59454C4C 		.ascii	"YELLOW\000"
  1556      4F5700
  1557              	.LASF59:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 31
 
 
  1558 0139 626C696E 		.ascii	"blink\000"
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1582      434800
  1583              	.LASF48:
  1584 01de 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 32
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 32
 
 
  1584      52524F52 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1607              	.LASF38:
  1608 0272 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
  1608      52524F52 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 33
 
 
  1608      5F524541 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1631              	.LASF26:
  1632 0316 52435F45 		.ascii	"RC_ERROR_NULL\000"
  1632      52524F52 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 34
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 34
 
 
  1632      5F4E554C 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1656      325F7400 
  1657              	.LASF7:
  1658 03c9 5F5F696E 		.ascii	"__int32_t\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 35
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 35
 
 
  1658      7433325F 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1682      4D00
  1683              	.LASF53:
  1684 0463 6D5F6564 		.ascii	"m_editing\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 36
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 36
 
 
  1684      6974696E 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 1
  1703      37373135 
  1704 054d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  1704      66756E63 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccIAbk4b.s 			page 37
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cceLdcVe.s 			page 37
 
 
  1704      74696F6E 

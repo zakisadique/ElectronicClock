@@ -44,14 +44,41 @@
  * task: tsk_control
  */
 void CONTROL_runStateMachine_run(RTE_event ev){
+    
+//    SC_EVENTS_data_t eventData = SC_EVENTS_INIT_DATA;
+    SC_EVENTS_data_t eventData;
+    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &eventData); 
+    
+    STATE_event_t currentEvent;
+    while (1){
+//        SC_EVENTS_data_t eventData = SC_EVENTS_INIT_DATA;
+//        RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &eventData); 
+        
+        
+        STATE_event_t currentEvent;
+        if (Ringbuffer_Read(eventData.eventBuffer, &currentEvent, sizeof(currentEvent)) == RC_SUCCESS) {
+           STATE_processEvent(&CLOCK_CONTAINER_FSM, currentEvent);
+        } else {
+            break;
+        }
+        
+        
+        
+        
+//        STATE_event_t event = *((STATE_event_t*)eventPtr);
+    
+//        STATE_processEvent(&CLOCK_CONTAINER_FSM, event);
+    
+    }
+    
 	
 	/* USER CODE START CONTROL_runStateMachine_run */
-    SC_EVENTS_data_t eventData = SC_EVENTS_INIT_DATA;
-    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &eventData);
+//    SC_EVENTS_data_t eventData = SC_EVENTS_INIT_DATA;
+//    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &eventData);
     
-    STATE_event_t event = eventData.m_event;
-    
-    STATE_processEvent(&CLOCK_CONTAINER_FSM, event);
+//    STATE_event_t event = eventData.m_event;
+//    
+//    STATE_processEvent(&CLOCK_CONTAINER_FSM, event);
 
     /* USER CODE END CONTROL_runStateMachine_run */
 }

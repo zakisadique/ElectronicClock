@@ -92,6 +92,8 @@ TASK(tsk_init)
     ActivateTask(tsk_control);
     ActivateTask(tsk_display);
     ActivateTask(tsk_background);
+    
+    
 
     TerminateTask();
     
