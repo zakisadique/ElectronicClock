@@ -28,6 +28,7 @@
     
 #include <project.h>
 #include "global.h"
+    #include "UART_Logs.h"
     
 /*=======================[ Symbols ]===============================================================*/
 
@@ -88,6 +89,8 @@ inline RC_t Ringbuffer_Write(ringbuffer_hdl_t* rb, void* p_payload, uint32_t siz
     for(i=0;i<size;i++){
         //copy byte
         ((uint8_t*)rb->p_payload)[rb->idx_write]=((uint8_t*)p_payload)[i];
+        
+
         
         //update write index
         rb->idx_write++;

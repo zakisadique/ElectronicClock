@@ -45,36 +45,33 @@ void INPUT_readButtons_run(RTE_event ev){
 	
 	/* USER CODE START INPUT_readButtons_run */
     
-//    UART_Logs_PutString("INPUT_readButtons_run\n");
+
     
     RTE_SC_BUTTONS_pullPort(&SO_BUTTONS_signal);
     
     SC_BUTTONS_data_t input = SC_BUTTONS_INIT_DATA;
     RTE_SC_BUTTONS_getThreadSafe(&SO_BUTTONS_signal, &input);
     
-//    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
+
         SC_EVENTS_data_t event;
         RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
     
     if (input.m_buttonLeftPressed == TRUE){
         
-//        event.m_event = EV_KEYLEFT;
         
         STATE_event_t currentEvent = EV_KEYLEFT;
         
         Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
         
-        
         RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
         
-        UART_Logs_PutString("EV_KEYLEFT\n");
+        UART_Logs_PutString("EV_KEYLEFT_Input\n");
         
         CancelAlarm(alrm_buttonPressed);
         
     } else if (input.m_buttonLeftPressed == FALSE && input.m_buttonRightPressed == FALSE){
         if ((input.m_buttonRightPressedTime >= 0) && (input.m_buttonRightPressedTime < 20)){
             
-//            event.m_event = EV_KEYRIGHT;
             
             STATE_event_t currentEvent = EV_KEYRIGHT;
             Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
@@ -122,23 +119,23 @@ void INPUT_readButtons_run(RTE_event ev){
  * task: tsk_input
  */
 void INPUT_1min_run(RTE_event ev){
-	
-	/* USER CODE START INPUT_1sec_run */
-//    UART_Logs_PutString("INPUT_1sec_run\n");
-    
-    SC_EVENTS_data_t event;
-    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
-//    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
-//    event.m_event = EV_1MIN;
-    
-    STATE_event_t currentEvent = EV_1MIN;
-    Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
-    
-    
-    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
-    
-
-    /* USER CODE END INPUT_1sec_run */
+//	
+//	/* USER CODE START INPUT_1sec_run */
+////    UART_Logs_PutString("INPUT_1sec_run\n");
+//    
+//    SC_EVENTS_data_t event;
+//    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
+////    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
+////    event.m_event = EV_1MIN;
+//    
+//    STATE_event_t currentEvent = EV_1MIN;
+//    Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
+//    
+//    
+//    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+//    
+//
+//    /* USER CODE END INPUT_1sec_run */
 }
 
 /*
@@ -153,25 +150,48 @@ void INPUT_1min_run(RTE_event ev){
  * task: tsk_input
  */
 void INPUT_250ms_run(RTE_event ev){
-	
-	/* USER CODE START INPUT_250ms_run */
-//    UART_Logs_PutString("INPUT_250ms_run\n");
+//	
+//	/* USER CODE START INPUT_250ms_run */
     
-////    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
-    SC_EVENTS_data_t event;
-    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
-//    event.m_event = EV_250MS;
-    STATE_event_t currentEvent = EV_250MS;
-    Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
+    static boolean_t firstUse = TRUE;
+    
+    if (firstUse == TRUE){
+        SC_EVENTS_data_t event;
+        RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
+        
+        static ringbuffer_hdl_t rb;
+        
+        Ringbuffer_Init(&rb, res_events_Lock, event.buffer ,200 );
+        
+        event.eventBuffer = &rb;
+        
+        RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+        
+        firstUse = FALSE;
+    }
     
     
-    STATE_event_t currevent;
-    Ringbuffer_Read(event.eventBuffer, &currentEvent, sizeof(currentEvent));
-    currevent = NONE;
     
-    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
-
-    /* USER CODE END INPUT_250ms_run */
+    
+    
+    
+////    UART_Logs_PutString("INPUT_250ms_run\n");
+//    
+//////    SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
+//    SC_EVENTS_data_t event;
+//    RTE_SC_EVENTS_getThreadSafe(&SO_EVENTS_signal, &event); 
+////    event.m_event = EV_250MS;
+//    STATE_event_t currentEvent = EV_250MS;
+//    Ringbuffer_Write(event.eventBuffer, &currentEvent, sizeof(currentEvent));
+//    
+//    
+//    STATE_event_t currevent;
+//    Ringbuffer_Read(event.eventBuffer, &currentEvent, sizeof(currentEvent));
+//    currevent = NONE;
+//    
+//    RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
+//
+//    /* USER CODE END INPUT_250ms_run */
 }
 
 /* USER CODE START SWC_INPUT_FUNCTIONS */

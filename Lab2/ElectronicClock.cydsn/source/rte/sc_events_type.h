@@ -37,8 +37,8 @@ typedef
 struct
 {
 //	#error "Provide your data structure"
-    
     STATE_event_t m_event;
+    STATE_event_t buffer[200];
     ringbuffer_hdl_t *eventBuffer;
     
     
@@ -50,21 +50,37 @@ SC_EVENTS_data_t;
 /* USER CODE START InitSC_EVENTS */
 //#error "Provide a sensible init value"
 //#define SC_EVENTS_INIT_DATA ((SC_EVENTS_data_t){NULL})
-#define INIT_RINGBUFFER {    \
-    .erika_ressource = res_events_Lock,           \
-    .idx_read = 0,                  \
-    .idx_write = 0,                 \
-    .filled = 0,                    \
-    .p_payload = NULL,              \
-    .size = 200                    \
-}
+//
+//SC_EVENTS_data_t init_SC_EVENTS_data();
+//
+//SC_EVENTS_data_t init_SC_EVENTS_data() {
+//    SC_EVENTS_data_t data;
+//    static STATE_event_t payloadBuffer[200];
+//
+//    // Initialize payloadBuffer elements to 0
+//
+//
+//    // Initialize m_event
+//    data.m_event = NONE;
+//
+//    // Allocate memory for eventBuffer (ringbuffer_hdl_t) dynamically
+//    static ringbuffer_hdl_t eventBuffer = {
+//        .size = 200,
+//        .filled = 0,
+//        .idx_write = 0,
+//        .idx_read = 0,
+//        .p_payload = payloadBuffer,
+//        .erika_ressource = res_events_Lock
+//    };
+//
+//    // Set eventBuffer pointer in SC_EVENTS_data_t
+//    data.eventBuffer = (ringbuffer_hdl_t *)&eventBuffer;
+//    return data;
+//}
 
-static ringbuffer_hdl_t ringbuffer = INIT_RINGBUFFER;
 
-#define SC_EVENTS_INIT_DATA  (SC_EVENTS_data_t) { \
-    .m_event = NONE, \
-    .eventBuffer = &ringbuffer                         \
-}
+#define SC_EVENTS_INIT_DATA ((SC_EVENTS_data_t){NONE, {0},  NULL})
+
 
 
 /* USER CODE END InitSC_EVENTS */
