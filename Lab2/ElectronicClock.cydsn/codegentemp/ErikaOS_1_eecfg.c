@@ -1663,7 +1663,7 @@ const unsigned long EE_ALARM_ID[EE_MAX_ALARM]=
 #if (EE_MAX_ALARM > 3) && (1 == 3)
     void alarm_callback_5(void);
 #endif
-#if (EE_MAX_ALARM > 4) && (1 == 3)
+#if (EE_MAX_ALARM > 4) && (0 == 3)
     void alarm_callback_5(void);
 #endif
 #if (EE_MAX_ALARM > 5) && (0 == 3)
@@ -1797,18 +1797,18 @@ const unsigned long EE_ALARM_ID[EE_MAX_ALARM]=
             (EE_TYPECOUNTER)-1 }
     #endif
     #if EE_ACTION_ROM_SIZE > 4
-        ,{1    , 
-            #if 1 != 3 
+        ,{0    , 
+            #if 0 != 3 
                 2,
             #else
                 0,
             #endif
-            #if 1 == 1
+            #if 0 == 1
                 16U,
             #else
                 0U,
             #endif
-            #if 1 != 3
+            #if 0 != 3
              (EE_VOID_CALLBACK)NULL,
             #else
                 alarm_callback_5,

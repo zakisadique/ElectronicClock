@@ -26,6 +26,9 @@
 
 /* USER CODE START SWC_INPUT_USERDEFINITIONS */
 
+#define POLLINGRATE 25
+#define LONG_PRESS_DURATION 1000
+
 /* USER CODE END SWC_INPUT_USERDEFINITIONS */
 
 
@@ -63,14 +66,14 @@ void INPUT_readButtons_run(RTE_event ev){
             
             event.m_event = EV_KEYLEFT;
             
-            UART_Logs_PutString("EV_KEYLEFT\n");
+//            UART_Logs_PutString("EV_KEYLEFT\n");
             RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
            
 
         
         }
         
-        else if ((input.m_buttonRightPressedTime > 0) && (input.m_buttonRightPressedTime < 20)){
+        else if ((input.m_buttonRightPressedTime > 0) && (input.m_buttonRightPressedTime < (LONG_PRESS_DURATION / POLLINGRATE))){
             
             
             input.m_buttonRightPressedTime = 0;
@@ -80,14 +83,14 @@ void INPUT_readButtons_run(RTE_event ev){
             event.m_event = EV_KEYRIGHT;
             RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
 
-            UART_Logs_PutString("EV_KEYRIGHT\n");
+//            UART_Logs_PutString("EV_KEYRIGHT\n");
             
-        } else if (input.m_buttonRightPressedTime >= 20){
+        } else if (input.m_buttonRightPressedTime >= (LONG_PRESS_DURATION / POLLINGRATE)){
             
             event.m_event = EV_KEYRIGHTLONGPRESS;
             RTE_SC_EVENTS_set(&SO_EVENTS_signal, event);
             
-            UART_Logs_PutString("EV_KEYRIGHTLONGPRESS\n");
+//            UART_Logs_PutString("EV_KEYRIGHTLONGPRESS\n");
             
             input.m_buttonRightPressedTime = 0;
             RTE_SC_BUTTONS_set(&SO_BUTTONS_signal, input);
@@ -119,6 +122,15 @@ void INPUT_1min_run(RTE_event ev){
 	
 	/* USER CODE START INPUT_1sec_run */
 //    UART_Logs_PutString("INPUT_1sec_run\n");
+    
+    static boolean_t firstUse = TRUE;
+    if (firstUse == TRUE){
+        
+        // do not set event for 1 min at time t = 0
+        firstUse = FALSE;
+        return;
+    
+    }
     
     SC_EVENTS_data_t event = SC_EVENTS_INIT_DATA;
     event.m_event = EV_1MIN;

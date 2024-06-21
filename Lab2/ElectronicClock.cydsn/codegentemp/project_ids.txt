@@ -1,6 +1,6 @@
-C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\ElectronicClock.cyprj|a77b6f43-d47f-43c8-9359-816758e63c5b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|60c58bf4-b7a1-4e8a-972a-ab46c40e454d
-C:\Users\zakis\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f30468a6-6b0f-43eb-8301-59b079704955
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b8c2c8aa-43b1-465b-ba29-cb43b7e1623d
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|017d2fc0-a16e-4e4a-a0df-e450d2c652f6
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a83c127d-16d2-4b8e-b0da-7b14991691de
+C:\Users\zakis\Documents\EAA\ElectronicClock\Lab2\ElectronicClock.cydsn\ElectronicClock.cyprj|113f4a44-8404-44bd-904f-a138e433e281
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b790a469-274a-4f7b-97ac-afb45a92ba37
+C:\Users\zakis\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|ac3cddc2-1622-4395-90da-b62c90e9c826
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|206628af-54e1-42d4-b45d-6e86bb3c5b3f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7836d863-dc75-4494-b081-ae3a1628a2e1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5b3a711f-06b4-4b02-a1af-550151067ef7

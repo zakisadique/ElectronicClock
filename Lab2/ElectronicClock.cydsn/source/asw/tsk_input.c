@@ -42,14 +42,17 @@
 /* Cyclic Table */
 
 const RTE_cyclicTable_t RTE_cyclicActivationTable_tsk_input[] = {
+     { INPUT_readButtons_run, 25 },  //Runnable
+    { INPUT_250ms_run, 250 },	//Runnable
+    { INPUT_1min_run, 60000 },	//Runnable
 };
 const uint16_t RTE_cyclicActivation_tsk_input_size = sizeof (RTE_cyclicActivationTable_tsk_input) / sizeof(RTE_cyclicTable_t); 
 
 /* Event Table */
 const RTE_eventTable_t RTE_eventActivationTable_tsk_input[] = {
-    { INPUT_readButtons_run, ev_50ms },  //Runnable
-    { INPUT_250ms_run, ev_250ms },	//Runnable
-    { INPUT_1min_run, ev_1min },	//Runnable
+//    { INPUT_readButtons_run, ev_50ms },  //Runnable
+//    { INPUT_250ms_run, ev_250ms },	//Runnable
+//    { INPUT_1min_run, ev_1min },	//Runnable
 }; 
 const uint16_t RTE_eventActivation_tsk_input_size = sizeof (RTE_eventActivationTable_tsk_input) / sizeof(RTE_eventTable_t);
 
@@ -71,37 +74,59 @@ const uint16_t RTE_eventActivation_tsk_input_size = sizeof (RTE_eventActivationT
  */
 TASK(tsk_input)
 {
-	/* ticktime of the task */
-	uint32_t ticktime = 0;
-	
-    EventMaskType ev = 0;
-	
-	/* USER CODE START TSK_INPUT_INIT */
-
-	/* USER CODE END TSK_INPUT_INIT */
     
-    while(1)
-    {
-        //Wait, read and clear the event
-        WaitEvent(ev_250ms|ev_1min|ev_50ms);
-        GetEvent(tsk_input,&ev);
-        ClearEvent(ev);
+    /* ticktime of the task */
+	static uint32_t ticktime = 0;
+
+	/* USER CODE START TSK_DISPLAY_TASKBOBY_PRE */
+
+	/* USER CODE END TSK_DISPLAY_TASKBODY_PRE */
     
-		/* USER CODE START TSK_INPUT_TASKBOBY_PRE */
-
-		/* USER CODE END TSK_INPUT_TASKBODY_PRE */
-        		
-		//Process data driven events
-		RTE_ProcessEventTable(RTE_eventActivationTable_tsk_input, RTE_eventActivation_tsk_input_size, ev);
-		
-		/* USER CODE START TSK_INPUT_TASKBODY_POST */
-
-		/* USER CODE END TSK_INPUT_TASKBODY_POST */
-        
-    }
+    //Process all cyclic runnables which are due
+    RTE_ProcessCyclicTable(RTE_cyclicActivationTable_tsk_input, RTE_cyclicActivation_tsk_input_size, ticktime);
 	
-	//Just in Case
+	/* USER CODE START TSK_DISPLAY_TASKBODY_POST */
+
+	/* USER CODE END TSK_DISPLAY_TASKBODY_POST */
+
+	ticktime += 25;
+	if (ticktime > 0xFFFFFF00) ticktime = 0;
+	
 	TerminateTask();
+    
+    
+    
+//	/* ticktime of the task */
+//	uint32_t ticktime = 0;
+//	
+//    EventMaskType ev = 0;
+//	
+//	/* USER CODE START TSK_INPUT_INIT */
+//
+//	/* USER CODE END TSK_INPUT_INIT */
+//    
+//    while(1)
+//    {
+//        //Wait, read and clear the event
+//        WaitEvent(ev_250ms|ev_1min|ev_50ms);
+//        GetEvent(tsk_input,&ev);
+//        ClearEvent(ev);
+//    
+//		/* USER CODE START TSK_INPUT_TASKBOBY_PRE */
+//
+//		/* USER CODE END TSK_INPUT_TASKBODY_PRE */
+//        		
+//		//Process data driven events
+//		RTE_ProcessEventTable(RTE_eventActivationTable_tsk_input, RTE_eventActivation_tsk_input_size, ev);
+//		
+//		/* USER CODE START TSK_INPUT_TASKBODY_POST */
+//
+//		/* USER CODE END TSK_INPUT_TASKBODY_POST */
+//        
+//    }
+//	
+//	//Just in Case
+//	TerminateTask();
 }
 
 
